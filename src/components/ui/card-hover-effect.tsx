@@ -5,12 +5,12 @@ import Link from "next/link";
 import { useState } from "react";
 import { Book, Lightbulb, UserCheck, Heart, Award, Briefcase } from "lucide-react";
 const iconMap: { [key: string]: React.ReactNode } = {
-    book: <Book className="w-8 h-8 text-blue-500" />,
-    Lightbulb: <Lightbulb className="w-8 h-8 text-blue-500" />,
-    UserCheck: <UserCheck className="w-8 h-8 text-blue-500" />,
-    Heart: <Heart className="w-8 h-8 text-blue-500" />,
-    Award: <Award className="w-8 h-8 text-blue-500" />,
-    Briefcase: <Briefcase className="w-8 h-8 text-blue-500" />,
+    book: <Book className="w-8 h-8 text-bg-primary" />,
+    Lightbulb: <Lightbulb className="w-8 h-8 text-bg-primary" />,
+    UserCheck: <UserCheck className="w-8 h-8 text-bg-primary" />,
+    Heart: <Heart className="w-8 h-8 text-bg-primary" />,
+    Award: <Award className="w-8 h-8 text-bg-primary" />,
+    Briefcase: <Briefcase className="w-8 h-8 text-bg-primary" />,
 
 
 };
@@ -45,7 +45,7 @@ export const HoverEffect = ({
                     <AnimatePresence>
                         {hoveredIndex === idx && (
                             <motion.span
-                                className="absolute inset-0 h-full w-full bg-neutral-200 dark:bg-blue-300 block  rounded-3xl"
+                                className="absolute inset-0 h-full w-full bg-neutral-200 dark:bg-bg-second block  rounded-3xl"
                                 layoutId="hoverBackground"
                                 initial={{ opacity: 0 }}
                                 animate={{
@@ -63,8 +63,8 @@ export const HoverEffect = ({
                         <div className="flex items-center justify-center w-16 h-16 rounded-full bg-white shadow-lg">
                             {iconMap[item.icon] || <div className="w-8 h-8 text-gray-500">Icon Not Found</div>}
                         </div>
-                        <CardTitle>{item.title}</CardTitle>
-                        <CardDescription>{item.description}</CardDescription>
+                        <CardTitle className="">{item.title}</CardTitle>
+                        <CardDescription className="">{item.description}</CardDescription>
                     </Card>
                 </Link>
             ))}
@@ -82,7 +82,7 @@ export const Card = ({
     return (
         <div
             className={cn(
-                "rounded-2xl h-full w-full p-4 overflow-hidden bg-blue-400 border border-transparent dark:border-blue-200 group-hover:border-blue-200 relative z-20",
+                "rounded-2xl h-full w-full p-4 overflow-hidden bg-bg-primary border border-transparent dark:border-blue-200 group-hover:border-blue-200 relative z-20",
                 className
             )}
         >
