@@ -11,11 +11,14 @@ const config: Config = {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
-        'bg-primary': "rgb(96 165 250)",
-        'bg-second':"rgb(147 197 253)",
+        'bg-primary': "#f5b2c5",
+        'bg-second':"#fbe7e9 ",
         'text-primary':"#60a5fa",
         'sakura': '#FFD3E0',  
         'brownSakura': '#4E3629',
+        'border-primary':"#f3a5bd",
+        'text-head': "#f5b2c5",
+        'text-second': "#E3629"
       },
     },
   },
