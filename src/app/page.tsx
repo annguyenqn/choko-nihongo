@@ -1,9 +1,10 @@
-import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
-import { Card, CardContent } from "@/components/ui/card";
+// import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
+// import { Card, CardContent } from "@/components/ui/card";
 import KeysBenefit from "@/components/KeysBenefit";
 import ChokoCore from "@/components/ChokoCore";
 import AbroadProgram from "@/components/AbroadProgram";
 import { TypewriterEffectSmooth } from "@/components/ui/typewriter-effect";
+import Course from "@/components/Course";
 export default function Home() {
   const words = [
     {
@@ -79,6 +80,7 @@ export default function Home() {
       <div>
         <KeysBenefit />
       </div>
+      <Course />
       <div>
         <AbroadProgram />
       </div>

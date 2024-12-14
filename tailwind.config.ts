@@ -13,7 +13,7 @@ const config: Config = {
         foreground: "var(--foreground)",
         'bg-primary': "#f5b2c5",
         'bg-second':"#fbe7e9 ",
-        'text-primary':"#60a5fa",
+        'text-primary':"rgb(227 56 105)",
         'sakura': '#FFD3E0',  
         'brownSakura': '#4E3629',
         'border-primary':"#f3a5bd",
