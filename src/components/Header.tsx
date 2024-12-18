@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import RegisterDialog from "./RegisterDiaglog";
 
 export default function Header() {
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -63,9 +64,10 @@ export default function Header() {
                         </svg>
                         Hotline: 0362980029
                     </div>
-                    <Button className="bg-red-600 text-white font-semibold px-4 py-2 rounded hover:bg-red-700">
+                    <RegisterDialog />
+                    {/* <Button className="bg-red-600 text-white font-semibold px-4 py-2 rounded hover:bg-red-700">
                         Học thử miễn phí
-                    </Button>
+                    </Button> */}
                 </div>
 
                 {/* Mobile Menu Button */}
