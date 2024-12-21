@@ -5,6 +5,7 @@ import ChokoCore from "@/components/ChokoCore";
 import AbroadProgram from "@/components/AbroadProgram";
 import { TypewriterEffectSmooth } from "@/components/ui/typewriter-effect";
 import Course from "@/components/Course";
+import Head from "next/head";
 export default function Home() {
   const words = [
     {
@@ -35,6 +36,33 @@ export default function Home() {
   ];
   return (
     <>
+      <Head>
+        <title>Trang chủ - Choko</title> {/* Thêm title cho trang */}
+        <meta name="description" content="Học Tiếng Nhật Online - Du Học Nhật Bản, Học Tiếng Nhật Quy Nhơn." /> {/* Thêm mô tả */}
+        <meta name="robots" content="index, follow" /> {/* Thêm meta robots */}
+        <link rel="icon" href="/favicon.ico" /> {/* Favicon */}
+        <meta property="og:title" content="Choko - Khóa học tiếng Nhật và văn hóa Nhật Bản Quy Nhơn" /> {/* Open Graph Title */}
+        <meta property="og:description" content="Tìm hiểu các khóa học tiếng Nhật online, du học Nhật Bản, và học tiếng Nhật tại Quy Nhơn với phương pháp giảng dạy hiệu quả, giúp bạn nhanh chóng đạt được mục tiêu học tập." /> {/* Open Graph Description */}
+        <meta property="og:image" content="/chokoLogo2.png" /> {/* Open Graph Image */}
+        <meta property="og:url" content="https://www.yourwebsite.com" /> {/* Open Graph URL */}
+        <script type="application/ld+json">
+          {`
+            {
+              "@context": "https://schema.org",
+              "@type": "Course",
+              "name": "Khóa Học Tiếng Nhật Quy Nhơn Online",
+              "description": "Khóa học tiếng Nhật dành cho người mới bắt đầu, học từ cơ bản đến nâng cao.",
+              "provider": {
+                "@type": "Organization",
+                "name": "Trung Tâm Học Tiếng Nhật"
+              },
+              "courseMode": "Online",
+              "educationalCredentialAwarded": "Chứng chỉ",
+              "url": "https://yourdomain.com/khoa-hoc-tieng-nhat-online"
+            }
+          `}
+        </script>
+      </Head>
       <div className="relative h-screen w-full">
         {/* Hình ảnh làm nền */}
         <img
@@ -81,7 +109,7 @@ export default function Home() {
         <KeysBenefit />
       </div>
       <Course />
-      <div>
+      <div className="overflow-hidden">
         <AbroadProgram />
       </div>
     </>
