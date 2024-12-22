@@ -31,9 +31,9 @@ function RegisterDialog() {
                             Quý khách vui lòng điền đúng thông tin bên dưới, chúng tôi sẽ gọi lại trong giây phút.
                         </p>
                     </DialogHeader>
-                    <form className="mt-4 space-y-4">
+                    <form className="mt-4 space-y-2">
                         <div>
-                            <label className="block text-sm font-medium text-gray-700 mb-2">Họ tên</label>
+                            {/* <label className="block text-sm font-medium text-gray-700 mb-2">Họ tên</label> */}
                             <input
                                 type="text"
                                 className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-red-500"
@@ -42,7 +42,7 @@ function RegisterDialog() {
                         </div>
                         {/* Điện thoại */}
                         <div>
-                            <label className="block text-sm font-medium text-gray-700 mb-2">Điện thoại</label>
+                            {/* <label className="block text-sm font-medium text-gray-700 mb-2">Điện thoại</label> */}
                             <input
                                 type="number"
                                 className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-red-500"
@@ -50,7 +50,7 @@ function RegisterDialog() {
                             />
                         </div>
                         <div>
-                            <label className="block text-sm font-medium text-gray-700 mb-2 ">Tuổi</label>
+                            {/* <label className="block text-sm font-medium text-gray-700 mb-2 ">Tuổi</label> */}
                             <input
                                 type="number"
                                 className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-red-500"
@@ -58,7 +58,7 @@ function RegisterDialog() {
                             />
                         </div>
                         <div>
-                            <label className="block text-sm font-medium text-gray-700 mb-2">Nội dung tư vấn</label>
+                            {/* <label className="block text-sm font-medium text-gray-700 mb-2">Nội dung tư vấn</label> */}
                             <input
                                 type="text"
                                 className="w-full h-24 border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-red-500"
@@ -70,7 +70,7 @@ function RegisterDialog() {
                         <div className="text-center">
                             <button
                                 type="submit"
-                                className="bg-red-600 text-white px-6 py-2 rounded hover:bg-red-700"
+                                className="bg-red-600 text-white px-6 py-2 mt-4 rounded hover:bg-red-700"
                             >
                                 YÊU CẦU GỌI LẠI
                             </button>

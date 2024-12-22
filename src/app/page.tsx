@@ -6,6 +6,7 @@ import AbroadProgram from "@/components/AbroadProgram";
 import { TypewriterEffectSmooth } from "@/components/ui/typewriter-effect";
 import Course from "@/components/Course";
 import Head from "next/head";
+import QandA from "@/components/QandA";
 export default function Home() {
   const words = [
     {
@@ -64,17 +65,13 @@ export default function Home() {
         </script>
       </Head>
       <div className="relative h-screen w-full">
-        {/* Hình ảnh làm nền */}
         <img
           src="/bg-image.jpg"
           alt="Background"
           className="absolute inset-0 h-full w-full object-cover"
         />
 
-        {/* Lớp phủ đen mờ */}
         <div className="absolute inset-0 bg-black bg-opacity-20"></div>
-
-        {/* Nội dung hiển thị trên lớp phủ */}
         <div className="absolute inset-0 flex items-center justify-center text-white">
           <TypewriterEffectSmooth words={words} />
         </div>
@@ -111,6 +108,9 @@ export default function Home() {
       <Course />
       <div className="overflow-hidden">
         <AbroadProgram />
+      </div>
+      <div className="">
+        <QandA />
       </div>
     </>
   );
