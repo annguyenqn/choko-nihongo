@@ -7,6 +7,7 @@ import { TypewriterEffectSmooth } from "@/components/ui/typewriter-effect";
 import Course from "@/components/Course";
 import Head from "next/head";
 import QandA from "@/components/QandA";
+import Review from "@/components/Review";
 export default function Home() {
   const words = [
     {
@@ -109,7 +110,9 @@ export default function Home() {
       <div className="overflow-hidden">
         <AbroadProgram />
       </div>
+
       <div className="">
+        <Review />
         <QandA />
       </div>
     </>
