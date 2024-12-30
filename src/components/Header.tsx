@@ -1,16 +1,16 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import Link from "next/link";
 import RegisterDialog from "./RegisterDiaglog";
 export default function Header() {
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-    const [isScrolled, setIsScrolled] = useState(false);
+    // const [isScrolled, setIsScrolled] = useState(false);
 
     const navItems = [
         { name: "Giới thiệu", path: "/rent" },
-        { name: "Khóa học", path: "/purchase" },
+        { name: "Khóa học", path: "/tieng-nhat-jlpt" },
         { name: "Trải nghiệm Nhật Bản", path: "/trainghiem" },
         { name: "Du học Nhật Bản", path: "/contact" },
         { name: "Tiếng Nhật - Văn hóa", path: "/culture" },
@@ -19,13 +19,13 @@ export default function Header() {
     ];
 
     // Lắng nghe sự kiện scroll để thay đổi trạng thái header
-    useEffect(() => {
-        const handleScroll = () => {
-            setIsScrolled(window.scrollY > 0);
-        };
-        window.addEventListener("scroll", handleScroll);
-        return () => window.removeEventListener("scroll", handleScroll);
-    }, []);
+    // useEffect(() => {
+    //     const handleScroll = () => {
+    //         setIsScrolled(window.scrollY > 0);
+    //     };
+    //     window.addEventListener("scroll", handleScroll);
+    //     return () => window.removeEventListener("scroll", handleScroll);
+    // }, []);
 
     // Toggle trạng thái sidebar
     const toggleSidebar = () => setIsSidebarOpen((prev) => !prev);
@@ -34,7 +34,7 @@ export default function Header() {
     return (
         <>
             <header
-                className={`fixed w-full z-50 top-0 left-0 h-20 ${isScrolled ? "bg-white shadow-md" : "bg-transparent"} transition-all duration-300`}
+                className={`fixed w-full z-50 top-0 shadow-xl bg-white left-0 h-20  text-black transition-all duration-300`}
             >
                 <div className=" mx-auto flex items-center justify-between h-full px-56">
                     {/* Logo */}
@@ -50,7 +50,7 @@ export default function Header() {
                             <Link key={index} href={item.path}>
                                 <div className="w-auto  flex justify-center ">
                                     <span
-                                        className={`cursor-pointer ${isScrolled ? "text-black" : "text-white"} hover:text-primary hover:text-red-500  text-lg transition-colors duration-200`}
+                                        className={`cursor-pointer }text-black  hover:text-primary hover:text-red-500  text-lg transition-colors duration-200`}
                                     >
                                         {item.name}
                                     </span>
@@ -61,7 +61,7 @@ export default function Header() {
 
                     {/* Hotline and Button */}
                     <div className="hidden md:flex items-center space-x-4">
-                        <div className={`${isScrolled ? "text-red-600" : "text-white"} font-bold flex items-center`}>
+                        <div className={`text-red-600 font-bold flex items-center`}>
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-1" viewBox="0 0 24 24" fill="currentColor">
                                 <path d="M2.1 4.93a10.43 10.43 0 016.38-3.58 9.88 9.88 0 015.85.59 1.43 1.43 0 01.79 1.26c-.06.83-.3 1.66-.64 2.44a1.45 1.45 0 01-1.14.86 7.37 7.37 0 01-1.72.2c-.93.02-1.86.05-2.79.06a1.26 1.26 0 01-1.06-.59c-.34-.5-.77-.97-1.15-1.45-.5-.66-.88-1.39-1.33-2.08a1.38 1.38 0 00-.45-.45z" />
                             </svg>
