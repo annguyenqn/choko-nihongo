@@ -9,8 +9,9 @@ import { MessageCircleQuestionIcon } from 'lucide-react'
 function QandA() {
     return (
         <>
-            <div className='flex justify-center gap-9 my-10'>
-                <div className='w-1/3'>
+            <div className='flex md:flex-row flex-col justify-center items-center w-full  md:gap-24 gap-7 my-10'>
+                <div className='md:w-1/3 w-[95%]'>
+                    <h3 className='md:text-3xl text-2xl ml-2 text-red-500 font-bold'>Câu hỏi thường gặp</h3>
                     <Accordion type="single" collapsible defaultValue="item-1" className="w-full">
                         <AccordionItem value="item-1">
                             <AccordionTrigger>
@@ -19,7 +20,7 @@ function QandA() {
                                 </div>
                             </AccordionTrigger>
                             <AccordionContent>
-                                <div className='flex flex-col justify-start shadow-red-500/50 border border-red-500 bg-red-50 p-4 rounded-lg '>
+                                <div className='flex flex-col mx-3 justify-start shadow-red-500/50 border border-red-500 bg-red-50 p-4 rounded-lg '>
                                     <h3 className='text-lg font-bold text-red-600'>Trả lời:</h3>
                                     <p className='text-base'>
                                         Đối với bạn đã từng học tiếng Nhật hoặc đi Nhật về, các con sẽ làm một bài kiểm tra kiến thức đầu vào, gồm có bài viết và bài nói để thầy cô xếp lớp phù hợp với năng lực của con cũng như mục tiêu và định hướng của gia đình.
@@ -35,7 +36,7 @@ function QandA() {
                                 </div>
                             </AccordionTrigger>
                             <AccordionContent>
-                                <div className='flex flex-col justify-start '>
+                                <div className='flex flex-col justify-start mx-3 '>
                                     <h3 className='text-lg font-bold text-red-600'>Trả lời:</h3>
 
                                     <div className='flex flex-col text-base gap-3 shadow-red-500/50 border border-red-500 bg-red-50 p-4 rounded-lg'>
@@ -53,7 +54,7 @@ function QandA() {
                                 </div>
                             </AccordionTrigger>
                             <AccordionContent className=''>
-                                <div className='flex flex-col justify-start'>
+                                <div className='flex flex-col justify-start mx-3'>
                                     <h3 className='text-lg font-bold text-red-600'>Trả lời:</h3>
                                     <div className='flex flex-col text-base gap-3 shadow-red-500/50 border border-red-500 bg-red-50 p-4 rounded-lg'>
                                         <p>Với mỗi khóa học, ChokoNihongo đều có lộ trình học cụ thể và cam kết chất lượng đầu ra về mục tiêu tiếng Nhật, mục tiêu văn hóa kỷ luật dành cho các em học sinh.</p>
@@ -64,7 +65,7 @@ function QandA() {
                         </AccordionItem>
                     </Accordion>
                 </div>
-                <div className='w-1/3 bg-red-100 flex flex-col py-5 px-5 rounded-lg'>
+                <div className='md:w-1/3 w-[95%] mx-3 md:mx-0  bg-red-100 flex flex-col py-5 px-5 rounded-lg'>
                     <h3 className='text-red-600 font-bold text-2xl my-5'>NHẬN THÔNG TIN BÁO GIÁ</h3>
                     <form className=" space-y-2">
                         <div>

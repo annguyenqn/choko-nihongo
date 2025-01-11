@@ -3,20 +3,20 @@ import React from 'react';
 function Course() {
     return (
         <div
-            className="min-h-screen w-full bg-cover bg-center flex flex-col items-center justify-center"
+            className="min-h-screen  w-full bg-cover h-auto pb-5 bg-center flex flex-col items-center justify-center"
             style={{
-                backgroundImage: `url('/bg-course.svg')`, // Đường dẫn file SVG trong thư mục public
+                backgroundImage: `url('/bg-course.svg')`,
             }}
         >
-            <div className="text-center mb-8">
-                <h1 className="text-3xl font-bold text-red-500">KHÓA HỌC TIẾNG NHẬT</h1>
+            <div className="text-center mb-8 mt-8 md:mt-0">
+                <h1 className="md:text-3xl text-2xl font-bold text-red-500">KHÓA HỌC TIẾNG NHẬT</h1>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
                 {[
                     {
                         title: 'Tiếng Nhật luyện thi JLPT',
                         description: 'Tiếng Nhật luyện thi JLPT N5-N1',
-                        img: '/duhocDaiHoc1.jpg', // Đường dẫn đến ảnh
+                        img: '/duhocDaiHoc1.jpg',
                     },
                     {
                         title: 'Tiếng Nhật chuyên sâu - Khóa học CN',
@@ -36,7 +36,7 @@ function Course() {
                 ].map((course, index) => (
                     <div
                         key={index}
-                        className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow flex flex-col justify-between h-full"
+                        className="bg-white mx-3 md:mx-0  rounded-lg shadow-md hover:shadow-lg transition-shadow flex flex-col justify-between h-full"
                     >
                         <img
                             src={course.img}

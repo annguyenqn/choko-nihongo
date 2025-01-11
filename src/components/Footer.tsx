@@ -3,40 +3,58 @@ import { MapPinHouse, Phone, Mail, Clock } from 'lucide-react';
 
 const Footer = () => {
     return (
-        <footer className="bg-cover bg-center bg-no-repeat" style={{ backgroundImage: "url('/bg-course.svg')" }}>
+        <footer
+            className="bg-cover bg-center bg-no-repeat"
+            style={{ backgroundImage: "url('/bg-course.svg')" }}
+        >
             {/* Header Section */}
             <div className="text-center py-9 text-black">
                 <h2 className="text-2xl font-bold mb-2">Liên hệ với chúng tôi</h2>
-                <p>Choko sẵn sàng giải đáp mọi thắc mắc của bố, mẹ và con. Hãy kết nối với Choko nhé!</p>
-                <div className="flex justify-center mt-4 gap-4">
-                    <div className="bg-white rounded-md px-4 py-2 text-red-600 font-semibold shadow-md">
+                <p className='mx-3'>
+                    Choko sẵn sàng giải đáp mọi thắc mắc của bố, mẹ và con. Hãy kết nối với Choko
+                    nhé!
+                </p>
+                <div className="flex md:flex-row flex-col justify-center items-center mt-4 gap-4">
+                    <div className="bg-white w-56 rounded-md px-4 py-2 text-red-600 font-semibold shadow-md text-sm md:text-base">
                         ☎ Hotline: 0989266636
                     </div>
-                    <div className="bg-white rounded-md px-4 py-2 text-red-600 font-semibold shadow-md">
+                    <div className="bg-white w-56 rounded-md px-4 py-2 text-red-600 font-semibold shadow-md text-sm md:text-base">
                         💬 Zalo: 0989266636
                     </div>
-                    <div className="bg-white rounded-md px-4 py-2 text-red-600 font-semibold shadow-md">
+                    <div className="bg-white w-56 rounded-md px-4 py-2 text-red-600 font-semibold shadow-md text-sm md:text-base">
                         📋 Học thử miễn phí
                     </div>
                 </div>
             </div>
 
             {/* Footer Content */}
-            <div className="bg-white text-gray-800 py-8 ">
-                <div className="flex justify-center gap-20">
-                    <div className="flex flex-col  ">
-                        <div className='flex justify-center'><img src="/chokoLogo2.png" alt="Logo" className="w-28 h-40 mb-2" /></div>
-                        <div className='flex flex-col gap-2 text-base'>
-                            <p className="flex gap-5">
-                                <MapPinHouse className='text-red-500' /> Địa chỉ: 05 Yết Kiêu, Nguyễn Văn Cừ, Quy Nhơn, Bình Định, Việt Nam
+            <div className="bg-white text-gray-800 py-8">
+                <div className="flex flex-col md:flex-row justify-center gap-10 md:gap-20">
+                    {/* Contact Info */}
+                    <div className="flex flex-col items-center md:ml-5 md:items-start">
+                        <img
+                            src="/chokoLogo2.png"
+                            alt="Logo"
+                            className="w-20 h-28 md:w-20 md:h-28 mb-4"
+                        />
+                        <div className="flex flex-col ml-2 md:ml-0 gap-4 text-sm md:text-base">
+                            <p className="flex gap-4 items-start">
+                                <MapPinHouse className="text-red-500" />
+                                <span>
+                                    Địa chỉ: 05 Yết Kiêu, Nguyễn Văn Cừ, Quy Nhơn, Bình Định, Việt Nam
+                                </span>
                             </p>
-                            <p className="flex gap-5">
-                                <Phone className='text-red-500' /> 0989266636</p>
-                            <p className="flex gap-5">
-                                <Mail className='text-red-500' />tiengnhattreem@todaiedu.com</p>
-                            <p className="flex gap-5">
-                                <Clock className='text-red-500' />Thứ 2 - Thứ 7: 08h00 - 20h00</p>
-                            <p className='font-bold'>Kết nối với chúng tôi qua</p>
+                            <p className="flex gap-4 items-center">
+                                <Phone className="text-red-500" /> 0989266636
+                            </p>
+                            <p className="flex gap-4 items-center">
+                                <Mail className="text-red-500" />
+                                tiengnhattreem@todaiedu.com
+                            </p>
+                            <p className="flex gap-4 items-center">
+                                <Clock className="text-red-500" /> Thứ 2 - Thứ 7: 08h00 - 20h00
+                            </p>
+                            <p className="font-bold">Kết nối với chúng tôi qua</p>
                             <div className="flex space-x-4">
                                 <a
                                     href="https://www.facebook.com/tiengnhatchoko"
@@ -55,7 +73,6 @@ const Footer = () => {
                                         <path d="M11.99 0C5.37 0 0 5.37 0 11.99c0 5.92 4.3 10.91 9.95 11.88V14.45h-3v-2.95h3v-2.2c0-3.06 1.75-4.75 4.54-4.75 1.32 0 2.7.25 2.7.25v3h-1.5c-1.48 0-1.96.92-1.96 1.86v2.1h3.3l-.53 2.95h-2.76v9.41c5.64-.97 9.93-5.87 9.93-11.88 0-6.62-5.37-11.99-11.99-11.99z" />
                                     </svg>
                                 </a>
-
                                 <a
                                     href="https://zalo.me"
                                     target="_blank"
@@ -70,19 +87,20 @@ const Footer = () => {
                             </div>
                         </div>
                     </div>
-                    <div className=''>
+                    {/* Google Map */}
+                    <div className="w-full md:w-1/2 ">
                         <iframe
                             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d271.87742351790564!2d109.21178191586367!3d13.752077566847161!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x316f6cdd58737a7f%3A0x998a9a6e585aa86d!2zMDUgWeG6v3QgS2nDqnUsIE5ndXnhu4VuIFbEg24gQ-G7qywgUXV5IE5oxqFuLCBCw6xuaCDEkOG7i25oLCBWaeG7h3QgTmFt!5e0!3m2!1svi!2s!4v1734797222387!5m2!1svi!2s"
-                            width="600"
-                            height="450"
+                            width="100%"
+                            height="400"
                             loading="lazy"
                             title="Google Maps Location"
+                            className="rounded-lg"
                         ></iframe>
-
                     </div>
                 </div>
             </div>
-        </footer >
+        </footer>
     );
 };
 
