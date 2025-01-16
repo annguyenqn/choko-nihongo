@@ -49,7 +49,7 @@ const Footer = () => {
                             </p>
                             <p className="flex gap-4 items-center">
                                 <Mail className="text-red-500" />
-                                tiengnhattreem@todaiedu.com
+                                chokonihongo@gmail.com
                             </p>
                             <p className="flex gap-4 items-center">
                                 <Clock className="text-red-500" /> Thứ 2 - Thứ 7: 08h00 - 20h00

@@ -11,7 +11,7 @@ import {
 function RegisterDialog() {
     return (
         <Dialog>
-            <DialogTrigger className="bg-red-600 text-white font-semibold px-4 py-2 rounded hover:bg-red-700">Nhận báo giá</DialogTrigger>
+            <DialogTrigger className="bg-red-600 w-40 text-white font-semibold px-4 py-2 rounded hover:bg-red-700">Nhận báo giá</DialogTrigger>
             {/* <DialogContent style={{ backgroundImage: "url('/DuHocChoko.svg')" }} className="max-w-6xl p-0 overflow-hidden rounded-lg"> */}
             <div className="flex justify-center">
                 {/* Hình ảnh bên trái */}
