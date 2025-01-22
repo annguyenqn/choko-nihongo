@@ -11,7 +11,7 @@ export default function Header() {
     const navItems = [
         { name: "Giới thiệu", path: "/rent" },
         { name: "Khóa học", path: "/tieng-nhat-jlpt" },
-        { name: "Trải nghiệm Nhật Bản", path: "/trainghiem" },
+        { name: "Kanji", path: "/kanji" },
         { name: "Du học Nhật Bản", path: "/contact" },
         { name: "Tiếng Nhật - Văn hóa", path: "/culture" },
         { name: "Tin tức", path: "/project" },

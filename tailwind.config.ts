@@ -9,6 +9,10 @@ const config: Config = {
   ],
   theme: {
   	extend: {
+		transform: ['hover', 'focus'],
+		rotate: {
+		  'y-180': 'rotateY(180deg)',
+		},
   		colors: {
   			background: 'var(--background)',
   			foreground: 'var(--foreground)',

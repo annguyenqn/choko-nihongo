@@ -68,7 +68,16 @@ body {
     --chart-5: 340 75% 55%;
   }
 }
+@layer utilities {
+  .rotate-y-180 {
+    transform: rotateY(180deg);
+  }
 
+  .backface-hidden {
+    backface-visibility: hidden;
+  }
+  
+}
 @layer base {
   * {
   }
