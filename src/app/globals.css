@@ -69,14 +69,32 @@ body {
   }
 }
 @layer utilities {
-  .rotate-y-180 {
-    transform: rotateY(180deg);
+  .rotate-x-180 {
+    transform: rotateX(180deg);
   }
 
   .backface-hidden {
     backface-visibility: hidden;
   }
   
+}
+
+.card__content {
+  transform-style: preserve-3d; /* Duy trì không gian 3D */
+  transition: transform 0.7s ease-in-out; /* Hiệu ứng mượt mà */
+}
+.card__front,
+.card__back {
+  position: absolute; /* Đảm bảo hai mặt thẻ chồng lên nhau */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden; /* Giấu mặt sau khi chưa lật */
+}
+
+.card__back {
+  transform: rotateX(180deg); /* Xoay mặt sau để sẵn sàng hiển thị */
 }
 @layer base {
   * {
