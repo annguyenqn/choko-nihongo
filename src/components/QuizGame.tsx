@@ -40,7 +40,7 @@ const QuizGame: React.FC = () => {
     };
 
     return (
-        <div className="p-6 w-[1000px] h-[410px]  mx-auto bg-white rounded-lg shadow-md">
+        <div className="p-6 w-[90%] md:h-[410px] h-400px  mx-auto bg-white rounded-lg shadow-md">
             <div className="flex justify-between items-center mb-4">
                 <h1 className="text-xl font-bold">Học Kaji</h1>
                 <select

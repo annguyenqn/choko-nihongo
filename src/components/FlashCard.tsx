@@ -31,15 +31,16 @@ const FlashCard = () => {
   };
 
   return (
-    <div className="flex flex-col gap-3 mt-5 justify-center items-center h-[500px] bg-gray-100 relative">
+    <div className="flex flex-col gap-3  justify-center items-center  md:h-[650px] h-[350px] relative">
       <button
-        className="bg-blue-500 text-white px-4 py-2 rounded"
+        className="bg-blue-500 text-white  px-4 py-2 md:mb-5 rounded"
         onClick={handleShuffle}
       >
         Xáo trộn
       </button>
+      {/* thẻ flash card */}
       <div
-        className={`card w-[1000px] h-[410px] perspective-800 transition-transform duration-500 ${slide ? "translate-x-[-100%] opacity-0" : "translate-x-0 opacity-100"
+        className={`card w-full h-full  md:h-[600px] flex flex-col justify-center items-center  perspective-800 transition-transform duration-500 ${slide ? "translate-x-[-100%] opacity-0" : "translate-x-0 opacity-100"
           }`}
         style={{ perspective: "800px" }}
         onClick={handleClick}
