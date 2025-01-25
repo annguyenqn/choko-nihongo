@@ -6,28 +6,24 @@ import Link from "next/link";
 import RegisterDialog from "./RegisterDiaglog";
 export default function Header() {
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-    // const [isScrolled, setIsScrolled] = useState(false);
-
     const navItems = [
         { name: "Giới thiệu", path: "/rent" },
         { name: "Khóa học", path: "/tieng-nhat-jlpt" },
-        { name: "Kanji", path: "/kanji" },
+        {
+            name: "Kanji", path: "/kanji-n5",
+            subItems:
+                [
+                    { name: "Kanji N5", path: "/kanji-n5" },
+                    { name: "Kanji N4", path: "/kanji-n4" },
+                    // { name: "Kanji N3", path: "/kanji-n3" }
+                ]
+        },
         { name: "Du học Nhật Bản", path: "/contact" },
         { name: "Tiếng Nhật - Văn hóa", path: "/culture" },
         { name: "Tin tức", path: "/project" },
         { name: "Liên hệ", path: "/contact" },
     ];
 
-    // Lắng nghe sự kiện scroll để thay đổi trạng thái header
-    // useEffect(() => {
-    //     const handleScroll = () => {
-    //         setIsScrolled(window.scrollY > 0);
-    //     };
-    //     window.addEventListener("scroll", handleScroll);
-    //     return () => window.removeEventListener("scroll", handleScroll);
-    // }, []);
-
-    // Toggle trạng thái sidebar
     const toggleSidebar = () => setIsSidebarOpen((prev) => !prev);
     const closeSidebar = () => setIsSidebarOpen(false);
 
@@ -47,13 +43,30 @@ export default function Header() {
                     {/* Desktop Navigation */}
                     <nav className="hidden md:flex items-center gap-4 lg:gap-8 whitespace-nowrap">
                         {navItems.map((item, index) => (
-                            <Link key={index} href={item.path}>
-                                <span
-                                    className="cursor-pointer text-black hover:text-red-500 text-sm sm:text-base lg:text-lg transition-colors duration-200"
-                                >
-                                    {item.name}
-                                </span>
-                            </Link>
+                            item.subItems ? (
+                                <div key={index} className="relative group">
+                                    <span className="cursor-pointer text-black hover:text-red-500 text-sm sm:text-base lg:text-lg transition-colors duration-200">
+                                        {item.name}
+                                    </span>
+                                    <div className="absolute left-0 hidden group-hover:block bg-white shadow-md">
+                                        <ul>
+                                            {item.subItems.map((subItem, subIndex) => (
+                                                <li key={subIndex} className="px-4 py-2 hover:bg-gray-100">
+                                                    <Link href={subItem.path}>
+                                                        <span>{subItem.name}</span>
+                                                    </Link>
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    </div>
+                                </div>
+                            ) : (
+                                <Link key={index} href={item.path}>
+                                    <span className="cursor-pointer text-black hover:text-red-500 text-sm sm:text-base lg:text-lg transition-colors duration-200">
+                                        {item.name}
+                                    </span>
+                                </Link>
+                            )
                         ))}
                     </nav>
 
@@ -72,15 +85,10 @@ export default function Header() {
                         </div>
                         <RegisterDialog />
                     </div>
-
-                    {/* Mobile Menu Button */}
                     <button onClick={toggleSidebar} className="md:hidden mr-2 sm:mr-4" aria-label="Open Sidebar">
                         <Menu className="w-5 h-5 sm:w-6 sm:h-6 text-black" />
                     </button>
                 </div>
-
-
-                {/* Sidebar Overlay */}
                 {isSidebarOpen && (
                     <div
                         className="fixed inset-0 bg-black bg-opacity-50 z-40"
@@ -88,7 +96,6 @@ export default function Header() {
                     ></div>
                 )}
 
-                {/* Sidebar */}
                 <div
                     className={`fixed top-0 right-0 h-full w-64 bg-white text-black z-50 transform ${isSidebarOpen ? "translate-x-0" : "translate-x-full"} transition-transform duration-300`}
                 >
@@ -100,10 +107,28 @@ export default function Header() {
                     </div>
                     <ul className="mt-4 space-y-2">
                         {navItems.map((item, index) => (
-                            <li key={index} className="px-4 py-2 hover:bg-gray-100">
+                            <li key={index} className="px-4 py-2 hover:bg-gray-100 transition-colors duration-300">
                                 <Link href={item.path}>
-                                    <span onClick={closeSidebar}>{item.name}</span>
+                                    <span
+                                        onClick={closeSidebar}
+                                        className="block px-2 py-1 rounded-md text-lg font-medium hover:text-blue-600 transition-colors duration-300"
+                                    >
+                                        {item.name}
+                                    </span>
                                 </Link>
+                                {item.subItems && (
+                                    <ul className="ml-4 space-y-2 mt-2">
+                                        {item.subItems.map((subItem, subIndex) => (
+                                            <li key={subIndex} className="px-4 py-2 hover:bg-gray-200">
+                                                <Link href={subItem.path}>
+                                                    <span onClick={closeSidebar} className="block text-sm">
+                                                        {subItem.name}
+                                                    </span>
+                                                </Link>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                )}
                             </li>
                         ))}
                     </ul>
