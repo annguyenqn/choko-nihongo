@@ -7,6 +7,7 @@ import { kanjiItemsN4 } from '@/data/kanjiItems';
 import Image from 'next/image'
 import Head from 'next/head';
 function page() {
+    // eslint-disable-next-line react-hooks/rules-of-hooks
     const [activeTab, setActiveTab] = useState<'flashcard' | 'quiz'>('flashcard');
     return (
         <div>

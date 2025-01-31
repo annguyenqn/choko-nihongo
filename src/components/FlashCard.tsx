@@ -1,14 +1,6 @@
 import { useState } from "react";
 import Pagination from '@/components/Pagination';
-
-interface KanjiItem {
-  id: number;
-  kanji: string;
-  hiragana: string;
-  mean: string;
-  on_yomi: string;
-  examples: string[];
-}
+import { KanjiItem } from "@/interface/IKanjiItem";
 
 interface FlashCardProps {
   kanjiItems: KanjiItem[];

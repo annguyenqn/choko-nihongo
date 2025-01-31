@@ -56,7 +56,7 @@ const QuizGame: React.FC<QuizGameProps> = ({ kanjiItems }) => {
     };
 
     return (
-        <div className="p-6 w-[90%] md:h-[450px] h-400px  mx-auto bg-white rounded-lg shadow-md">
+        <div className="p-6 w-[90%] md:h-auto h-400px  mx-auto bg-white rounded-lg shadow-md">
             <div className="flex justify-between items-center mb-4">
                 <h1 className="text-xl font-bold">Học Kanji</h1>
                 <select

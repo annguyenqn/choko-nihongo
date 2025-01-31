@@ -1193,4 +1193,309 @@ export const kanjiItemsN4: {
     "examples": ["章 (chương)", "章句 (đoạn văn)"]
   }
 ]
-
+export const kanjiItems35 : {
+  id: number;
+  kanji: string;
+  hiragana: string;
+  mean: string;
+  on_yomi: string;
+  examples:string[];
+}[] = [
+  {
+    "id": 1,
+    "kanji": "咲",
+    "hiragana": "さ",
+    "mean": "Tiếu",
+    "on_yomi": "ショウ",
+    "examples": ["咲きます (nở [hoa])"]
+  },
+  {
+    "id": 2,
+    "kanji": "変",
+    "hiragana": "かわ",
+    "mean": "Biến",
+    "on_yomi": "ヘン",
+    "examples": ["変わります (thay đổi [màu])"]
+  },
+  {
+    "id": 3,
+    "kanji": "困",
+    "hiragana": "こま",
+    "mean": "Khốn",
+    "on_yomi": "コン",
+    "examples": ["困ります (rắc rối, khó xử)"]
+  },
+  {
+    "id": 4,
+    "kanji": "付",
+    "hiragana": "つ",
+    "mean": "Phó",
+    "on_yomi": "フ",
+    "examples": ["付けます (vẽ, đánh dấu [tròn])"]
+  },
+  {
+    "id": 5,
+    "kanji": "拾",
+    "hiragana": "ひろ",
+    "mean": "Thập",
+    "on_yomi": "シュウ",
+    "examples": ["拾います (nhặt, nhặt lên)"]
+  },
+  {
+    "id": 6,
+    "kanji": "楽",
+    "hiragana": "らく",
+    "mean": "Lạc/Nhạc",
+    "on_yomi": "ガク, ラク",
+    "examples": ["楽な (thoải mái, nhàn hạ, dễ dàng)"]
+  },
+  {
+    "id": 7,
+    "kanji": "正",
+    "hiragana": "ただ",
+    "mean": "Chính",
+    "on_yomi": "セイ, ショウ",
+    "examples": ["正しい (đúng, chính xác)"]
+  },
+  {
+    "id": 8,
+    "kanji": "珍",
+    "hiragana": "めずら",
+    "mean": "Trân",
+    "on_yomi": "チン",
+    "examples": ["珍しい (hiếm, hiếm có)"]
+  },
+  {
+    "id": 9,
+    "kanji": "向",
+    "hiragana": "む",
+    "mean": "Hướng",
+    "on_yomi": "コウ",
+    "examples": ["向こう (bên kia, bên đấy, phía đằng kia)"]
+  },
+  {
+    "id": 10,
+    "kanji": "島",
+    "hiragana": "しま",
+    "mean": "Đảo",
+    "on_yomi": "トウ",
+    "examples": ["島 (đảo, hòn đảo)"]
+  },
+  {
+    "id": 11,
+    "kanji": "村",
+    "hiragana": "むら",
+    "mean": "Thôn",
+    "on_yomi": "ソン",
+    "examples": ["村 (làng)"]
+  },
+  {
+    "id": 12,
+    "kanji": "港",
+    "hiragana": "みなと",
+    "mean": "Cảng",
+    "on_yomi": "コウ",
+    "examples": ["港 (cảng, bến cảng)"]
+  },
+  {
+    "id": 13,
+    "kanji": "近",
+    "hiragana": "きん",
+    "mean": "Cận",
+    "on_yomi": "キン",
+    "examples": ["近所 (hàng xóm, khu vực lân cận)"]
+  },
+  {
+    "id": 14,
+    "kanji": "屋",
+    "hiragana": "おく",
+    "mean": "Ốc",
+    "on_yomi": "オク",
+    "examples": ["屋上 (mái nhà, nóc nhà)"]
+  },
+  {
+    "id": 15,
+    "kanji": "海",
+    "hiragana": "かい",
+    "mean": "Hải",
+    "on_yomi": "カイ",
+    "examples": ["海外 (nước ngoài, hải ngoại)"]
+  },
+  {
+    "id": 16,
+    "kanji": "山",
+    "hiragana": "やま",
+    "mean": "Sơn",
+    "on_yomi": "サン",
+    "examples": ["山登り (leo núi)"]
+  },
+  {
+    "id": 17,
+    "kanji": "機",
+    "hiragana": "き",
+    "mean": "Cơ",
+    "on_yomi": "キ",
+    "examples": ["機会 (cơ hội)"]
+  },
+  {
+    "id": 18,
+    "kanji": "許",
+    "hiragana": "きょ",
+    "mean": "Hứa",
+    "on_yomi": "キョ",
+    "examples": ["許可 (sự cho phép)"]
+  },
+  {
+    "id": 19,
+    "kanji": "丸",
+    "hiragana": "まる",
+    "mean": "Hoàn",
+    "on_yomi": "ガン",
+    "examples": ["丸 (tròn, vòng tròn)"]
+  },
+  {
+    "id": 20,
+    "kanji": "操",
+    "hiragana": "そう",
+    "mean": "Thao",
+    "on_yomi": "ソウ",
+    "examples": ["操作 (thao tác)"]
+  },
+  {
+    "id": 21,
+    "kanji": "設",
+    "hiragana": "せつ",
+    "mean": "Thiết",
+    "on_yomi": "セツ",
+    "examples": ["設備 (thiết bị)"]
+  },
+  {
+    "id": 22,
+    "kanji": "葉",
+    "hiragana": "は",
+    "mean": "Diệp",
+    "on_yomi": "ヨウ",
+    "examples": ["葉 (lá)"]
+  },
+  {
+    "id": 23,
+    "kanji": "曲",
+    "hiragana": "きょく",
+    "mean": "Khúc",
+    "on_yomi": "キョク",
+    "examples": ["曲 (ca khúc, bản nhạc)"]
+  },
+]
+export const kanjiItems36 :{
+  kanji: string;
+  hiragana: string;
+  mean: string;
+  on_yomi: string;
+  examples:string[];
+}[] = [
+  {
+    kanji: "事故",
+    hiragana: "じこ",
+    mean: "Sự cố",
+    on_yomi: "ジコ",
+    examples: ["事故にあいます (Gặp tai nạn)"]
+  },
+  {
+    kanji: "貯金",
+    hiragana: "ちょきん",
+    mean: "Trữ kim",
+    on_yomi: "チョキン",
+    examples: ["貯金します (Tiết kiệm tiền, để dành tiền)"]
+  },
+  {
+    kanji: "過",
+    hiragana: "す",
+    mean: "Quá",
+    on_yomi: "カ",
+    examples: ["７時を過ぎます (Quá 7 giờ)"]
+  },
+  {
+    kanji: "慣",
+    hiragana: "な",
+    mean: "Quán",
+    on_yomi: "カン",
+    examples: ["習慣に慣れます (Quen với tập quán)"]
+  },
+  {
+    kanji: "腐",
+    hiragana: "くさ",
+    mean: "Hủ",
+    on_yomi: "フ",
+    examples: ["食べ物が腐ります (Thức ăn bị ôi thiu)"]
+  },
+  {
+    kanji: "剣道",
+    hiragana: "けんどう",
+    mean: "Kiếm đạo",
+    on_yomi: "ケンドウ",
+    examples: ["剣道をします (Tập kiếm đạo)"]
+  },
+  {
+    kanji: "柔道",
+    hiragana: "じゅうどう",
+    mean: "Nhu đạo",
+    on_yomi: "ジュウドウ",
+    examples: ["柔道を習います (Học judo)"]
+  },
+  {
+    kanji: "宇宙",
+    hiragana: "うちゅう",
+    mean: "Vũ trụ",
+    on_yomi: "ウチュウ",
+    examples: ["宇宙飛行士 (Phi hành gia)"]
+  },
+  {
+    kanji: "曲",
+    hiragana: "きょく",
+    mean: "Khúc",
+    on_yomi: "キョク",
+    examples: ["曲を聴きます (Nghe bài hát)"]
+  },
+  {
+    kanji: "毎週",
+    hiragana: "まいしゅう",
+    mean: "Mỗi tuần",
+    on_yomi: "マイシュウ",
+    examples: ["毎週日曜日に運動します (Tập thể dục vào chủ nhật hàng tuần)"]
+  },
+  {
+    kanji: "毎月",
+    hiragana: "まいつき",
+    mean: "Mỗi tháng",
+    on_yomi: "マイゲツ",
+    examples: ["毎月給料をもらいます (Nhận lương hàng tháng)"]
+  },
+  {
+    kanji: "毎年",
+    hiragana: "まいとし (まいねん)",
+    mean: "Mỗi năm",
+    on_yomi: "マイネン",
+    examples: ["毎年旅行します (Đi du lịch hàng năm)"]
+  },
+  {
+    kanji: "必ず",
+    hiragana: "かならず",
+    mean: "Tất",
+    on_yomi: "ヒツ",
+    examples: ["必ず守ります (Chắc chắn tuân thủ)"]
+  },
+  {
+    kanji: "絶対に",
+    hiragana: "ぜったいに",
+    mean: "Tuyệt đối",
+    on_yomi: "ゼッタイ",
+    examples: ["絶対に負けません (Tuyệt đối không thua)"]
+  },
+  {
+    kanji: "上手に",
+    hiragana: "じょうずに",
+    mean: "Thượng thủ",
+    on_yomi: "ジョウズ",
+    examples: ["上手に料理します (Nấu ăn giỏi)"]
+  }
+];
