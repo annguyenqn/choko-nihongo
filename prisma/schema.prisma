@@ -14,12 +14,13 @@ datasource db {
 }
 
 model KanjiLesson {
-  id        Int      @id @default(autoincrement())
-  lesson    Int
-  kanji     String
-  hiragana  String
-  mean      String
-  on_yomi   String
-  examples  String[]
-  createdAt DateTime @default(now())
+  id          Int      @id @default(autoincrement())
+  lesson      Int
+  kanji       String
+  hiragana    String
+  mean        Json 
+  on_yomi     String
+  examples    Json 
+  kanji_parts Json    
+  createdAt   DateTime @default(now())
 }

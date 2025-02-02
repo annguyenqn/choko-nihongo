@@ -10,7 +10,7 @@ export default function Header() {
         { name: "Giới thiệu", path: "/rent" },
         { name: "Khóa học", path: "/tieng-nhat-jlpt" },
         {
-            name: "Kanji", path: "/kanji-n5",
+            name: "Kanji", path: "/kanji",
             subItems:
                 [
                     { name: "Kanji N5", path: "/kanji-n5" },

@@ -46,7 +46,7 @@ function page() {
                     alt="temple"
                 />
             </div>
-            <div className="flex flex-col items-center justify-center md:min-h-screen h-[900px] w-full bg-gray-100 relative">
+            <div className="flex flex-col items-center justify-center md:min-h-screen h-[980px] w-full bg-gray-100 relative">
                 <div className="flex flex-col absolute w-[80%] top-10 md:h-48  gap-2 z-20">
                     <h3 className='text-3xl font-bold text-black mt-6 mb-3'>Kanji N4 Tổng Hợp 150 Chữ</h3>
                     <div className="flex justify-start gap-5 mb-6 w-full">

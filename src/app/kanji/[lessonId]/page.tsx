@@ -6,7 +6,7 @@ import { CreditCard, BookOpen } from 'lucide-react';
 import Image from 'next/image';
 import Head from 'next/head';
 import { useState, useEffect } from 'react';
-import { KanjiItem } from '@/interface/IKanjiItem';
+import { KanjiLesson } from '@/interface/IKanjiItem';
 
 interface KanjiPageProps {
     params: { lessonId: string };
@@ -16,7 +16,7 @@ function KanjiLessonPage({ params }: KanjiPageProps) {
     const { lessonId } = params;
 
     const [activeTab, setActiveTab] = useState<'flashcard' | 'quiz'>('flashcard');
-    const [kanji, setKanji] = useState<KanjiItem[]>([]);
+    const [kanji, setKanji] = useState<KanjiLesson[]>([]);
     const [loading, setLoading] = useState<boolean>(true);
     console.log('lessonid', lessonId);
 
@@ -29,6 +29,8 @@ function KanjiLessonPage({ params }: KanjiPageProps) {
                     throw new Error('Failed to fetch kanji data');
                 }
                 const data = await res.json();
+                console.log('kanji item', data);
+
                 setKanji(data);
             } catch (error) {
                 console.error('Error fetching kanji:', error);
@@ -43,19 +45,19 @@ function KanjiLessonPage({ params }: KanjiPageProps) {
     return (
         <div>
             <Head>
-                <title>Luyện Kanji N4 - Bài {lessonId}</title>
+                <title>Luyện Kanji - Bài {lessonId}</title>
                 <meta name="description" content={`Học Kanji N4 bài ${lessonId} với Flashcard và Quiz giúp bạn luyện tập Kanji hiệu quả.`} />
             </Head>
 
             <div className="min-h-96 w-full bg-cover bg-center bg-[#fae7e7] flex items-center justify-center relative">
                 <Image className="absolute bottom-0 left-0 hidden md:block" src="/tem.svg" width={620} height={620} alt="temple" />
-                <div className="text-red-600 text-3xl font-semibold z-10 mt-10 text-center">Luyện Kanji N4 - Bài {lessonId}</div>
+                <div className="text-red-600 text-3xl font-semibold z-10 mt-10 text-center">Luyện Kanji - Bài {lessonId}</div>
                 <Image className="absolute bottom-0 right-0 transform scale-x-[-1] hidden md:block" src="/tem.svg" width={620} height={620} alt="temple" />
             </div>
 
-            <div className="flex flex-col items-center justify-center md:min-h-screen h-[900px] w-full bg-gray-100 relative">
-                <div className="flex flex-col absolute w-[80%] top-10 md:h-48 gap-2 z-20">
-                    <h3 className="text-3xl font-bold text-black mt-6 mb-3">Kanji N4 - Bài {lessonId}</h3>
+            <div className="flex flex-col items-center justify-center min-h-screen w-full bg-gray-100 relative">
+                <div className="flex flex-col w-[80%] top-10 gap-2 z-20 min-h-0"> {/* Sửa phần này, thêm min-h-0 để phần tử con có thể mở rộng */}
+                    <h3 className="text-3xl font-bold text-black mt-6 mb-3">Kanji - Bài {lessonId}</h3>
 
                     <div className="flex justify-start gap-5 mb-6 w-full">
                         <div
@@ -73,12 +75,10 @@ function KanjiLessonPage({ params }: KanjiPageProps) {
                             <div>Học</div>
                         </div>
                     </div>
-
-                    {/* Hiển thị loading khi dữ liệu chưa sẵn sàng */}
                     {loading ? (
                         <div className="text-center text-gray-500">Đang tải dữ liệu...</div>
                     ) : (
-                        <div>
+                        <div className="flex-grow">
                             {activeTab === 'flashcard' && <FlashCard kanjiItems={kanji} />}
                             {activeTab === 'quiz' && <QuizGame kanjiItems={kanji} />}
                         </div>
