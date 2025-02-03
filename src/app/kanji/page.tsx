@@ -2,12 +2,12 @@
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import { Button } from '@/components/ui/button';
-import { KanjiItem } from '@/interface/IKanjiItem';
+import { KanjiLesson } from '@/interface/IKanjiItem';
 import { Card, CardHeader, CardContent } from '@/components/ui/card';
 import Image from 'next/image';
 export default function KanjiHome() {
-    const lessons = Array.from({ length: 50 }, (_, i) => i + 1);
-    const [kanji, setKanji] = useState<KanjiItem[]>([]);
+    const lessons = [33, 34, 35, 36];
+    const [kanji, setKanji] = useState<KanjiLesson[]>([]);
     const [loading, setLoading] = useState<boolean>(true);
 
     useEffect(() => {

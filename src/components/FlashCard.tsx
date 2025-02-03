@@ -40,7 +40,7 @@ const FlashCard: React.FC<FlashCardProps> = ({ kanjiItems }) => {
   };
 
   return (
-    <div className="flex flex-col gap-3 justify-center items-center md:h-[650px] h-[350px] relative">
+    <div className="flex flex-col gap-3 justify-center items-center md:h-[650px] h-[450px] relative">
       <button
         className="bg-blue-500 text-white px-4 py-2 md:mb-5 rounded"
         onClick={handleShuffle}
@@ -69,51 +69,71 @@ const FlashCard: React.FC<FlashCardProps> = ({ kanjiItems }) => {
             )}
           </div>
           <div className="card__back absolute top-0 bottom-0 right-0 left-0 bg-white shadow-lg flex flex-col items-center justify-center transform rotate-y-180 backface-hidden p-6">
-            <div className="w-full max-w-md mx-auto">
+            <div className="w-auto  mx-auto">
               {/* Skeleton cho phần nghĩa */}
               {shuffledKanjiItems.length === 0 ? (
                 <Skeleton className="w-32 h-6 bg-gray-300 mb-2" />
               ) : (
-                <div className="md:text-4xl text-xl text-black font-bold mb-4">
+                <div className="md:text-4xl text-xl text-black font-bold md:mb-4">
+                  <strong>Nghĩa: </strong>
                   {typeof shuffledKanjiItems[currentItem]?.mean === 'string'
                     ? JSON.parse(shuffledKanjiItems[currentItem]?.mean)?.vi
                     : shuffledKanjiItems[currentItem]?.mean?.vi}
-
                 </div>
               )}
 
               {/* Skeleton cho Hiragana */}
               {shuffledKanjiItems.length === 0 ? (
-                <Skeleton className="w-32 h-6 bg-gray-300 mb-2" />
+                <Skeleton className="w-32 h-6 bg-gray-300 md:mb-2" />
               ) : (
-                <div className="space-y-2">
-                  <div className="text-xl text-black">
-                    <strong>Hiragana:</strong> {shuffledKanjiItems[currentItem]?.hiragana}
+                <div className="md:space-y-2">
+                  <div className="md:text-4xl text-xl text-black font-bold md:mb-4">
+                    <strong>Phiên âm:</strong> {shuffledKanjiItems[currentItem]?.hiragana}
                   </div>
                 </div>
               )}
 
+              {/* ví dụ */}
+              <div className="md:text-4xl text-xl text-black font-bold md:mb-4">
+                {shuffledKanjiItems[currentItem]?.lesson == 1 && (
+                  <>
+                    <strong>Ví Dụ: </strong>
+                    {shuffledKanjiItems[currentItem]?.examples?.map((example, idx) => (
+                      <div key={idx} className="md:my-2 my-0 ml-3">
+                        <span className="font-semibold"> - {example.sentence} ({example.reading})</span>{" "}
+                        <span>{example.meaning.vi}</span>
+                      </div>
+                    ))}
+                  </>
+                )}
+              </div>
+
               {/* Kanji Parts */}
               {shuffledKanjiItems.length === 0 ? (
-                <Skeleton className="w-full h-6 bg-gray-300 mt-4" />
+                <Skeleton className="w-full h-6 bg-gray-300 md:mt-4" />
               ) : (
-                <div className="mt-2">
-                  <strong className="text-xl text-black">Kanji Parts:</strong>
-                  <ul className="list-inside list-disc pl-5">
-                    {Array.isArray(shuffledKanjiItems[currentItem]?.kanji_parts)
-                      ? shuffledKanjiItems[currentItem]?.kanji_parts.map((part, idx) => (
-                        <li key={idx} className="text-black">
-                          <strong>{part.kanji}:</strong> {part.han_viet} - {typeof part.meaning === 'string' ? JSON.parse(part.meaning).vi : part.meaning?.vi}
-                        </li>
-                      ))
-                      : JSON.parse(shuffledKanjiItems[currentItem]?.kanji_parts)?.map(
-                        (part, idx) => (
-                          <li key={idx} className="text-black">
-                            <strong>{part.kanji}:</strong> {part.han_viet} - {typeof part.meaning === 'string' ? JSON.parse(part.meaning).vi : part.meaning?.vi}
-                          </li>
-                        )
-                      )}
-                  </ul>
+                <div className="md:mt-2">
+                  {shuffledKanjiItems[currentItem]?.lesson !== 1 && (
+                    <>
+                      <strong className="md:text-4xl text-xl text-black">Kanji Parts:</strong>
+                      <ul className="list-inside list-disc pl-5 md:text-2xl md:mt-2 text-xl">
+                        {Array.isArray(shuffledKanjiItems[currentItem]?.kanji_parts)
+                          ? shuffledKanjiItems[currentItem]?.kanji_parts.map((part, idx) => (
+                            <li key={idx} className="text-black">
+                              <strong>{part.kanji}:</strong> {part.han_viet} - {typeof part.meaning === 'string' ? JSON.parse(part.meaning).vi : part.meaning?.vi}
+                            </li>
+                          ))
+                          : JSON.parse(shuffledKanjiItems[currentItem]?.kanji_parts)?.map(
+                            (part, idx) => (
+                              <li key={idx} className="text-black ">
+                                <strong>{part.kanji}:</strong> {part.han_viet} - {typeof part.meaning === 'string' ? JSON.parse(part.meaning).vi : part.meaning?.vi}
+                              </li>
+                            )
+                          )}
+                      </ul>
+                    </>
+                  )}
+
                 </div>
               )}
             </div>

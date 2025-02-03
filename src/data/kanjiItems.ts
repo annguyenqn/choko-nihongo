@@ -1,1197 +1,5377 @@
 import { KanjiLesson } from "@/interface/IKanjiItem";
-export const kanjiItemsN5: {
-  id: number;
-  kanji: string;
-  hiragana: string;
-  mean: string;
-  on_yomi: string;
-  examples:string[];
-}[] = [
-  { 
-    id: 1, 
-    kanji: '一', 
-    hiragana: 'いち', 
-    mean: 'Một', 
-    on_yomi: 'イチ', 
-    examples: ['一つ (một cái)', '一日 (một ngày)'] 
-  },
-  { 
-    id: 2, 
-    kanji: '二', 
-    hiragana: 'に', 
-    mean: 'Hai', 
-    on_yomi: 'ニ', 
-    examples: ['二つ (hai cái)', '二人 (hai người)'] 
-  },
-  { 
-    id: 3, 
-    kanji: '三', 
-    hiragana: 'さん', 
-    mean: 'Ba', 
-    on_yomi: 'サン', 
-    examples: ['三つ (ba cái)', '三人 (ba người)'] 
-  },
-  { 
-    id: 4, 
-    kanji: '四', 
-    hiragana: 'し', 
-    mean: 'Bốn', 
-    on_yomi: 'シ', 
-    examples: ['四つ (bốn cái)', '四人 (bốn người)'] 
-  },
-  { 
-    id: 5, 
-    kanji: '五', 
-    hiragana: 'ご', 
-    mean: 'Năm', 
-    on_yomi: 'ゴ', 
-    examples: ['五つ (năm cái)', '五人 (năm người)'] 
-  },
-  { 
-    id: 6, 
-    kanji: '六', 
-    hiragana: 'ろく', 
-    mean: 'Sáu', 
-    on_yomi: 'ロク', 
-    examples: ['六つ (sáu cái)', '六人 (sáu người)'] 
-  },
-  { 
-    id: 7, 
-    kanji: '七', 
-    hiragana: 'しち', 
-    mean: 'Bảy', 
-    on_yomi: 'シチ', 
-    examples: ['七つ (bảy cái)', '七人 (bảy người)'] 
-  },
-  { 
-    id: 8, 
-    kanji: '八', 
-    hiragana: 'はち', 
-    mean: 'Tám', 
-    on_yomi: 'ハチ', 
-    examples: ['八つ (tám cái)', '八人 (tám người)'] 
-  },
-  { 
-    id: 9, 
-    kanji: '九', 
-    hiragana: 'きゅう', 
-    mean: 'Chín', 
-    on_yomi: 'キュウ', 
-    examples: ['九つ (chín cái)', '九人 (chín người)'] 
-  },
-  { 
-    id: 10, 
-    kanji: '十', 
-    hiragana: 'じゅう', 
-    mean: 'Mười', 
-    on_yomi: 'ジュウ', 
-    examples: ['十つ (mười cái)', '十人 (mười người)'] 
-  },
-  { 
-    id: 11, 
-    kanji: '日', 
-    hiragana: 'にち', 
-    mean: 'Ngày, Mặt trời', 
-    on_yomi: 'ニチ', 
-    examples: ['日曜日 (chủ nhật)', '日本 (Nhật Bản)'] 
-  },
-  { 
-    id: 12, 
-    kanji: '月', 
-    hiragana: 'げつ', 
-    mean: 'Tháng, Mặt trăng', 
-    on_yomi: 'ゲツ', 
-    examples: ['月曜日 (thứ hai)', '月 (mặt trăng)'] 
-  },
-  { 
-    id: 13, 
-    kanji: '火', 
-    hiragana: 'か', 
-    mean: 'Lửa', 
-    on_yomi: 'カ', 
-    examples: ['火曜日 (thứ ba)', '火事 (hỏa hoạn)'] 
-  },
-  { 
-    id: 14, 
-    kanji: '水', 
-    hiragana: 'すい', 
-    mean: 'Nước', 
-    on_yomi: 'スイ', 
-    examples: ['水曜日 (thứ tư)', '水 (nước)'] 
-  },
-  { 
-    id: 15, 
-    kanji: '木', 
-    hiragana: 'もく', 
-    mean: 'Cây, Gỗ', 
-    on_yomi: 'モク', 
-    examples: ['木曜日 (thứ năm)', '木 (cây)'] 
-  },
-  { 
-    id: 16, 
-    kanji: '金', 
-    hiragana: 'きん', 
-    mean: 'Vàng, Tiền', 
-    on_yomi: 'キン', 
-    examples: ['金曜日 (thứ sáu)', '金 (vàng)'] 
-  },
-  { 
-    id: 17, 
-    kanji: '土', 
-    hiragana: 'ど', 
-    mean: 'Đất', 
-    on_yomi: 'ド', 
-    examples: ['土曜日 (thứ bảy)', '土 (đất)'] 
-  },
-  { 
-    id: 18, 
-    kanji: '山', 
-    hiragana: 'やま', 
-    mean: 'Núi', 
-    on_yomi: 'サン', 
-    examples: ['山 (núi)', '山脈 (dãy núi)'] 
-  },
-  { 
-    id: 19, 
-    kanji: '川', 
-    hiragana: 'かわ', 
-    mean: 'Sông', 
-    on_yomi: 'セン', 
-    examples: ['川 (sông)', '川沿い (dọc theo sông)'] 
-  },
-  { 
-    id: 20, 
-    kanji: '田', 
-    hiragana: 'た', 
-    mean: 'Ruộng', 
-    on_yomi: 'デン', 
-    examples: ['田んぼ (cánh đồng)', '田舎 (nông thôn)'] 
-  },
-  { 
-    id: 21, 
-    kanji: '人', 
-    hiragana: 'ひと', 
-    mean: 'Người', 
-    on_yomi: 'ジン', 
-    examples: ['人間 (con người)', '人々 (mọi người)'] 
-  },
-  { 
-    id: 22, 
-    kanji: '口', 
-    hiragana: 'くち', 
-    mean: 'Miệng', 
-    on_yomi: 'コウ', 
-    examples: ['口 (miệng)', '口座 (tài khoản)'] 
-  },
-  { 
-    id: 23, 
-    kanji: '目', 
-    hiragana: 'め', 
-    mean: 'Mắt', 
-    on_yomi: 'モク', 
-    examples: ['目 (mắt)', '目標 (mục tiêu)'] 
-  },
-  { 
-    id: 24, 
-    kanji: '耳', 
-    hiragana: 'みみ', 
-    mean: 'Tai', 
-    on_yomi: 'ジ', 
-    examples: ['耳 (tai)', '耳鳴り (tiếng ve)'] 
-  },
-  { 
-    id: 25, 
-    kanji: '手', 
-    hiragana: 'て', 
-    mean: 'Tay', 
-    on_yomi: 'シュ', 
-    examples: ['手 (tay)', '手紙 (thư tay)'] 
-  },
-  { 
-    id: 26, 
-    kanji: '足', 
-    hiragana: 'あし', 
-    mean: 'Chân', 
-    on_yomi: 'ソク', 
-    examples: ['足 (chân)', '足音 (tiếng bước chân)'] 
-  },
-  { 
-    id: 27, 
-    kanji: '力', 
-    hiragana: 'ちから', 
-    mean: 'Sức mạnh', 
-    on_yomi: 'リョク', 
-    examples: ['力 (sức mạnh)', '力強い (mạnh mẽ)'] 
-  },
-  { 
-    id: 28, 
-    kanji: '男', 
-    hiragana: 'おとこ', 
-    mean: 'Nam giới', 
-    on_yomi: 'ダン', 
-    examples: ['男 (nam)', '男の子 (bé trai)'] 
-  },
-  { 
-    id: 29, 
-    kanji: '女', 
-    hiragana: 'おんな', 
-    mean: 'Nữ giới', 
-    on_yomi: 'ジョ', 
-    examples: ['女 (nữ)', '女の子 (bé gái)'] 
-  },
-  { 
-    id: 30, 
-    kanji: '子', 
-    hiragana: 'こ', 
-    mean: 'Trẻ con', 
-    on_yomi: 'シ', 
-    examples: ['子 (trẻ)', '子供 (đứa trẻ)'] 
-  },
-  { 
-    "id": 31, 
-    "kanji": "学", 
-    "hiragana": "がく", 
-    "mean": "Học", 
-    "on_yomi": "ガク", 
-    "examples": ["学生 (học sinh)", "学問 (học vấn)"]
-  },
-  { 
-    "id": 32, 
-    "kanji": "校", 
-    "hiragana": "こう", 
-    "mean": "Trường học", 
-    "on_yomi": "コウ", 
-    "examples": ["学校 (trường học)", "校舎 (dãy nhà trường)"]
-  },
-  { 
-    "id": 33, 
-    "kanji": "先", 
-    "hiragana": "せん", 
-    "mean": "Trước, Tiên sinh", 
-    "on_yomi": "セン", 
-    "examples": ["先週 (tuần trước)", "先生 (giáo viên)"]
-  },
-  { 
-    "id": 34, 
-    "kanji": "生", 
-    "hiragana": "せい", 
-    "mean": "Sinh, Sống", 
-    "on_yomi": "セイ", 
-    "examples": ["生きる (sống)", "学生 (học sinh)"]
-  },
-  { 
-    "id": 35, 
-    "kanji": "何", 
-    "hiragana": "なに", 
-    "mean": "Gì, Cái gì", 
-    "on_yomi": "カ", 
-    "examples": ["何時 (mấy giờ)", "何か (cái gì đó)"]
-  },
-  { 
-    "id": 36, 
-    "kanji": "父", 
-    "hiragana": "ちち", 
-    "mean": "Bố", 
-    "on_yomi": "フ", 
-    "examples": ["父親 (bố)", "父母 (cha mẹ)"]
-  },
-  { 
-    "id": 36, 
-    "kanji": "母", 
-    "hiragana": "はは", 
-    "mean": "Mẹ", 
-    "on_yomi": "ボ", 
-    "examples": ["母親 (mẹ)", "母国 (quê hương)"]
-  },
-  { 
-    "id": 38, 
-    "kanji": "年", 
-    "hiragana": "とし", 
-    "mean": "Năm, Tuổi", 
-    "on_yomi": "ネン", 
-    "examples": ["今年 (năm nay)", "年齢 (tuổi tác)"]
-  },
-  { 
-    "id": 39, 
-    "kanji": "今", 
-    "hiragana": "いま", 
-    "mean": "Bây giờ", 
-    "on_yomi": "コン", 
-    "examples": ["今 (bây giờ)", "今週 (tuần này)"]
-  },
-  { 
-    "id": 40, 
-    "kanji": "時", 
-    "hiragana": "じ", 
-    "mean": "Thời gian, Giờ", 
-    "on_yomi": "ジ", 
-    "examples": ["時間 (thời gian)", "時刻 (thời khắc)"]
-  },
-  { 
-    "id": 41, 
-    "kanji": "間", 
-    "hiragana": "あいだ", 
-    "mean": "Giữa, Khoảng", 
-    "on_yomi": "カン", 
-    "examples": ["時間 (thời gian)", "間違い (sai lầm)"]
-  },
-  { 
-    "id": 42, 
-    "kanji": "半", 
-    "hiragana": "はん", 
-    "mean": "Một nửa", 
-    "on_yomi": "ハン", 
-    "examples": ["半分 (một nửa)", "半日 (nửa ngày)"]
-  },
-  { 
-    "id": 43, 
-    "kanji": "分", 
-    "hiragana": "ふん", 
-    "mean": "Phút, Phân chia", 
-    "on_yomi": "ブン", 
-    "examples": ["分ける (chia)", "分かる (hiểu)"]
-  },
-  { 
-    "id": 44, 
-    "kanji": "上", 
-    "hiragana": "うえ", 
-    "mean": "Trên", 
-    "on_yomi": "ジョウ", 
-    "examples": ["上手 (giỏi)", "上に (lên trên)"]
-  },
-  { 
-    "id": 45, 
-    "kanji": "下", 
-    "hiragana": "した", 
-    "mean": "Dưới", 
-    "on_yomi": "カ", 
-    "examples": ["下手 (kém)", "下に (xuống dưới)"]
-  },
-  { 
-    "id": 46, 
-    "kanji": "中", 
-    "hiragana": "なか", 
-    "mean": "Trong, Giữa", 
-    "on_yomi": "チュウ", 
-    "examples": ["中学校 (trường trung học)", "中央 (trung tâm)"]
-  },
-  { 
-    "id": 47, 
-    "kanji": "外", 
-    "hiragana": "そと", 
-    "mean": "Ngoài", 
-    "on_yomi": "ガイ", 
-    "examples": ["外出 (ra ngoài)", "外国 (nước ngoài)"]
-  },
-  { 
-    "id": 48, 
-    "kanji": "前", 
-    "hiragana": "まえ", 
-    "mean": "Trước", 
-    "on_yomi": "ゼン", 
-    "examples": ["前に (trước đây)", "前進 (tiến lên)"]
-  },
-  { 
-    "id": 49, 
-    "kanji": "後", 
-    "hiragana": "あと", 
-    "mean": "Sau", 
-    "on_yomi": "ゴ", 
-    "examples": ["後で (sau đó)", "後ろ (phía sau)"]
-  },
-  { 
-    "id": 50, 
-    "kanji": "左", 
-    "hiragana": "ひだり", 
-    "mean": "Trái", 
-    "on_yomi": "サ", 
-    "examples": ["左側 (bên trái)", "左手 (tay trái)"]
-  },
-  { 
-    "id": 51, 
-    "kanji": "右", 
-    "hiragana": "みぎ", 
-    "mean": "Phải", 
-    "on_yomi": "ウ", 
-    "examples": ["右側 (bên phải)", "右手 (tay phải)"]
-  },
-  { 
-    "id": 52, 
-    "kanji": "東", 
-    "hiragana": "ひがし", 
-    "mean": "Đông", 
-    "on_yomi": "トウ", 
-    "examples": ["東南アジア (Đông Nam Á)", "東洋 (Phương Đông)"]
-  },
-  { 
-    "id": 53, 
-    "kanji": "西", 
-    "hiragana": "にし", 
-    "mean": "Tây", 
-    "on_yomi": "セイ", 
-    "examples": ["西洋 (Phương Tây)", "西部 (vùng Tây)"]
-  },
-  { 
-    "id": 54, 
-    "kanji": "南", 
-    "hiragana": "みなみ", 
-    "mean": "Nam", 
-    "on_yomi": "ナン", 
-    "examples": ["南アメリカ (Nam Mỹ)", "南極 (Nam Cực)"]
-  },
-  { 
-    "id": 55, 
-    "kanji": "北", 
-    "hiragana": "きた", 
-    "mean": "Bắc", 
-    "on_yomi": "ホク", 
-    "examples": ["北アメリカ (Bắc Mỹ)", "北極 (Bắc Cực)"]
-  },
-  { 
-    "id": 56, 
-    "kanji": "車", 
-    "hiragana": "くるま", 
-    "mean": "Xe hơi", 
-    "on_yomi": "シャ", 
-    "examples": ["自動車 (xe hơi)", "車道 (lộ trình)"]
-  },
-  { 
-    "id": 57, 
-    "kanji": "駅", 
-    "hiragana": "えき", 
-    "mean": "Nhà ga", 
-    "on_yomi": "エキ", 
-    "examples": ["駅前 (trước ga)", "駅舎 (nhà ga)"]
-  },
-  { 
-    "id": 58, 
-    "kanji": "道", 
-    "hiragana": "みち", 
-    "mean": "Đường đi", 
-    "on_yomi": "ドウ", 
-    "examples": ["道 (con đường)", "道路 (đường phố)"]
-  },
-  { 
-    "id": 59, 
-    "kanji": "話", 
-    "hiragana": "はなし", 
-    "mean": "Câu chuyện", 
-    "on_yomi": "ワ", 
-    "examples": ["話す (nói)", "話題 (chủ đề)"]
-  },
-  { 
-    "id": 60, 
-    "kanji": "聞", 
-    "hiragana": "きく", 
-    "mean": "Nghe", 
-    "on_yomi": "ブン", 
-    "examples": ["聞く (hỏi, nghe)", "新聞 (báo)"]
-  },
-  { 
-    "id": 61, 
-    "kanji": "書", 
-    "hiragana": "かく", 
-    "mean": "Viết", 
-    "on_yomi": "ショ", 
-    "examples": ["書く (viết)", "書道 (thư pháp)"]
-  },
-  { 
-    "id": 62, 
-    "kanji": "読", 
-    "hiragana": "よむ", 
-    "mean": "Đọc", 
-    "on_yomi": "ドク", 
-    "examples": ["読む (đọc)", "読書 (đọc sách)"]
-  },
-  { 
-    "id": 63, 
-    "kanji": "見", 
-    "hiragana": "みる", 
-    "mean": "Nhìn", 
-    "on_yomi": "ケン", 
-    "examples": ["見る (nhìn)", "見学 (tham quan)"]
-  },
-  { 
-    "id": 64, 
-    "kanji": "食", 
-    "hiragana": "たべる", 
-    "mean": "Ăn", 
-    "on_yomi": "ショク", 
-    "examples": ["食べる (ăn)", "食事 (bữa ăn)"]
-  },
-  { 
-    "id": 65, 
-    "kanji": "飲", 
-    "hiragana": "のむ", 
-    "mean": "Uống", 
-    "on_yomi": "イン", 
-    "examples": ["飲む (uống)", "飲み物 (thức uống)"]
-  },
-  { 
-    "id": 66, 
-    "kanji": "会", 
-    "hiragana": "あう", 
-    "mean": "Gặp gỡ", 
-    "on_yomi": "カイ", 
-    "examples": ["会う (gặp gỡ)", "会話 (hội thoại)"]
-  },
-  { 
-    "id": 67, 
-    "kanji": "友", 
-    "hiragana": "とも", 
-    "mean": "Bạn bè", 
-    "on_yomi": "ユウ", 
-    "examples": ["友達 (bạn bè)", "友情 (tình bạn)"]
-  },
-  { 
-    "id": 68, 
-    "kanji": "家", 
-    "hiragana": "いえ", 
-    "mean": "Nhà", 
-    "on_yomi": "カ", 
-    "examples": ["家 (nhà)", "家庭 (gia đình)"]
-  },
-  { 
-    "id": 69, 
-    "kanji": "店", 
-    "hiragana": "みせ", 
-    "mean": "Cửa hàng", 
-    "on_yomi": "テン", 
-    "examples": ["店 (cửa hàng)", "店員 (nhân viên cửa hàng)"]
-  },
-  { 
-    "id": 70, 
-    "kanji": "社", 
-    "hiragana": "しゃ", 
-    "mean": "Công ty", 
-    "on_yomi": "シャ", 
-    "examples": ["会社 (công ty)", "社会 (xã hội)"]
-  },
-  { 
-    "id": 71, 
-    "kanji": "電", 
-    "hiragana": "でん", 
-    "mean": "Điện", 
-    "on_yomi": "デン", 
-    "examples": ["電気 (điện)", "電車 (tàu điện)"]
-  },
-  { 
-    "id": 72, 
-    "kanji": "雨", 
-    "hiragana": "あめ", 
-    "mean": "Mưa", 
-    "on_yomi": "ウ", 
-    "examples": ["雨 (mưa)", "雨季 (mùa mưa)"]
-  },
-  { 
-    "id": 73, 
-    "kanji": "雪", 
-    "hiragana": "ゆき", 
-    "mean": "Tuyết", 
-    "on_yomi": "セツ", 
-    "examples": ["雪 (tuyết)", "雪景色 (cảnh tuyết)"]
-  },
-  { 
-    "id": 74, 
-    "kanji": "風", 
-    "hiragana": "かぜ", 
-    "mean": "Gió", 
-    "on_yomi": "フウ", 
-    "examples": ["風 (gió)", "風景 (cảnh vật)"]
-  },
-  { 
-    "id": 75, 
-    "kanji": "空", 
-    "hiragana": "そら", 
-    "mean": "Bầu trời", 
-    "on_yomi": "クウ", 
-    "examples": ["空 (bầu trời)", "空気 (không khí)"]
-  },
-  { 
-    "id": 76, 
-    "kanji": "海", 
-    "hiragana": "うみ", 
-    "mean": "Biển", 
-    "on_yomi": "カイ", 
-    "examples": ["海 (biển)", "海岸 (bờ biển)"]
-  },
-  { 
-    "id": 77, 
-    "kanji": "花", 
-    "hiragana": "はな", 
-    "mean": "Hoa", 
-    "on_yomi": "カ", 
-    "examples": ["花 (hoa)", "花火 (pháo hoa)"]
-  },
-  { 
-    "id": 78, 
-    "kanji": "犬", 
-    "hiragana": "いぬ", 
-    "mean": "Chó", 
-    "on_yomi": "ケン", 
-    "examples": ["犬 (chó)", "犬小屋 (chuồng chó)"]
-  },
-  { 
-    "id": 79, 
-    "kanji": "猫", 
-    "hiragana": "ねこ", 
-    "mean": "Mèo", 
-    "on_yomi": "ビョウ", 
-    "examples": ["猫 (mèo)", "猫耳 (tai mèo)"]
-  },
-  { 
-    "id": 80, 
-    "kanji": "魚", 
-    "hiragana": "さかな", 
-    "mean": "Cá", 
-    "on_yomi": "ギョ", 
-    "examples": ["魚 (cá)", "魚屋 (cửa hàng cá)"]
-  }
+type KanjiLessonWithId = KanjiLesson & { id: number };
+export const kanjiItemsN5 : KanjiLessonWithId[] = [
+  {
+    "id": 1,
+    "kanji": "一",
+    "hiragana": "いち",
+    "mean": {
+      "vi": "Một",
+      "en": "One"
+    },
+    "on_yomi": "イチ",
+    "lesson": 1,
+    "examples": [
+      {
+        "sentence": "一つ",
+        "reading": "ひとつ",
+        "meaning": {
+          "vi": "một cái",
+          "en": "one thing"
+        }
+      },
+      {
+        "sentence": "一日",
+        "reading": "いちにち",
+        "meaning": {
+          "vi": "một ngày",
+          "en": "one day"
+        }
+      }
+    ],
+    "kanji_parts": []
+  },
+  {
+    "id": 2,
+    "kanji": "二",
+    "hiragana": "に",
+    "mean": {
+      "vi": "Hai",
+      "en": "Two"
+    },
+    "on_yomi": "ニ",
+    "lesson": 1,
+    "examples": [
+      {
+        "sentence": "二つ",
+        "reading": "ふたつ",
+        "meaning": {
+          "vi": "hai cái",
+          "en": "two things"
+        }
+      },
+      {
+        "sentence": "二人",
+        "reading": "ふたり",
+        "meaning": {
+          "vi": "hai người",
+          "en": "two people"
+        }
+      }
+    ],
+    "kanji_parts": []
+  },
+  {
+    "id": 3,
+    "kanji": "三",
+    "hiragana": "さん",
+    "mean": {
+      "vi": "Ba",
+      "en": "Three"
+    },
+    "on_yomi": "サン",
+    "lesson": 1,
+    "examples": [
+      {
+        "sentence": "三つ",
+        "reading": "みっつ",
+        "meaning": {
+          "vi": "ba cái",
+          "en": "three things"
+        }
+      },
+      {
+        "sentence": "三人",
+        "reading": "さんにん",
+        "meaning": {
+          "vi": "ba người",
+          "en": "three people"
+        }
+      }
+    ],
+    "kanji_parts": []
+  },
+  {
+    "id": 4,
+    "kanji": "四",
+    "hiragana": "し",
+    "mean": {
+      "vi": "Bốn",
+      "en": "Four"
+    },
+    "on_yomi": "シ",
+    "lesson": 1,
+    "examples": [
+      {
+        "sentence": "四つ",
+        "reading": "よっつ",
+        "meaning": {
+          "vi": "bốn cái",
+          "en": "four things"
+        }
+      },
+      {
+        "sentence": "四人",
+        "reading": "よにん",
+        "meaning": {
+          "vi": "bốn người",
+          "en": "four people"
+        }
+      }
+    ],
+    "kanji_parts": []
+  },
+  {
+    "id": 5,
+    "kanji": "五",
+    "hiragana": "ご",
+    "mean": {
+      "vi": "Năm",
+      "en": "Five"
+    },
+    "on_yomi": "ゴ",
+    "lesson": 1,
+    "examples": [
+      {
+        "sentence": "五つ",
+        "reading": "いつつ",
+        "meaning": {
+          "vi": "năm cái",
+          "en": "five things"
+        }
+      },
+      {
+        "sentence": "五人",
+        "reading": "ごにん",
+        "meaning": {
+          "vi": "năm người",
+          "en": "five people"
+        }
+      }
+    ],
+    "kanji_parts": []
+  },
+  {
+    "id": 6,
+    "kanji": "六",
+    "hiragana": "ろく",
+    "mean": {
+      "vi": "Sáu",
+      "en": "Six"
+    },
+    "on_yomi": "ロク",
+    "lesson": 1,
+    "examples": [
+      {
+        "sentence": "六つ",
+        "reading": "むっつ",
+        "meaning": {
+          "vi": "sáu cái",
+          "en": "six things"
+        }
+      },
+      {
+        "sentence": "六人",
+        "reading": "ろくにん",
+        "meaning": {
+          "vi": "sáu người",
+          "en": "six people"
+        }
+      }
+    ],
+    "kanji_parts": []
+  },
+  {
+    "id": 7,
+    "kanji": "七",
+    "hiragana": "しち",
+    "mean": {
+      "vi": "Bảy",
+      "en": "Seven"
+    },
+    "on_yomi": "シチ",
+    "lesson": 1,
+    "examples": [
+      {
+        "sentence": "七つ",
+        "reading": "ななつ",
+        "meaning": {
+          "vi": "bảy cái",
+          "en": "seven things"
+        }
+      },
+      {
+        "sentence": "七人",
+        "reading": "しちにん",
+        "meaning": {
+          "vi": "bảy người",
+          "en": "seven people"
+        }
+      }
+    ],
+    "kanji_parts": []
+  },
+  {
+    "id": 8,
+    "kanji": "八",
+    "hiragana": "はち",
+    "mean": {
+      "vi": "Tám",
+      "en": "Eight"
+    },
+    "on_yomi": "ハチ",
+    "lesson": 1,
+    "examples": [
+      {
+        "sentence": "八つ",
+        "reading": "やっつ",
+        "meaning": {
+          "vi": "tám cái",
+          "en": "eight things"
+        }
+      },
+      {
+        "sentence": "八人",
+        "reading": "はちにん",
+        "meaning": {
+          "vi": "tám người",
+          "en": "eight people"
+        }
+      }
+    ],
+    "kanji_parts": []
+  },
+    {
+      "id": 8,
+      "kanji": "八",
+      "hiragana": "はち",
+      "mean": {
+        "vi": "Tám",
+        "en": "Eight"
+      },
+      "on_yomi": "ハチ",
+      "lesson": 1,
+      "examples": [
+        {
+          "sentence": "八つ",
+          "reading": "やっつ",
+          "meaning": {
+            "vi": "tám cái",
+            "en": "eight things"
+          }
+        },
+        {
+          "sentence": "八人",
+          "reading": "はちにん",
+          "meaning": {
+            "vi": "tám người",
+            "en": "eight people"
+          }
+        }
+      ],
+      "kanji_parts": []
+    },
+    {
+      "id": 9,
+      "kanji": "九",
+      "hiragana": "きゅう",
+      "mean": {
+        "vi": "Chín",
+        "en": "Nine"
+      },
+      "on_yomi": "キュウ",
+      "lesson": 1,
+      "examples": [
+        {
+          "sentence": "九つ",
+          "reading": "ここのつ",
+          "meaning": {
+            "vi": "chín cái",
+            "en": "nine things"
+          }
+        },
+        {
+          "sentence": "九人",
+          "reading": "きゅうにん",
+          "meaning": {
+            "vi": "chín người",
+            "en": "nine people"
+          }
+        }
+      ],
+      "kanji_parts": []
+    },
+    {
+      "id": 10,
+      "kanji": "十",
+      "hiragana": "じゅう",
+      "mean": {
+        "vi": "Mười",
+        "en": "Ten"
+      },
+      "on_yomi": "ジュウ",
+      "lesson": 1,
+      "examples": [
+        {
+          "sentence": "十つ",
+          "reading": "とお",
+          "meaning": {
+            "vi": "mười cái",
+            "en": "ten things"
+          }
+        },
+        {
+          "sentence": "十人",
+          "reading": "じゅうにん",
+          "meaning": {
+            "vi": "mười người",
+            "en": "ten people"
+          }
+        }
+      ],
+      "kanji_parts": []
+    },
+    {
+      "id": 11,
+      "kanji": "日",
+      "hiragana": "にち",
+      "mean": {
+        "vi": "Ngày, Mặt trời",
+        "en": "Day, Sun"
+      },
+      "on_yomi": "ニチ",
+      "lesson": 1,
+      "examples": [
+        {
+          "sentence": "日曜日",
+          "reading": "にちようび",
+          "meaning": {
+            "vi": "chủ nhật",
+            "en": "Sunday"
+          }
+        },
+        {
+          "sentence": "日本",
+          "reading": "にほん",
+          "meaning": {
+            "vi": "Nhật Bản",
+            "en": "Japan"
+          }
+        }
+      ],
+      "kanji_parts": []
+    },
+    {
+      "id": 12,
+      "kanji": "月",
+      "hiragana": "げつ",
+      "mean": {
+        "vi": "Tháng, Mặt trăng",
+        "en": "Month, Moon"
+      },
+      "on_yomi": "ゲツ",
+      "lesson": 1,
+      "examples": [
+        {
+          "sentence": "月曜日",
+          "reading": "げつようび",
+          "meaning": {
+            "vi": "thứ hai",
+            "en": "Monday"
+          }
+        },
+        {
+          "sentence": "月",
+          "reading": "つき",
+          "meaning": {
+            "vi": "mặt trăng",
+            "en": "moon"
+          }
+        }
+      ],
+      "kanji_parts": []
+    },
+    {
+      "id": 13,
+      "kanji": "火",
+      "hiragana": "か",
+      "mean": {
+        "vi": "Lửa",
+        "en": "Fire"
+      },
+      "on_yomi": "カ",
+      "lesson": 1,
+      "examples": [
+        {
+          "sentence": "火曜日",
+          "reading": "かようび",
+          "meaning": {
+            "vi": "thứ ba",
+            "en": "Tuesday"
+          }
+        },
+        {
+          "sentence": "火事",
+          "reading": "かじ",
+          "meaning": {
+            "vi": "hỏa hoạn",
+            "en": "fire (disaster)"
+          }
+        }
+      ],
+      "kanji_parts": []
+    },
+    {
+      "id": 14,
+      "kanji": "水",
+      "hiragana": "すい",
+      "mean": {
+        "vi": "Nước",
+        "en": "Water"
+      },
+      "on_yomi": "スイ",
+      "lesson": 1,
+      "examples": [
+        {
+          "sentence": "水曜日",
+          "reading": "すいようび",
+          "meaning": {
+            "vi": "thứ tư",
+            "en": "Wednesday"
+          }
+        },
+        {
+          "sentence": "水",
+          "reading": "みず",
+          "meaning": {
+            "vi": "nước",
+            "en": "water"
+          }
+        }
+      ],
+      "kanji_parts": []
+    },
+    {
+      "id": 15,
+      "kanji": "木",
+      "hiragana": "もく",
+      "mean": {
+        "vi": "Cây, Gỗ",
+        "en": "Tree, Wood"
+      },
+      "on_yomi": "モク",
+      "lesson": 1,
+      "examples": [
+        {
+          "sentence": "木曜日",
+          "reading": "もくようび",
+          "meaning": {
+            "vi": "thứ năm",
+            "en": "Thursday"
+          }
+        },
+        {
+          "sentence": "木",
+          "reading": "き",
+          "meaning": {
+            "vi": "cây",
+            "en": "tree"
+          }
+        }
+      ],
+      "kanji_parts": []
+    },
+    {
+      "id": 16,
+      "kanji": "金",
+      "hiragana": "きん",
+      "mean": {
+        "vi": "Vàng, Tiền",
+        "en": "Gold, Money"
+      },
+      "on_yomi": "キン",
+      "lesson": 1,
+      "examples": [
+        {
+          "sentence": "金曜日",
+          "reading": "きんようび",
+          "meaning": {
+            "vi": "thứ sáu",
+            "en": "Friday"
+          }
+        },
+        {
+          "sentence": "金",
+          "reading": "かね",
+          "meaning": {
+            "vi": "vàng",
+            "en": "gold"
+          }
+        }
+      ],
+      "kanji_parts": []
+    },
+    {
+      "id": 17,
+      "kanji": "土",
+      "hiragana": "ど",
+      "mean": {
+        "vi": "Đất",
+        "en": "Soil, Earth"
+      },
+      "on_yomi": "ド",
+      "lesson": 1,
+      "examples": [
+        {
+          "sentence": "土曜日",
+          "reading": "どようび",
+          "meaning": {
+            "vi": "thứ bảy",
+            "en": "Saturday"
+          }
+        },
+        {
+          "sentence": "土",
+          "reading": "つち",
+          "meaning": {
+            "vi": "đất",
+            "en": "soil"
+          }
+        }
+      ],
+      "kanji_parts": []
+    },
+    {
+      "id": 18,
+      "kanji": "山",
+      "hiragana": "やま",
+      "mean": {
+        "vi": "Núi",
+        "en": "Mountain"
+      },
+      "on_yomi": "サン",
+      "lesson": 1,
+      "examples": [
+        {
+          "sentence": "山",
+          "reading": "やま",
+          "meaning": {
+            "vi": "núi",
+            "en": "mountain"
+          }
+        },
+        {
+          "sentence": "山脈",
+          "reading": "さんみゃく",
+          "meaning": {
+            "vi": "dãy núi",
+            "en": "mountain range"
+          }
+        }
+      ],
+      "kanji_parts": []
+    },
+    {
+      "id": 19,
+      "kanji": "川",
+      "hiragana": "かわ",
+      "mean": {
+        "vi": "Sông",
+        "en": "River"
+      },
+      "on_yomi": "セン",
+      "lesson": 1,
+      "examples": [
+        {
+          "sentence": "川",
+          "reading": "かわ",
+          "meaning": {
+            "vi": "sông",
+            "en": "river"
+          }
+        },
+        {
+          "sentence": "川沿い",
+          "reading": "かわぞい",
+          "meaning": {
+            "vi": "dọc theo sông",
+            "en": "along the river"
+          }
+        }
+      ],
+      "kanji_parts": []
+    },
+    {
+      "id": 20,
+      "kanji": "田",
+      "hiragana": "た",
+      "mean": {
+        "vi": "Ruộng",
+        "en": "Rice field"
+      },
+      "on_yomi": "デン",
+      "lesson": 1,
+      "examples": [
+        {
+          "sentence": "田んぼ",
+          "reading": "たんぼ",
+          "meaning": {
+            "vi": "cánh đồng",
+            "en": "rice field"
+          }
+        },
+        {
+          "sentence": "田舎",
+          "reading": "いなか",
+          "meaning": {
+            "vi": "nông thôn",
+            "en": "countryside"
+          }
+        }
+      ],
+      "kanji_parts": []
+    },
+    {
+      "id": 21,
+      "kanji": "人",
+      "hiragana": "ひと",
+      "mean": {
+        "vi": "Người",
+        "en": "Person"
+      },
+      "on_yomi": "ジン",
+      "lesson": 1,
+      "examples": [
+        {
+          "sentence": "人間",
+          "reading": "にんげん",
+          "meaning": {
+            "vi": "con người",
+            "en": "human"
+          }
+        },
+        {
+          "sentence": "人々",
+          "reading": "ひとびと",
+          "meaning": {
+            "vi": "mọi người",
+            "en": "people"
+          }
+        }
+      ],
+      "kanji_parts": []
+    },
+    {
+      "id": 22,
+      "kanji": "口",
+      "hiragana": "くち",
+      "mean": {
+        "vi": "Miệng",
+        "en": "Mouth"
+      },
+      "on_yomi": "コウ",
+      "lesson": 1,
+      "examples": [
+        {
+          "sentence": "口",
+          "reading": "くち",
+          "meaning": {
+            "vi": "miệng",
+            "en": "mouth"
+          }
+        },
+        {
+          "sentence": "口座",
+          "reading": "こうざ",
+          "meaning": {
+            "vi": "tài khoản",
+            "en": "account"
+          }
+        }
+      ],
+      "kanji_parts": []
+    },
+    {
+      "id": 23,
+      "kanji": "目",
+      "hiragana": "め",
+      "mean": {
+        "vi": "Mắt",
+        "en": "Eye"
+      },
+      "on_yomi": "モク",
+      "lesson": 1,
+      "examples": [
+        {
+          "sentence": "目",
+          "reading": "め",
+          "meaning": {
+            "vi": "mắt",
+            "en": "eye"
+          }
+        },
+        {
+          "sentence": "目標",
+          "reading": "もくひょう",
+          "meaning": {
+            "vi": "mục tiêu",
+            "en": "goal"
+          }
+        }
+      ],
+      "kanji_parts": []
+    },
+    {
+      "id": 24,
+      "kanji": "耳",
+      "hiragana": "みみ",
+      "mean": {
+        "vi": "Tai",
+        "en": "Ear"
+      },
+      "on_yomi": "ジ",
+      "lesson": 1,
+      "examples": [
+        {
+          "sentence": "耳",
+          "reading": "みみ",
+          "meaning": {
+            "vi": "tai",
+            "en": "ear"
+          }
+        },
+        {
+          "sentence": "耳鳴り",
+          "reading": "みみなり",
+          "meaning": {
+            "vi": "tiếng ve",
+            "en": "ringing in the ears"
+          }
+        }
+      ],
+      "kanji_parts": []
+    },
+    {
+      "id": 25,
+      "kanji": "手",
+      "hiragana": "て",
+      "mean": {
+        "vi": "Tay",
+        "en": "Hand"
+      },
+      "on_yomi": "シュ",
+      "lesson": 1,
+      "examples": [
+        {
+          "sentence": "手",
+          "reading": "て",
+          "meaning": {
+            "vi": "tay",
+            "en": "hand"
+          }
+        },
+        {
+          "sentence": "手紙",
+          "reading": "てがみ",
+          "meaning": {
+            "vi": "thư tay",
+            "en": "letter"
+          }
+        }
+      ],
+      "kanji_parts": []
+    },
+    {
+      "id": 26,
+      "kanji": "足",
+      "hiragana": "あし",
+      "mean": {
+        "vi": "Chân",
+        "en": "Foot"
+      },
+      "on_yomi": "ソク",
+      "lesson": 1,
+      "examples": [
+        {
+          "sentence": "足",
+          "reading": "あし",
+          "meaning": {
+            "vi": "chân",
+            "en": "foot"
+          }
+        },
+        {
+          "sentence": "足音",
+          "reading": "あしおと",
+          "meaning": {
+            "vi": "tiếng bước chân",
+            "en": "footsteps"
+          }
+        }
+      ],
+      "kanji_parts": []
+    },
+    {
+      "id": 27,
+      "kanji": "力",
+      "hiragana": "ちから",
+      "mean": {
+        "vi": "Sức mạnh",
+        "en": "Strength"
+      },
+      "on_yomi": "リョク",
+      "lesson": 1,
+      "examples": [
+        {
+          "sentence": "力",
+          "reading": "ちから",
+          "meaning": {
+            "vi": "sức mạnh",
+            "en": "strength"
+          }
+        },
+        {
+          "sentence": "力強い",
+          "reading": "ちからづよい",
+          "meaning": {
+            "vi": "mạnh mẽ",
+            "en": "powerful"
+          }
+        }
+      ],
+      "kanji_parts": []
+    },
+    {
+      "id": 28,
+      "kanji": "男",
+      "hiragana": "おとこ",
+      "mean": {
+        "vi": "Nam giới",
+        "en": "Man"
+      },
+      "on_yomi": "ダン",
+      "lesson": 1,
+      "examples": [
+        {
+          "sentence": "男",
+          "reading": "おとこ",
+          "meaning": {
+            "vi": "nam",
+            "en": "man"
+          }
+        },
+        {
+          "sentence": "男の子",
+          "reading": "おとこのこ",
+          "meaning": {
+            "vi": "bé trai",
+            "en": "boy"
+          }
+        }
+      ],
+      "kanji_parts": []
+    },
+    {
+      "id": 29,
+      "kanji": "女",
+      "hiragana": "おんな",
+      "mean": {
+        "vi": "Nữ giới",
+        "en": "Woman"
+      },
+      "on_yomi": "ジョ",
+      "lesson": 1,
+      "examples": [
+        {
+          "sentence": "女",
+          "reading": "おんな",
+          "meaning": {
+            "vi": "nữ",
+            "en": "woman"
+          }
+        },
+        {
+          "sentence": "女の子",
+          "reading": "おんなのこ",
+          "meaning": {
+            "vi": "bé gái",
+            "en": "girl"
+          }
+        }
+      ],
+      "kanji_parts": []
+    },
+    {
+      "id": 30,
+      "kanji": "子",
+      "hiragana": "こ",
+      "mean": {
+        "vi": "Trẻ con",
+        "en": "Child"
+      },
+      "on_yomi": "シ",
+      "lesson": 1,
+      "examples": [
+        {
+          "sentence": "子",
+          "reading": "こ",
+          "meaning": {
+            "vi": "trẻ",
+            "en": "child"
+          }
+        },
+        {
+          "sentence": "子供",
+          "reading": "こども",
+          "meaning": {
+            "vi": "đứa trẻ",
+            "en": "children"
+          }
+        }
+      ],
+      "kanji_parts": []
+    },
+    {
+      "id": 31,
+      "kanji": "学",
+      "hiragana": "がく",
+      "mean": {
+        "vi": "Học",
+        "en": "Study"
+      },
+      "on_yomi": "ガク",
+      "lesson": 1,
+      "examples": [
+        {
+          "sentence": "学生",
+          "reading": "がくせい",
+          "meaning": {
+            "vi": "học sinh",
+            "en": "student"
+          }
+        },
+        {
+          "sentence": "学問",
+          "reading": "がくもん",
+          "meaning": {
+            "vi": "học vấn",
+            "en": "learning"
+          }
+        }
+      ],
+      "kanji_parts": []
+    },
+    {
+      "id": 32,
+      "kanji": "校",
+      "hiragana": "こう",
+      "mean": {
+        "vi": "Trường học",
+        "en": "School"
+      },
+      "on_yomi": "コウ",
+      "lesson": 1,
+      "examples": [
+        {
+          "sentence": "学校",
+          "reading": "がっこう",
+          "meaning": {
+            "vi": "trường học",
+            "en": "school"
+          }
+        },
+        {
+          "sentence": "校舎",
+          "reading": "こうしゃ",
+          "meaning": {
+            "vi": "dãy nhà trường",
+            "en": "school building"
+          }
+        }
+      ],
+      "kanji_parts": []
+    },
+    {
+      "id": 33,
+      "kanji": "先",
+      "hiragana": "せん",
+      "mean": {
+        "vi": "Trước, Tiên sinh",
+        "en": "Before, Teacher"
+      },
+      "on_yomi": "セン",
+      "lesson": 1,
+      "examples": [
+        {
+          "sentence": "先週",
+          "reading": "せんしゅう",
+          "meaning": {
+            "vi": "tuần trước",
+            "en": "last week"
+          }
+        },
+        {
+          "sentence": "先生",
+          "reading": "せんせい",
+          "meaning": {
+            "vi": "giáo viên",
+            "en": "teacher"
+          }
+        }
+      ],
+      "kanji_parts": []
+    },
+    {
+      "id": 34,
+      "kanji": "生",
+      "hiragana": "せい",
+      "mean": {
+        "vi": "Sinh, Sống",
+        "en": "Life, Live"
+      },
+      "on_yomi": "セイ",
+      "lesson": 1,
+      "examples": [
+        {
+          "sentence": "生きる",
+          "reading": "いきる",
+          "meaning": {
+            "vi": "sống",
+            "en": "to live"
+          }
+        },
+        {
+          "sentence": "学生",
+          "reading": "がくせい",
+          "meaning": {
+            "vi": "học sinh",
+            "en": "student"
+          }
+        }
+      ],
+      "kanji_parts": []
+    },
+    {
+      "id": 35,
+      "kanji": "何",
+      "hiragana": "なに",
+      "mean": {
+        "vi": "Gì, Cái gì",
+        "en": "What"
+      },
+      "on_yomi": "カ",
+      "lesson": 1,
+      "examples": [
+        {
+          "sentence": "何時",
+          "reading": "なんじ",
+          "meaning": {
+            "vi": "mấy giờ",
+            "en": "what time"
+          }
+        },
+        {
+          "sentence": "何か",
+          "reading": "なにか",
+          "meaning": {
+            "vi": "cái gì đó",
+            "en": "something"
+          }
+        }
+      ],
+      "kanji_parts": []
+    },
+    {
+      "id": 36,
+      "kanji": "父",
+      "hiragana": "ちち",
+      "mean": {
+        "vi": "Bố",
+        "en": "Father"
+      },
+      "on_yomi": "フ",
+      "lesson": 1,
+      "examples": [
+        {
+          "sentence": "父親",
+          "reading": "ちちおや",
+          "meaning": {
+            "vi": "bố",
+            "en": "father"
+          }
+        },
+        {
+          "sentence": "父母",
+          "reading": "ふぼ",
+          "meaning": {
+            "vi": "cha mẹ",
+            "en": "parents"
+          }
+        }
+      ],
+      "kanji_parts": []
+    },
+    {
+      "id": 37,
+      "kanji": "母",
+      "hiragana": "はは",
+      "mean": {
+        "vi": "Mẹ",
+        "en": "Mother"
+      },
+      "on_yomi": "ボ",
+      "lesson": 1,
+      "examples": [
+        {
+          "sentence": "母親",
+          "reading": "ははおや",
+          "meaning": {
+            "vi": "mẹ",
+            "en": "mother"
+          }
+        },
+        {
+          "sentence": "母国",
+          "reading": "ぼこく",
+          "meaning": {
+            "vi": "quê hương",
+            "en": "motherland"
+          }
+        }
+      ],
+      "kanji_parts": []
+    },
+    {
+      "id": 38,
+      "kanji": "年",
+      "hiragana": "とし",
+      "mean": {
+        "vi": "Năm, Tuổi",
+        "en": "Year, Age"
+      },
+      "on_yomi": "ネン",
+      "lesson": 1,
+      "examples": [
+        {
+          "sentence": "今年",
+          "reading": "ことし",
+          "meaning": {
+            "vi": "năm nay",
+            "en": "this year"
+          }
+        },
+        {
+          "sentence": "年齢",
+          "reading": "ねんれい",
+          "meaning": {
+            "vi": "tuổi tác",
+            "en": "age"
+          }
+        }
+      ],
+      "kanji_parts": []
+    },
+    {
+      "id": 39,
+      "kanji": "今",
+      "hiragana": "いま",
+      "mean": {
+        "vi": "Bây giờ",
+        "en": "Now"
+      },
+      "on_yomi": "コン",
+      "lesson": 1,
+      "examples": [
+        {
+          "sentence": "今",
+          "reading": "いま",
+          "meaning": {
+            "vi": "bây giờ",
+            "en": "now"
+          }
+        },
+        {
+          "sentence": "今週",
+          "reading": "こんしゅう",
+          "meaning": {
+            "vi": "tuần này",
+            "en": "this week"
+          }
+        }
+      ],
+      "kanji_parts": []
+    },
+    {
+      "id": 40,
+      "kanji": "時",
+      "hiragana": "じ",
+      "mean": {
+        "vi": "Thời gian, Giờ",
+        "en": "Time, Hour"
+      },
+      "on_yomi": "ジ",
+      "lesson": 1,
+      "examples": [
+        {
+          "sentence": "時間",
+          "reading": "じかん",
+          "meaning": {
+            "vi": "thời gian",
+            "en": "time"
+          }
+        },
+        {
+          "sentence": "時刻",
+          "reading": "じこく",
+          "meaning": {
+            "vi": "thời khắc",
+            "en": "time, moment"
+          }
+        }
+      ],
+      "kanji_parts": []
+    },
+    {
+      "id": 41,
+      "kanji": "間",
+      "hiragana": "あいだ",
+      "mean": {
+        "vi": "Giữa, Khoảng",
+        "en": "Between, Interval"
+      },
+      "on_yomi": "カン",
+      "lesson": 1,
+      "examples": [
+        {
+          "sentence": "時間",
+          "reading": "じかん",
+          "meaning": {
+            "vi": "thời gian",
+            "en": "time"
+          }
+        },
+        {
+          "sentence": "間違い",
+          "reading": "まちがい",
+          "meaning": {
+            "vi": "sai lầm",
+            "en": "mistake"
+          }
+        }
+      ],
+      "kanji_parts": []
+    },
+    {
+      "id": 42,
+      "kanji": "半",
+      "hiragana": "はん",
+      "mean": {
+        "vi": "Một nửa",
+        "en": "Half"
+      },
+      "on_yomi": "ハン",
+      "lesson": 1,
+      "examples": [
+        {
+          "sentence": "半分",
+          "reading": "はんぶん",
+          "meaning": {
+            "vi": "một nửa",
+            "en": "half"
+          }
+        },
+        {
+          "sentence": "半日",
+          "reading": "はんにち",
+          "meaning": {
+            "vi": "nửa ngày",
+            "en": "half day"
+          }
+        }
+      ],
+      "kanji_parts": []
+    },
+    {
+      "id": 43,
+      "kanji": "分",
+      "hiragana": "ふん",
+      "mean": {
+        "vi": "Phút, Phân chia",
+        "en": "Minute, Part"
+      },
+      "on_yomi": "ブン",
+      "lesson": 1,
+      "examples": [
+        {
+          "sentence": "分ける",
+          "reading": "わける",
+          "meaning": {
+            "vi": "chia",
+            "en": "to divide"
+          }
+        },
+        {
+          "sentence": "分かる",
+          "reading": "わかる",
+          "meaning": {
+            "vi": "hiểu",
+            "en": "to understand"
+          }
+        }
+      ],
+      "kanji_parts": []
+    },
+    {
+      "id": 44,
+      "kanji": "上",
+      "hiragana": "うえ",
+      "mean": {
+        "vi": "Trên",
+        "en": "Up, Above"
+      },
+      "on_yomi": "ジョウ",
+      "lesson": 1,
+      "examples": [
+        {
+          "sentence": "上手",
+          "reading": "じょうず",
+          "meaning": {
+            "vi": "giỏi",
+            "en": "good at"
+          }
+        },
+        {
+          "sentence": "上に",
+          "reading": "うえに",
+          "meaning": {
+            "vi": "lên trên",
+            "en": "on top"
+          }
+        }
+      ],
+      "kanji_parts": []
+    },
+    {
+      "id": 45,
+      "kanji": "下",
+      "hiragana": "した",
+      "mean": {
+        "vi": "Dưới",
+        "en": "Down, Below"
+      },
+      "on_yomi": "カ",
+      "lesson": 1,
+      "examples": [
+        {
+          "sentence": "下手",
+          "reading": "へた",
+          "meaning": {
+            "vi": "kém",
+            "en": "poor at"
+          }
+        },
+        {
+          "sentence": "下に",
+          "reading": "したに",
+          "meaning": {
+            "vi": "xuống dưới",
+            "en": "down below"
+          }
+        }
+      ],
+      "kanji_parts": []
+    },
+    {
+      "id": 51,
+      "kanji": "右",
+      "hiragana": "みぎ",
+      "mean": {
+        "vi": "Phải",
+        "en": "Right"
+      },
+      "on_yomi": "ウ",
+      "lesson": 1,
+      "examples": [
+        {
+          "sentence": "右側",
+          "reading": "みぎがわ",
+          "meaning": {
+            "vi": "bên phải",
+            "en": "right side"
+          }
+        },
+        {
+          "sentence": "右手",
+          "reading": "みぎて",
+          "meaning": {
+            "vi": "tay phải",
+            "en": "right hand"
+          }
+        }
+      ],
+      "kanji_parts": []
+    },
+    {
+      "id": 52,
+      "kanji": "東",
+      "hiragana": "ひがし",
+      "mean": {
+        "vi": "Đông",
+        "en": "East"
+      },
+      "on_yomi": "トウ",
+      "lesson": 1,
+      "examples": [
+        {
+          "sentence": "東南アジア",
+          "reading": "とうなんアジア",
+          "meaning": {
+            "vi": "Đông Nam Á",
+            "en": "Southeast Asia"
+          }
+        },
+        {
+          "sentence": "東洋",
+          "reading": "とうよう",
+          "meaning": {
+            "vi": "Phương Đông",
+            "en": "The East"
+          }
+        }
+      ],
+      "kanji_parts": []
+    },
+    {
+      "id": 53,
+      "kanji": "西",
+      "hiragana": "にし",
+      "mean": {
+        "vi": "Tây",
+        "en": "West"
+      },
+      "on_yomi": "セイ",
+      "lesson": 1,
+      "examples": [
+        {
+          "sentence": "西洋",
+          "reading": "せいよう",
+          "meaning": {
+            "vi": "Phương Tây",
+            "en": "The West"
+          }
+        },
+        {
+          "sentence": "西部",
+          "reading": "せいぶ",
+          "meaning": {
+            "vi": "vùng Tây",
+            "en": "Western region"
+          }
+        }
+      ],
+      "kanji_parts": []
+    },
+    {
+      "id": 54,
+      "kanji": "南",
+      "hiragana": "みなみ",
+      "mean": {
+        "vi": "Nam",
+        "en": "South"
+      },
+      "on_yomi": "ナン",
+      "lesson": 1,
+      "examples": [
+        {
+          "sentence": "南アメリカ",
+          "reading": "みなみアメリカ",
+          "meaning": {
+            "vi": "Nam Mỹ",
+            "en": "South America"
+          }
+        },
+        {
+          "sentence": "南極",
+          "reading": "なんきょく",
+          "meaning": {
+            "vi": "Nam Cực",
+            "en": "South Pole"
+          }
+        }
+      ],
+      "kanji_parts": []
+    },
+    {
+      "id": 55,
+      "kanji": "北",
+      "hiragana": "きた",
+      "mean": {
+        "vi": "Bắc",
+        "en": "North"
+      },
+      "on_yomi": "ホク",
+      "lesson": 1,
+      "examples": [
+        {
+          "sentence": "北アメリカ",
+          "reading": "きたアメリカ",
+          "meaning": {
+            "vi": "Bắc Mỹ",
+            "en": "North America"
+          }
+        },
+        {
+          "sentence": "北極",
+          "reading": "ほっきょく",
+          "meaning": {
+            "vi": "Bắc Cực",
+            "en": "North Pole"
+          }
+        }
+      ],
+      "kanji_parts": []
+    },
+    {
+      "id": 56,
+      "kanji": "車",
+      "hiragana": "くるま",
+      "mean": {
+        "vi": "Xe hơi",
+        "en": "Car"
+      },
+      "on_yomi": "シャ",
+      "lesson": 1,
+      "examples": [
+        {
+          "sentence": "自動車",
+          "reading": "じどうしゃ",
+          "meaning": {
+            "vi": "xe hơi",
+            "en": "automobile"
+          }
+        },
+        {
+          "sentence": "車道",
+          "reading": "しゃどう",
+          "meaning": {
+            "vi": "lộ trình",
+            "en": "roadway"
+          }
+        }
+      ],
+      "kanji_parts": []
+    },
+    {
+      "id": 57,
+      "kanji": "駅",
+      "hiragana": "えき",
+      "mean": {
+        "vi": "Nhà ga",
+        "en": "Station"
+      },
+      "on_yomi": "エキ",
+      "lesson": 1,
+      "examples": [
+        {
+          "sentence": "駅前",
+          "reading": "えきまえ",
+          "meaning": {
+            "vi": "trước ga",
+            "en": "station front"
+          }
+        },
+        {
+          "sentence": "駅舎",
+          "reading": "えきしゃ",
+          "meaning": {
+            "vi": "nhà ga",
+            "en": "station building"
+          }
+        }
+      ],
+      "kanji_parts": []
+    },
+    {
+      "id": 58,
+      "kanji": "道",
+      "hiragana": "みち",
+      "mean": {
+        "vi": "Đường đi",
+        "en": "Way, Road"
+      },
+      "on_yomi": "ドウ",
+      "lesson": 1,
+      "examples": [
+        {
+          "sentence": "道",
+          "reading": "みち",
+          "meaning": {
+            "vi": "con đường",
+            "en": "road"
+          }
+        },
+        {
+          "sentence": "道路",
+          "reading": "どうろ",
+          "meaning": {
+            "vi": "đường phố",
+            "en": "street, road"
+          }
+        }
+      ],
+      "kanji_parts": []
+    },
+    {
+      "id": 59,
+      "kanji": "話",
+      "hiragana": "はなし",
+      "mean": {
+        "vi": "Câu chuyện",
+        "en": "Talk, Story"
+      },
+      "on_yomi": "ワ",
+      "lesson": 1,
+      "examples": [
+        {
+          "sentence": "話す",
+          "reading": "はなす",
+          "meaning": {
+            "vi": "nói",
+            "en": "to speak"
+          }
+        },
+        {
+          "sentence": "話題",
+          "reading": "わだい",
+          "meaning": {
+            "vi": "chủ đề",
+            "en": "topic"
+          }
+        }
+      ],
+      "kanji_parts": []
+    },
+    {
+      "id": 60,
+      "kanji": "聞",
+      "hiragana": "きく",
+      "mean": {
+        "vi": "Nghe",
+        "en": "To Listen, To Ask"
+      },
+      "on_yomi": "ブン",
+      "lesson": 1,
+      "examples": [
+        {
+          "sentence": "聞く",
+          "reading": "きく",
+          "meaning": {
+            "vi": "hỏi, nghe",
+            "en": "to ask, to listen"
+          }
+        },
+        {
+          "sentence": "新聞",
+          "reading": "しんぶん",
+          "meaning": {
+            "vi": "báo",
+            "en": "newspaper"
+          }
+        }
+      ],
+      "kanji_parts": []
+    },
+    {
+      "id": 61,
+      "kanji": "書",
+      "hiragana": "かく",
+      "mean": {
+        "vi": "Viết",
+        "en": "To Write"
+      },
+      "on_yomi": "ショ",
+      "lesson": 1,
+      "examples": [
+        {
+          "sentence": "書く",
+          "reading": "かく",
+          "meaning": {
+            "vi": "viết",
+            "en": "to write"
+          }
+        },
+        {
+          "sentence": "書道",
+          "reading": "しょどう",
+          "meaning": {
+            "vi": "thư pháp",
+            "en": "calligraphy"
+          }
+        }
+      ],
+      "kanji_parts": []
+    },
+    {
+      "id": 62,
+      "kanji": "読",
+      "hiragana": "よむ",
+      "mean": {
+        "vi": "Đọc",
+        "en": "To Read"
+      },
+      "on_yomi": "ドク",
+      "lesson": 1,
+      "examples": [
+        {
+          "sentence": "読む",
+          "reading": "よむ",
+          "meaning": {
+            "vi": "đọc",
+            "en": "to read"
+          }
+        },
+        {
+          "sentence": "読書",
+          "reading": "どくしょ",
+          "meaning": {
+            "vi": "đọc sách",
+            "en": "reading books"
+          }
+        }
+      ],
+      "kanji_parts": []
+    },
+    {
+      "id": 63,
+      "kanji": "見",
+      "hiragana": "みる",
+      "mean": {
+        "vi": "Nhìn",
+        "en": "To See"
+      },
+      "on_yomi": "ケン",
+      "lesson": 1,
+      "examples": [
+        {
+          "sentence": "見る",
+          "reading": "みる",
+          "meaning": {
+            "vi": "nhìn",
+            "en": "to see"
+          }
+        },
+        {
+          "sentence": "見学",
+          "reading": "けんがく",
+          "meaning": {
+            "vi": "tham quan",
+            "en": "visit, tour"
+          }
+        }
+      ],
+      "kanji_parts": []
+    },
+    {
+      "id": 64,
+      "kanji": "食",
+      "hiragana": "たべる",
+      "mean": {
+        "vi": "Ăn",
+        "en": "To Eat"
+      },
+      "on_yomi": "ショク",
+      "lesson": 1,
+      "examples": [
+        {
+          "sentence": "食べる",
+          "reading": "たべる",
+          "meaning": {
+            "vi": "ăn",
+            "en": "to eat"
+          }
+        },
+        {
+          "sentence": "食事",
+          "reading": "しょくじ",
+          "meaning": {
+            "vi": "bữa ăn",
+            "en": "meal"
+          }
+        }
+      ],
+      "kanji_parts": []
+    },
+    {
+      "id": 65,
+      "kanji": "飲",
+      "hiragana": "のむ",
+      "mean": {
+        "vi": "Uống",
+        "en": "To Drink"
+      },
+      "on_yomi": "イン",
+      "lesson": 1,
+      "examples": [
+        {
+          "sentence": "飲む",
+          "reading": "のむ",
+          "meaning": {
+            "vi": "uống",
+            "en": "to drink"
+          }
+        },
+        {
+          "sentence": "飲み物",
+          "reading": "のみもの",
+          "meaning": {
+            "vi": "thức uống",
+            "en": "beverage"
+          }
+        }
+      ],
+      "kanji_parts": []
+    },
+    {
+      "id": 66,
+      "kanji": "会",
+      "hiragana": "あう",
+      "mean": {
+        "vi": "Gặp gỡ",
+        "en": "To meet"
+      },
+      "on_yomi": "カイ",
+      "lesson": 1,
+      "examples": [
+        {
+          "sentence": "会う",
+          "reading": "あう",
+          "meaning": {
+            "vi": "gặp gỡ",
+            "en": "to meet"
+          }
+        },
+        {
+          "sentence": "会話",
+          "reading": "かいわ",
+          "meaning": {
+            "vi": "hội thoại",
+            "en": "conversation"
+          }
+        }
+      ],
+      "kanji_parts": []
+    },
+    {
+      "id": 67,
+      "kanji": "友",
+      "hiragana": "とも",
+      "mean": {
+        "vi": "Bạn bè",
+        "en": "Friend"
+      },
+      "on_yomi": "ユウ",
+      "lesson": 1,
+      "examples": [
+        {
+          "sentence": "友達",
+          "reading": "ともだち",
+          "meaning": {
+            "vi": "bạn bè",
+            "en": "friends"
+          }
+        },
+        {
+          "sentence": "友情",
+          "reading": "ゆうじょう",
+          "meaning": {
+            "vi": "tình bạn",
+            "en": "friendship"
+          }
+        }
+      ],
+      "kanji_parts": []
+    },
+    {
+      "id": 68,
+      "kanji": "家",
+      "hiragana": "いえ",
+      "mean": {
+        "vi": "Nhà",
+        "en": "House"
+      },
+      "on_yomi": "カ",
+      "lesson": 1,
+      "examples": [
+        {
+          "sentence": "家",
+          "reading": "いえ",
+          "meaning": {
+            "vi": "nhà",
+            "en": "house"
+          }
+        },
+        {
+          "sentence": "家庭",
+          "reading": "かてい",
+          "meaning": {
+            "vi": "gia đình",
+            "en": "family"
+          }
+        }
+      ],
+      "kanji_parts": []
+    },
+    {
+      "id": 69,
+      "kanji": "店",
+      "hiragana": "みせ",
+      "mean": {
+        "vi": "Cửa hàng",
+        "en": "Shop"
+      },
+      "on_yomi": "テン",
+      "lesson": 1,
+      "examples": [
+        {
+          "sentence": "店",
+          "reading": "みせ",
+          "meaning": {
+            "vi": "cửa hàng",
+            "en": "shop"
+          }
+        },
+        {
+          "sentence": "店員",
+          "reading": "てんいん",
+          "meaning": {
+            "vi": "nhân viên cửa hàng",
+            "en": "shop assistant"
+          }
+        }
+      ],
+      "kanji_parts": []
+    },
+    {
+      "id": 70,
+      "kanji": "社",
+      "hiragana": "しゃ",
+      "mean": {
+        "vi": "Công ty",
+        "en": "Company"
+      },
+      "on_yomi": "シャ",
+      "lesson": 1,
+      "examples": [
+        {
+          "sentence": "会社",
+          "reading": "かいしゃ",
+          "meaning": {
+            "vi": "công ty",
+            "en": "company"
+          }
+        },
+        {
+          "sentence": "社会",
+          "reading": "しゃかい",
+          "meaning": {
+            "vi": "xã hội",
+            "en": "society"
+          }
+        }
+      ],
+      "kanji_parts": []
+    },
+    {
+      "id": 71,
+      "kanji": "電",
+      "hiragana": "でん",
+      "mean": {
+        "vi": "Điện",
+        "en": "Electricity"
+      },
+      "on_yomi": "デン",
+      "lesson": 1,
+      "examples": [
+        {
+          "sentence": "電気",
+          "reading": "でんき",
+          "meaning": {
+            "vi": "điện",
+            "en": "electricity"
+          }
+        },
+        {
+          "sentence": "電車",
+          "reading": "でんしゃ",
+          "meaning": {
+            "vi": "tàu điện",
+            "en": "electric train"
+          }
+        }
+      ],
+      "kanji_parts": []
+    },
+    {
+      "id": 72,
+      "kanji": "雨",
+      "hiragana": "あめ",
+      "mean": {
+        "vi": "Mưa",
+        "en": "Rain"
+      },
+      "on_yomi": "ウ",
+      "lesson": 1,
+      "examples": [
+        {
+          "sentence": "雨",
+          "reading": "あめ",
+          "meaning": {
+            "vi": "mưa",
+            "en": "rain"
+          }
+        },
+        {
+          "sentence": "雨季",
+          "reading": "うき",
+          "meaning": {
+            "vi": "mùa mưa",
+            "en": "rainy season"
+          }
+        }
+      ],
+      "kanji_parts": []
+    },
+    {
+      "id": 73,
+      "kanji": "雪",
+      "hiragana": "ゆき",
+      "mean": {
+        "vi": "Tuyết",
+        "en": "Snow"
+      },
+      "on_yomi": "セツ",
+      "lesson": 1,
+      "examples": [
+        {
+          "sentence": "雪",
+          "reading": "ゆき",
+          "meaning": {
+            "vi": "tuyết",
+            "en": "snow"
+          }
+        },
+        {
+          "sentence": "雪景色",
+          "reading": "ゆきげしき",
+          "meaning": {
+            "vi": "cảnh tuyết",
+            "en": "snow scene"
+          }
+        }
+      ],
+      "kanji_parts": []
+    },
+    {
+      "id": 74,
+      "kanji": "風",
+      "hiragana": "かぜ",
+      "mean": {
+        "vi": "Gió",
+        "en": "Wind"
+      },
+      "on_yomi": "フウ",
+      "lesson": 1,
+      "examples": [
+        {
+          "sentence": "風",
+          "reading": "かぜ",
+          "meaning": {
+            "vi": "gió",
+            "en": "wind"
+          }
+        },
+        {
+          "sentence": "風景",
+          "reading": "ふうけい",
+          "meaning": {
+            "vi": "cảnh vật",
+            "en": "scenery"
+          }
+        }
+      ],
+      "kanji_parts": []
+    },
+    {
+      "id": 75,
+      "kanji": "空",
+      "hiragana": "そら",
+      "mean": {
+        "vi": "Bầu trời",
+        "en": "Sky"
+      },
+      "on_yomi": "クウ",
+      "lesson": 1,
+      "examples": [
+        {
+          "sentence": "空",
+          "reading": "そら",
+          "meaning": {
+            "vi": "bầu trời",
+            "en": "sky"
+          }
+        },
+        {
+          "sentence": "空気",
+          "reading": "くうき",
+          "meaning": {
+            "vi": "không khí",
+            "en": "air"
+          }
+        }
+      ],
+      "kanji_parts": []
+    },
+    {
+      "id": 76,
+      "kanji": "海",
+      "hiragana": "うみ",
+      "mean": {
+        "vi": "Biển",
+        "en": "Sea"
+      },
+      "on_yomi": "カイ",
+      "lesson": 1,
+      "examples": [
+        {
+          "sentence": "海",
+          "reading": "うみ",
+          "meaning": {
+            "vi": "biển",
+            "en": "sea"
+          }
+        },
+        {
+          "sentence": "海岸",
+          "reading": "かいがん",
+          "meaning": {
+            "vi": "bờ biển",
+            "en": "coast"
+          }
+        }
+      ],
+      "kanji_parts": []
+    },
+    {
+      "id": 77,
+      "kanji": "花",
+      "hiragana": "はな",
+      "mean": {
+        "vi": "Hoa",
+        "en": "Flower"
+      },
+      "on_yomi": "カ",
+      "lesson": 1,
+      "examples": [
+        {
+          "sentence": "花",
+          "reading": "はな",
+          "meaning": {
+            "vi": "hoa",
+            "en": "flower"
+          }
+        },
+        {
+          "sentence": "花火",
+          "reading": "はなび",
+          "meaning": {
+            "vi": "pháo hoa",
+            "en": "fireworks"
+          }
+        }
+      ],
+      "kanji_parts": []
+    },
+    {
+      "id": 78,
+      "kanji": "犬",
+      "hiragana": "いぬ",
+      "mean": {
+        "vi": "Chó",
+        "en": "Dog"
+      },
+      "on_yomi": "ケン",
+      "lesson": 1,
+      "examples": [
+        {
+          "sentence": "犬",
+          "reading": "いぬ",
+          "meaning": {
+            "vi": "chó",
+            "en": "dog"
+          }
+        },
+        {
+          "sentence": "犬小屋",
+          "reading": "いぬごや",
+          "meaning": {
+            "vi": "chuồng chó",
+            "en": "doghouse"
+          }
+        }
+      ],
+      "kanji_parts": []
+    },
+    {
+      "id": 79,
+      "kanji": "猫",
+      "hiragana": "ねこ",
+      "mean": {
+        "vi": "Mèo",
+        "en": "Cat"
+      },
+      "on_yomi": "ビョウ",
+      "lesson": 1,
+      "examples": [
+        {
+          "sentence": "猫",
+          "reading": "ねこ",
+          "meaning": {
+            "vi": "mèo",
+            "en": "cat"
+          }
+        },
+        {
+          "sentence": "猫耳",
+          "reading": "ねこみみ",
+          "meaning": {
+            "vi": "tai mèo",
+            "en": "cat ears"
+          }
+        }
+      ],
+      "kanji_parts": []
+    },
+    {
+      "id": 80,
+      "kanji": "魚",
+      "hiragana": "さかな",
+      "mean": {
+        "vi": "Cá",
+        "en": "Fish"
+      },
+      "on_yomi": "ギョ",
+      "lesson": 1,
+      "examples": [
+        {
+          "sentence": "魚",
+          "reading": "さかな",
+          "meaning": {
+            "vi": "cá",
+            "en": "fish"
+          }
+        },
+        {
+          "sentence": "魚屋",
+          "reading": "さかなや",
+          "meaning": {
+            "vi": "cửa hàng cá",
+            "en": "fish shop"
+          }
+        }
+      ],
+      "kanji_parts": []
+    }    
 ];
-export const kanjiItemsN4: {
-  id: number;
-  kanji: string;
-  hiragana: string;
-  mean: string;
-  on_yomi: string;
-  examples:string[];
-}[] = [
-  { 
-    "id": 1, 
-    "kanji": "悪", 
-    "hiragana": "あく", 
-    "mean": "Ác", 
-    "on_yomi": "アク", 
-    "examples": ["悪い (xấu)", "悪化 (xấu đi)"]
+export const kanjiItemsN4: KanjiLessonWithId[] = [
+  {
+    "id": 1,
+    "kanji": "悪",
+    "hiragana": "あく",
+    "mean": {
+      "vi": "Ác",
+      "en": "Evil"
+    },
+    "on_yomi": "アク",
+    "lesson": 1,
+    "examples": [
+      {
+        "sentence": "悪い",
+        "reading": "わるい",
+        "meaning": {
+          "vi": "xấu",
+          "en": "bad"
+        }
+      },
+      {
+        "sentence": "悪化",
+        "reading": "あっか",
+        "meaning": {
+          "vi": "xấu đi",
+          "en": "deterioration"
+        }
+      }
+    ],
+    "kanji_parts": []
   },
-  { 
-    "id": 2, 
-    "kanji": "安", 
-    "hiragana": "あん", 
-    "mean": "An", 
-    "on_yomi": "アン", 
-    "examples": ["安全 (an toàn)", "安心 (yên tâm)"]
+  {
+    "id": 2,
+    "kanji": "安",
+    "hiragana": "あん",
+    "mean": {
+      "vi": "An",
+      "en": "Safe"
+    },
+    "on_yomi": "アン",
+    "lesson": 1,
+    "examples": [
+      {
+        "sentence": "安全",
+        "reading": "あんぜん",
+        "meaning": {
+          "vi": "an toàn",
+          "en": "safety"
+        }
+      },
+      {
+        "sentence": "安心",
+        "reading": "あんしん",
+        "meaning": {
+          "vi": "yên tâm",
+          "en": "peace of mind"
+        }
+      }
+    ],
+    "kanji_parts": []
   },
-  { 
-    "id": 3, 
-    "kanji": "以", 
-    "hiragana": "い", 
-    "mean": "Dĩ", 
-    "on_yomi": "イ", 
-    "examples": ["以前 (trước đây)", "以上 (hơn)"]
+  {
+    "id": 3,
+    "kanji": "以",
+    "hiragana": "い",
+    "mean": {
+      "vi": "Dĩ",
+      "en": "By"
+    },
+    "on_yomi": "イ",
+    "lesson": 1,
+    "examples": [
+      {
+        "sentence": "以前",
+        "reading": "いぜん",
+        "meaning": {
+          "vi": "trước đây",
+          "en": "before"
+        }
+      },
+      {
+        "sentence": "以上",
+        "reading": "いじょう",
+        "meaning": {
+          "vi": "hơn",
+          "en": "more than"
+        }
+      }
+    ],
+    "kanji_parts": []
   },
-  { 
-    "id": 4, 
-    "kanji": "意", 
-    "hiragana": "い", 
-    "mean": "Ý", 
-    "on_yomi": "イ", 
-    "examples": ["意思 (Ý chí)", "意見 (Ý kiến)"]
+  {
+    "id": 4,
+    "kanji": "意",
+    "hiragana": "い",
+    "mean": {
+      "vi": "Ý",
+      "en": "Idea"
+    },
+    "on_yomi": "イ",
+    "lesson": 1,
+    "examples": [
+      {
+        "sentence": "意思",
+        "reading": "いし",
+        "meaning": {
+          "vi": "Ý chí",
+          "en": "will"
+        }
+      },
+      {
+        "sentence": "意見",
+        "reading": "いけん",
+        "meaning": {
+          "vi": "Ý kiến",
+          "en": "opinion"
+        }
+      }
+    ],
+    "kanji_parts": []
   },
-  { 
-    "id": 5, 
-    "kanji": "医", 
-    "hiragana": "い", 
-    "mean": "Y", 
-    "on_yomi": "イ", 
-    "examples": ["医者 (bác sĩ)", "医学 (y học)"]
+  {
+    "id": 5,
+    "kanji": "医",
+    "hiragana": "い",
+    "mean": {
+      "vi": "Y",
+      "en": "Medicine"
+    },
+    "on_yomi": "イ",
+    "lesson": 1,
+    "examples": [
+      {
+        "sentence": "医者",
+        "reading": "いしゃ",
+        "meaning": {
+          "vi": "bác sĩ",
+          "en": "doctor"
+        }
+      },
+      {
+        "sentence": "医学",
+        "reading": "いがく",
+        "meaning": {
+          "vi": "y học",
+          "en": "medicine"
+        }
+      }
+    ],
+    "kanji_parts": []
   },
-  { 
-    "id": 6, 
-    "kanji": "員", 
-    "hiragana": "いん", 
-    "mean": "Viên", 
-    "on_yomi": "イン", 
-    "examples": ["社員 (nhân viên)", "会員 (thành viên)"]
+  {
+    "id": 6,
+    "kanji": "員",
+    "hiragana": "いん",
+    "mean": {
+      "vi": "Viên",
+      "en": "Member"
+    },
+    "on_yomi": "イン",
+    "lesson": 1,
+    "examples": [
+      {
+        "sentence": "社員",
+        "reading": "しゃいん",
+        "meaning": {
+          "vi": "nhân viên",
+          "en": "employee"
+        }
+      },
+      {
+        "sentence": "会員",
+        "reading": "かいいん",
+        "meaning": {
+          "vi": "thành viên",
+          "en": "member"
+        }
+      }
+    ],
+    "kanji_parts": []
   },
-  { 
-    "id": 7, 
-    "kanji": "飲", 
-    "hiragana": "いん", 
-    "mean": "Ẩm", 
-    "on_yomi": "イン", 
-    "examples": ["飲み物 (đồ uống)", "飲料 (nước giải khát)"]
+  {
+    "id": 7,
+    "kanji": "飲",
+    "hiragana": "いん",
+    "mean": {
+      "vi": "Ẩm",
+      "en": "Drink"
+    },
+    "on_yomi": "イン",
+    "lesson": 1,
+    "examples": [
+      {
+        "sentence": "飲み物",
+        "reading": "のみもの",
+        "meaning": {
+          "vi": "đồ uống",
+          "en": "beverage"
+        }
+      },
+      {
+        "sentence": "飲料",
+        "reading": "いんりょう",
+        "meaning": {
+          "vi": "nước giải khát",
+          "en": "beverage"
+        }
+      }
+    ],
+    "kanji_parts": []
   },
-  { 
-    "id": 8, 
-    "kanji": "運", 
-    "hiragana": "うん", 
-    "mean": "Vận", 
-    "on_yomi": "ウン", 
-    "examples": ["運転 (lái xe)", "運命 (vận mệnh)"]
+  {
+    "id": 8,
+    "kanji": "運",
+    "hiragana": "うん",
+    "mean": {
+      "vi": "Vận",
+      "en": "Luck"
+    },
+    "on_yomi": "ウン",
+    "lesson": 1,
+    "examples": [
+      {
+        "sentence": "運転",
+        "reading": "うんてん",
+        "meaning": {
+          "vi": "lái xe",
+          "en": "driving"
+        }
+      },
+      {
+        "sentence": "運命",
+        "reading": "うんめい",
+        "meaning": {
+          "vi": "vận mệnh",
+          "en": "fate"
+        }
+      }
+    ],
+    "kanji_parts": []
   },
-  { 
-    "id": 9, 
-    "kanji": "泳", 
-    "hiragana": "えい", 
-    "mean": "Vịnh", 
-    "on_yomi": "エイ", 
-    "examples": ["泳ぐ (bơi)", "水泳 (bơi lội)"]
+  {
+    "id": 9,
+    "kanji": "泳",
+    "hiragana": "えい",
+    "mean": {
+      "vi": "Vịnh",
+      "en": "Swim"
+    },
+    "on_yomi": "エイ",
+    "lesson": 1,
+    "examples": [
+      {
+        "sentence": "泳ぐ",
+        "reading": "およぐ",
+        "meaning": {
+          "vi": "bơi",
+          "en": "to swim"
+        }
+      },
+      {
+        "sentence": "水泳",
+        "reading": "すいえい",
+        "meaning": {
+          "vi": "bơi lội",
+          "en": "swimming"
+        }
+      }
+    ],
+    "kanji_parts": []
   },
-  { 
-    "id": 10, 
-    "kanji": "駅", 
-    "hiragana": "えき", 
-    "mean": "Dịch", 
-    "on_yomi": "エキ", 
-    "examples": ["駅前 (trước ga)", "駅舎 (nhà ga)"]
+  {
+    "id": 10,
+    "kanji": "駅",
+    "hiragana": "えき",
+    "mean": {
+      "vi": "Dịch",
+      "en": "Station"
+    },
+    "on_yomi": "エキ",
+    "lesson": 1,
+    "examples": [
+      {
+        "sentence": "駅前",
+        "reading": "えきまえ",
+        "meaning": {
+          "vi": "trước ga",
+          "en": "in front of the station"
+        }
+      },
+      {
+        "sentence": "駅舎",
+        "reading": "えきしゃ",
+        "meaning": {
+          "vi": "nhà ga",
+          "en": "station building"
+        }
+      }
+    ],
+    "kanji_parts": []
   },
-  { 
-    "id": 11, 
-    "kanji": "央", 
-    "hiragana": "おう", 
-    "mean": "Ương", 
-    "on_yomi": "オウ", 
-    "examples": ["中央 (trung ương)", "東京都 (Tokyo, thủ đô Tokyo)"]
+  {
+    "id": 11,
+    "kanji": "央",
+    "hiragana": "おう",
+    "mean": {
+      "vi": "Ương",
+      "en": "Center"
+    },
+    "on_yomi": "オウ",
+    "lesson": 1,
+    "examples": [
+      {
+        "sentence": "中央",
+        "reading": "ちゅうおう",
+        "meaning": {
+          "vi": "trung ương",
+          "en": "center"
+        }
+      },
+      {
+        "sentence": "東京都",
+        "reading": "とうきょうと",
+        "meaning": {
+          "vi": "Tokyo, thủ đô Tokyo",
+          "en": "Tokyo, the capital of Japan"
+        }
+      }
+    ],
+    "kanji_parts": []
   },
-  { 
-    "id": 12, 
-    "kanji": "横", 
-    "hiragana": "おう", 
-    "mean": "Hoành", 
-    "on_yomi": "オウ", 
-    "examples": ["横断 (băng qua)", "横浜 (Yokohama)"]
+  {
+    "id": 12,
+    "kanji": "横",
+    "hiragana": "おう",
+    "mean": {
+      "vi": "Hoành",
+      "en": "Horizontal"
+    },
+    "on_yomi": "オウ",
+    "lesson": 1,
+    "examples": [
+      {
+        "sentence": "横断",
+        "reading": "おうだん",
+        "meaning": {
+          "vi": "băng qua",
+          "en": "cross"
+        }
+      },
+      {
+        "sentence": "横浜",
+        "reading": "よこはま",
+        "meaning": {
+          "vi": "Yokohama",
+          "en": "Yokohama"
+        }
+      }
+    ],
+    "kanji_parts": []
   },
-  { 
-    "id": 13, 
-    "kanji": "屋", 
-    "hiragana": "おく", 
-    "mean": "Ốc", 
-    "on_yomi": "オク", 
-    "examples": ["屋根 (mái nhà)", "書店 (hiệu sách)"]
+  {
+    "id": 13,
+    "kanji": "屋",
+    "hiragana": "おく",
+    "mean": {
+      "vi": "Ốc",
+      "en": "House"
+    },
+    "on_yomi": "オク",
+    "lesson": 1,
+    "examples": [
+      {
+        "sentence": "屋根",
+        "reading": "やね",
+        "meaning": {
+          "vi": "mái nhà",
+          "en": "roof"
+        }
+      },
+      {
+        "sentence": "書店",
+        "reading": "しょてん",
+        "meaning": {
+          "vi": "hiệu sách",
+          "en": "bookstore"
+        }
+      }
+    ],
+    "kanji_parts": []
   },
-  { 
-    "id": 14, 
-    "kanji": "温", 
-    "hiragana": "おん", 
-    "mean": "Ôn", 
-    "on_yomi": "オン", 
-    "examples": ["温暖 (ấm áp)", "温泉 (suối nước nóng)"]
+  {
+    "id": 14,
+    "kanji": "温",
+    "hiragana": "おん",
+    "mean": {
+      "vi": "Ôn",
+      "en": "Warm"
+    },
+    "on_yomi": "オン",
+    "lesson": 1,
+    "examples": [
+      {
+        "sentence": "温暖",
+        "reading": "おんだん",
+        "meaning": {
+          "vi": "ấm áp",
+          "en": "warm"
+        }
+      },
+      {
+        "sentence": "温泉",
+        "reading": "おんせん",
+        "meaning": {
+          "vi": "suối nước nóng",
+          "en": "hot spring"
+        }
+      }
+    ],
+    "kanji_parts": []
   },
-  { 
-    "id": 15, 
-    "kanji": "化", 
-    "hiragana": "か", 
-    "mean": "Hóa", 
-    "on_yomi": "カ", 
-    "examples": ["文化 (văn hóa)", "化学 (hóa học)"]
+  {
+    "id": 15,
+    "kanji": "化",
+    "hiragana": "か",
+    "mean": {
+      "vi": "Hóa",
+      "en": "Change"
+    },
+    "on_yomi": "カ",
+    "lesson": 1,
+    "examples": [
+      {
+        "sentence": "文化",
+        "reading": "ぶんか",
+        "meaning": {
+          "vi": "văn hóa",
+          "en": "culture"
+        }
+      },
+      {
+        "sentence": "化学",
+        "reading": "かがく",
+        "meaning": {
+          "vi": "hóa học",
+          "en": "chemistry"
+        }
+      }
+    ],
+    "kanji_parts": []
   },
-  { 
-    "id": 16, 
-    "kanji": "荷", 
-    "hiragana": "か", 
-    "mean": "Hà", 
-    "on_yomi": "カ", 
-    "examples": ["荷物 (hành lý)", "荷台 (sàn xe)"]
+  {
+    "id": 16,
+    "kanji": "荷",
+    "hiragana": "か",
+    "mean": {
+      "vi": "Hà",
+      "en": "Baggage"
+    },
+    "on_yomi": "カ",
+    "lesson": 1,
+    "examples": [
+      {
+        "sentence": "荷物",
+        "reading": "にもつ",
+        "meaning": {
+          "vi": "hành lý",
+          "en": "luggage"
+        }
+      },
+      {
+        "sentence": "荷台",
+        "reading": "にだい",
+        "meaning": {
+          "vi": "sàn xe",
+          "en": "truck bed"
+        }
+      }
+    ],
+    "kanji_parts": []
   },
-  { 
-    "id": 17, 
-    "kanji": "界", 
-    "hiragana": "かい", 
-    "mean": "Giới", 
-    "on_yomi": "カイ", 
-    "examples": ["世界 (thế giới)", "界隈 (khu vực)"]
+  {
+    "id": 17,
+    "kanji": "界",
+    "hiragana": "かい",
+    "mean": {
+      "vi": "Giới",
+      "en": "World"
+    },
+    "on_yomi": "カイ",
+    "lesson": 1,
+    "examples": [
+      {
+        "sentence": "世界",
+        "reading": "せかい",
+        "meaning": {
+          "vi": "thế giới",
+          "en": "world"
+        }
+      },
+      {
+        "sentence": "界隈",
+        "reading": "かいわい",
+        "meaning": {
+          "vi": "khu vực",
+          "en": "neighborhood"
+        }
+      }
+    ],
+    "kanji_parts": []
   },
-  { 
-    "id": 18, 
-    "kanji": "開", 
-    "hiragana": "かい", 
-    "mean": "Khai", 
-    "on_yomi": "カイ", 
-    "examples": ["開店 (mở cửa hàng)", "開会 (khai mạc)"]
+  {
+    "id": 18,
+    "kanji": "開",
+    "hiragana": "かい",
+    "mean": {
+      "vi": "Khai",
+      "en": "Open"
+    },
+    "on_yomi": "カイ",
+    "lesson": 1,
+    "examples": [
+      {
+        "sentence": "開店",
+        "reading": "かいてん",
+        "meaning": {
+          "vi": "mở cửa hàng",
+          "en": "opening a store"
+        }
+      },
+      {
+        "sentence": "開会",
+        "reading": "かいかい",
+        "meaning": {
+          "vi": "khai mạc",
+          "en": "opening ceremony"
+        }
+      }
+    ],
+    "kanji_parts": []
   },
-  { 
-    "id": 19, 
-    "kanji": "回", 
-    "hiragana": "かい", 
-    "mean": "Hồi", 
-    "on_yomi": "カイ", 
-    "examples": ["回転 (xoay vòng)", "回数 (số lần)"]
+  {
+    "id": 19,
+    "kanji": "回",
+    "hiragana": "かい",
+    "mean": {
+      "vi": "Hồi",
+      "en": "Turn"
+    },
+    "on_yomi": "カイ",
+    "lesson": 1,
+    "examples": [
+      {
+        "sentence": "回転",
+        "reading": "かいてん",
+        "meaning": {
+          "vi": "xoay vòng",
+          "en": "rotation"
+        }
+      },
+      {
+        "sentence": "回数",
+        "reading": "かいすう",
+        "meaning": {
+          "vi": "số lần",
+          "en": "number of times"
+        }
+      }
+    ],
+    "kanji_parts": []
   },
-  { 
-    "id": 20, 
-    "kanji": "改", 
-    "hiragana": "かい", 
-    "mean": "Cải", 
-    "on_yomi": "カイ", 
-    "examples": ["改正 (cải cách)", "改良 (cải tiến)"]
+  {
+    "id": 20,
+    "kanji": "改",
+    "hiragana": "かい",
+    "mean": {
+      "vi": "Cải",
+      "en": "Improve"
+    },
+    "on_yomi": "カイ",
+    "lesson": 1,
+    "examples": [
+      {
+        "sentence": "改正",
+        "reading": "かいせい",
+        "meaning": {
+          "vi": "cải cách",
+          "en": "reform"
+        }
+      },
+      {
+        "sentence": "改良",
+        "reading": "かいりょう",
+        "meaning": {
+          "vi": "cải tiến",
+          "en": "improvement"
+        }
+      }
+    ],
+    "kanji_parts": []
+  },  
+  {
+    "id": 21,
+    "kanji": "解",
+    "hiragana": "かい",
+    "mean": {
+      "vi": "Giải",
+      "en": "Solve"
+    },
+    "on_yomi": "カイ",
+    "lesson": 1,
+    "examples": [
+      {
+        "sentence": "解決",
+        "reading": "かいけつ",
+        "meaning": {
+          "vi": "giải quyết",
+          "en": "solution"
+        }
+      },
+      {
+        "sentence": "理解",
+        "reading": "りかい",
+        "meaning": {
+          "vi": "hiểu",
+          "en": "understanding"
+        }
+      }
+    ],
+    "kanji_parts": []
   },
-  { 
-    "id": 21, 
-    "kanji": "解", 
-    "hiragana": "かい", 
-    "mean": "Giải", 
-    "on_yomi": "カイ", 
-    "examples": ["解決 (giải quyết)", "理解 (hiểu)"]
+  {
+    "id": 22,
+    "kanji": "格",
+    "hiragana": "かく",
+    "mean": {
+      "vi": "Cách",
+      "en": "Status"
+    },
+    "on_yomi": "カク",
+    "lesson": 1,
+    "examples": [
+      {
+        "sentence": "資格",
+        "reading": "しかく",
+        "meaning": {
+          "vi": "tư cách",
+          "en": "qualification"
+        }
+      },
+      {
+        "sentence": "格好",
+        "reading": "かっこう",
+        "meaning": {
+          "vi": "hình dáng",
+          "en": "appearance"
+        }
+      }
+    ],
+    "kanji_parts": []
   },
-  { 
-    "id": 22, 
-    "kanji": "格", 
-    "hiragana": "かく", 
-    "mean": "Cách", 
-    "on_yomi": "カク", 
-    "examples": ["資格 (tư cách)", "格好 (hình dáng)"]
+  {
+    "id": 23,
+    "kanji": "各",
+    "hiragana": "かく",
+    "mean": {
+      "vi": "Các",
+      "en": "Each"
+    },
+    "on_yomi": "カク",
+    "lesson": 1,
+    "examples": [
+      {
+        "sentence": "各国",
+        "reading": "かっこく",
+        "meaning": {
+          "vi": "các quốc gia",
+          "en": "each country"
+        }
+      },
+      {
+        "sentence": "各地",
+        "reading": "かくち",
+        "meaning": {
+          "vi": "mọi nơi",
+          "en": "various places"
+        }
+      }
+    ],
+    "kanji_parts": []
   },
-  { 
-    "id": 23, 
-    "kanji": "各", 
-    "hiragana": "かく", 
-    "mean": "Các", 
-    "on_yomi": "カク", 
-    "examples": ["各国 (các quốc gia)", "各地 (mọi nơi)"]
+  {
+    "id": 24,
+    "kanji": "角",
+    "hiragana": "かく",
+    "mean": {
+      "vi": "Giác",
+      "en": "Corner"
+    },
+    "on_yomi": "カク",
+    "lesson": 1,
+    "examples": [
+      {
+        "sentence": "角度",
+        "reading": "かくど",
+        "meaning": {
+          "vi": "góc độ",
+          "en": "angle"
+        }
+      },
+      {
+        "sentence": "角笛",
+        "reading": "かくふえ",
+        "meaning": {
+          "vi": "sáo",
+          "en": "horn"
+        }
+      }
+    ],
+    "kanji_parts": []
   },
-  { 
-    "id": 24, 
-    "kanji": "角", 
-    "hiragana": "かく", 
-    "mean": "Giác", 
-    "on_yomi": "カク", 
-    "examples": ["角度 (góc độ)", "角笛 (sáo)"]
+  {
+    "id": 25,
+    "kanji": "確",
+    "hiragana": "かく",
+    "mean": {
+      "vi": "Xác",
+      "en": "Certain"
+    },
+    "on_yomi": "カク",
+    "lesson": 1,
+    "examples": [
+      {
+        "sentence": "確実",
+        "reading": "かくじつ",
+        "meaning": {
+          "vi": "chắc chắn",
+          "en": "certainty"
+        }
+      },
+      {
+        "sentence": "確認",
+        "reading": "かくにん",
+        "meaning": {
+          "vi": "xác nhận",
+          "en": "confirmation"
+        }
+      }
+    ],
+    "kanji_parts": []
   },
-  { 
-    "id": 25, 
-    "kanji": "確", 
-    "hiragana": "かく", 
-    "mean": "Xác", 
-    "on_yomi": "カク", 
-    "examples": ["確実 (chắc chắn)", "確認 (xác nhận)"]
+  {
+    "id": 26,
+    "kanji": "関",
+    "hiragana": "かん",
+    "mean": {
+      "vi": "Quan",
+      "en": "Relation"
+    },
+    "on_yomi": "カン",
+    "lesson": 1,
+    "examples": [
+      {
+        "sentence": "関係",
+        "reading": "かんけい",
+        "meaning": {
+          "vi": "mối quan hệ",
+          "en": "relationship"
+        }
+      },
+      {
+        "sentence": "関連",
+        "reading": "かんれん",
+        "meaning": {
+          "vi": "liên quan",
+          "en": "connection"
+        }
+      }
+    ],
+    "kanji_parts": []
   },
-  { 
-    "id": 26, 
-    "kanji": "関", 
-    "hiragana": "かん", 
-    "mean": "Quan", 
-    "on_yomi": "カン", 
-    "examples": ["関係 (mối quan hệ)", "関連 (liên quan)"]
+  {
+    "id": 27,
+    "kanji": "観",
+    "hiragana": "かん",
+    "mean": {
+      "vi": "Quan",
+      "en": "View"
+    },
+    "on_yomi": "カン",
+    "lesson": 1,
+    "examples": [
+      {
+        "sentence": "観察",
+        "reading": "かんさつ",
+        "meaning": {
+          "vi": "quan sát",
+          "en": "observation"
+        }
+      },
+      {
+        "sentence": "観光",
+        "reading": "かんこう",
+        "meaning": {
+          "vi": "du lịch",
+          "en": "tourism"
+        }
+      }
+    ],
+    "kanji_parts": []
   },
-  { 
-    "id": 27, 
-    "kanji": "観", 
-    "hiragana": "かん", 
-    "mean": "Quan", 
-    "on_yomi": "カン", 
-    "examples": ["観察 (quan sát)", "観光 (du lịch)"]
+  {
+    "id": 28,
+    "kanji": "簡",
+    "hiragana": "かん",
+    "mean": {
+      "vi": "Giản",
+      "en": "Simple"
+    },
+    "on_yomi": "カン",
+    "lesson": 1,
+    "examples": [
+      {
+        "sentence": "簡単",
+        "reading": "かんたん",
+        "meaning": {
+          "vi": "đơn giản",
+          "en": "simple"
+        }
+      },
+      {
+        "sentence": "簡易",
+        "reading": "かんい",
+        "meaning": {
+          "vi": "đơn giản, dễ dàng",
+          "en": "simplicity"
+        }
+      }
+    ],
+    "kanji_parts": []
   },
-  { 
-    "id": 28, 
-    "kanji": "簡", 
-    "hiragana": "かん", 
-    "mean": "Giản", 
-    "on_yomi": "カン", 
-    "examples": ["簡単 (đơn giản)", "簡易 (đơn giản, dễ dàng)"]
+  {
+    "id": 29,
+    "kanji": "管理",
+    "hiragana": "かんり",
+    "mean": {
+      "vi": "Quản lý",
+      "en": "Management"
+    },
+    "on_yomi": "カンリ",
+    "lesson": 1,
+    "examples": [
+      {
+        "sentence": "管理者",
+        "reading": "かんりしゃ",
+        "meaning": {
+          "vi": "quản lý",
+          "en": "manager"
+        }
+      },
+      {
+        "sentence": "管理費",
+        "reading": "かんりひ",
+        "meaning": {
+          "vi": "phí quản lý",
+          "en": "management fee"
+        }
+      }
+    ],
+    "kanji_parts": []
   },
-  { 
-    "id": 29, 
-    "kanji": "管理", 
-    "hiragana": "かんり", 
-    "mean": "Quản lý", 
-    "on_yomi": "カンリ", 
-    "examples": ["管理者 (quản lý)", "管理費 (phí quản lý)"]
+  {
+    "id": 30,
+    "kanji": "期",
+    "hiragana": "き",
+    "mean": {
+      "vi": "Kỳ",
+      "en": "Period"
+    },
+    "on_yomi": "キ",
+    "lesson": 1,
+    "examples": [
+      {
+        "sentence": "期間",
+        "reading": "きかん",
+        "meaning": {
+          "vi": "kỳ hạn",
+          "en": "period"
+        }
+      },
+      {
+        "sentence": "予定",
+        "reading": "よてい",
+        "meaning": {
+          "vi": "dự định",
+          "en": "schedule"
+        }
+      }
+    ],
+    "kanji_parts": []
   },
-  { 
-    "id": 30, 
-    "kanji": "期", 
-    "hiragana": "き", 
-    "mean": "Kỳ", 
-    "on_yomi": "キ", 
-    "examples": ["期間 (kỳ hạn)", "予定 (dự định)"]
+  {
+    "id": 31,
+    "kanji": "機",
+    "hiragana": "き",
+    "mean": {
+      "vi": "Cơ",
+      "en": "Machine"
+    },
+    "on_yomi": "キ",
+    "lesson": 1,
+    "examples": [
+      {
+        "sentence": "機械",
+        "reading": "きかい",
+        "meaning": {
+          "vi": "máy móc",
+          "en": "machine"
+        }
+      },
+      {
+        "sentence": "機会",
+        "reading": "きかい",
+        "meaning": {
+          "vi": "cơ hội",
+          "en": "opportunity"
+        }
+      }
+    ],
+    "kanji_parts": []
   },
-  { 
-    "id": 31, 
-    "kanji": "機", 
-    "hiragana": "き", 
-    "mean": "Cơ", 
-    "on_yomi": "キ", 
-    "examples": ["機械 (máy móc)", "機会 (cơ hội)"]
+  {
+    "id": 32,
+    "kanji": "器",
+    "hiragana": "き",
+    "mean": {
+      "vi": "Khí",
+      "en": "Vessel"
+    },
+    "on_yomi": "キ",
+    "lesson": 1,
+    "examples": [
+      {
+        "sentence": "器具",
+        "reading": "きぐ",
+        "meaning": {
+          "vi": "dụng cụ",
+          "en": "instrument"
+        }
+      },
+      {
+        "sentence": "楽器",
+        "reading": "がっき",
+        "meaning": {
+          "vi": "nhạc cụ",
+          "en": "musical instrument"
+        }
+      }
+    ],
+    "kanji_parts": []
   },
-  { 
-    "id": 32, 
-    "kanji": "器", 
-    "hiragana": "き", 
-    "mean": "Khí", 
-    "on_yomi": "キ", 
-    "examples": ["器具 (dụng cụ)", "楽器 (nhạc cụ)"]
+  {
+    "id": 33,
+    "kanji": "記",
+    "hiragana": "き",
+    "mean": {
+      "vi": "Kí",
+      "en": "Record"
+    },
+    "on_yomi": "キ",
+    "lesson": 1,
+    "examples": [
+      {
+        "sentence": "記録",
+        "reading": "きろく",
+        "meaning": {
+          "vi": "kỷ lục",
+          "en": "record"
+        }
+      },
+      {
+        "sentence": "記憶",
+        "reading": "きおく",
+        "meaning": {
+          "vi": "ký ức",
+          "en": "memory"
+        }
+      }
+    ],
+    "kanji_parts": []
   },
-  { 
-    "id": 33, 
-    "kanji": "記", 
-    "hiragana": "き", 
-    "mean": "Kí", 
-    "on_yomi": "キ", 
-    "examples": ["記録 (kỷ lục)", "記憶 (ký ức)"]
+  {
+    "id": 34,
+    "kanji": "急",
+    "hiragana": "きゅう",
+    "mean": {
+      "vi": "Cấp",
+      "en": "Urgent"
+    },
+    "on_yomi": "キュウ",
+    "lesson": 1,
+    "examples": [
+      {
+        "sentence": "急ぐ",
+        "reading": "いそぐ",
+        "meaning": {
+          "vi": "vội vã",
+          "en": "hurry"
+        }
+      },
+      {
+        "sentence": "急行",
+        "reading": "きゅうこう",
+        "meaning": {
+          "vi": "tàu tốc hành",
+          "en": "express train"
+        }
+      }
+    ],
+    "kanji_parts": []
   },
-  { 
-    "id": 34, 
-    "kanji": "急", 
-    "hiragana": "きゅう", 
-    "mean": "Cấp", 
-    "on_yomi": "キュウ", 
-    "examples": ["急ぐ (vội vã)", "急行 (tàu tốc hành)"]
+  {
+    "id": 35,
+    "kanji": "級",
+    "hiragana": "きゅう",
+    "mean": {
+      "vi": "Cấp",
+      "en": "Grade"
+    },
+    "on_yomi": "キュウ",
+    "lesson": 1,
+    "examples": [
+      {
+        "sentence": "級別",
+        "reading": "きゅうべつ",
+        "meaning": {
+          "vi": "phân loại",
+          "en": "classification"
+        }
+      },
+      {
+        "sentence": "高級",
+        "reading": "こうきゅう",
+        "meaning": {
+          "vi": "cao cấp",
+          "en": "luxury"
+        }
+      }
+    ],
+    "kanji_parts": []
   },
-  { 
-    "id": 35, 
-    "kanji": "級", 
-    "hiragana": "きゅう", 
-    "mean": "Cấp", 
-    "on_yomi": "キュウ", 
-    "examples": ["級別 (phân loại)", "高級 (cao cấp)"]
+  {
+    "id": 36,
+    "kanji": "教",
+    "hiragana": "きょう",
+    "mean": {
+      "vi": "Giáo",
+      "en": "Teach"
+    },
+    "on_yomi": "キョウ",
+    "lesson": 1,
+    "examples": [
+      {
+        "sentence": "教育",
+        "reading": "きょういく",
+        "meaning": {
+          "vi": "giáo dục",
+          "en": "education"
+        }
+      },
+      {
+        "sentence": "教室",
+        "reading": "きょうしつ",
+        "meaning": {
+          "vi": "lớp học",
+          "en": "classroom"
+        }
+      }
+    ],
+    "kanji_parts": []
   },
-  { 
-    "id": 36, 
-    "kanji": "教", 
-    "hiragana": "きょう", 
-    "mean": "Giáo", 
-    "on_yomi": "キョウ", 
-    "examples": ["教育 (giáo dục)", "教室 (lớp học)"]
+  {
+    "id": 37,
+    "kanji": "強",
+    "hiragana": "きょう",
+    "mean": {
+      "vi": "Cường",
+      "en": "Strong"
+    },
+    "on_yomi": "キョウ",
+    "lesson": 1,
+    "examples": [
+      {
+        "sentence": "強い",
+        "reading": "つよい",
+        "meaning": {
+          "vi": "mạnh",
+          "en": "strong"
+        }
+      },
+      {
+        "sentence": "強化",
+        "reading": "きょうか",
+        "meaning": {
+          "vi": "củng cố",
+          "en": "strengthen"
+        }
+      }
+    ],
+    "kanji_parts": []
   },
-  { 
-    "id": 36, 
-    "kanji": "強", 
-    "hiragana": "きょう", 
-    "mean": "Cường", 
-    "on_yomi": "キョウ", 
-    "examples": ["強い (mạnh)", "強化 (củng cố)"]
+  {
+    "id": 38,
+    "kanji": "競",
+    "hiragana": "きょう",
+    "mean": {
+      "vi": "Cạnh",
+      "en": "Compete"
+    },
+    "on_yomi": "キョウ",
+    "lesson": 1,
+    "examples": [
+      {
+        "sentence": "競争",
+        "reading": "きょうそう",
+        "meaning": {
+          "vi": "cạnh tranh",
+          "en": "competition"
+        }
+      },
+      {
+        "sentence": "競技",
+        "reading": "きょうぎ",
+        "meaning": {
+          "vi": "thi đấu",
+          "en": "contest"
+        }
+      }
+    ],
+    "kanji_parts": []
   },
-  { 
-    "id": 38, 
-    "kanji": "競", 
-    "hiragana": "きょう", 
-    "mean": "Cạnh", 
-    "on_yomi": "キョウ", 
-    "examples": ["競争 (cạnh tranh)", "競技 (thi đấu)"]
+  {
+    "id": 39,
+    "kanji": "極",
+    "hiragana": "きょく",
+    "mean": {
+      "vi": "Cực",
+      "en": "Extreme"
+    },
+    "on_yomi": "キョク",
+    "lesson": 1,
+    "examples": [
+      {
+        "sentence": "極端",
+        "reading": "きょくたん",
+        "meaning": {
+          "vi": "cực đoan",
+          "en": "extreme"
+        }
+      },
+      {
+        "sentence": "極地",
+        "reading": "きょくち",
+        "meaning": {
+          "vi": "vùng cực",
+          "en": "polar region"
+        }
+      }
+    ],
+    "kanji_parts": []
   },
-  { 
-    "id": 39, 
-    "kanji": "極", 
-    "hiragana": "きょく", 
-    "mean": "Cực", 
-    "on_yomi": "キョク", 
-    "examples": ["極端 (cực đoan)", "極地 (vùng cực)"]
+  {
+    "id": 40,
+    "kanji": "苦",
+    "hiragana": "く",
+    "mean": {
+      "vi": "Khổ",
+      "en": "Suffer"
+    },
+    "on_yomi": "ク",
+    "lesson": 1,
+    "examples": [
+      {
+        "sentence": "苦しむ",
+        "reading": "くるしむ",
+        "meaning": {
+          "vi": "khổ sở",
+          "en": "suffer"
+        }
+      },
+      {
+        "sentence": "苦痛",
+        "reading": "くつう",
+        "meaning": {
+          "vi": "đau khổ",
+          "en": "pain"
+        }
+      }
+    ],
+    "kanji_parts": []
   },
-  { id: 40, kanji: '苦', hiragana: 'く', mean: 'Khổ', on_yomi: 'ク', examples: ['苦しむ (khổ sở)', '苦痛 (đau khổ)'] },
-  { id: 41, kanji: '具', hiragana: 'ぐ', mean: 'Cụ', on_yomi: 'グ', examples: ['器具 (dụng cụ)', '具合 (tình trạng)'] },
-  { id: 42, kanji: '君', hiragana: 'くん', mean: 'Quân', on_yomi: 'クン', examples: ['君主 (quân chủ)', '君子 (quân tử)'] },
-  { id: 43, kanji: '係', hiragana: 'けい', mean: 'Hệ', on_yomi: 'ケイ', examples: ['係員 (nhân viên)', '係数 (hệ số)'] },
-  { id: 44, kanji: '軽', hiragana: 'けい', mean: 'Khinh', on_yomi: 'ケイ', examples: ['軽い (nhẹ)', '軽視 (coi nhẹ)'] },
-  { id: 45, kanji: '血', hiragana: 'けつ', mean: 'Huyết', on_yomi: 'ケツ', examples: ['血液 (máu)', '血圧 (huyết áp)'] },
-  { id: 46, kanji: '決', hiragana: 'けつ', mean: 'Quyết', on_yomi: 'ケツ', examples: ['決定 (quyết định)', '決心 (quyết tâm)'] },
-  { id: 47, kanji: '研', hiragana: 'けん', mean: 'Nghiên', on_yomi: 'ケン', examples: ['研究 (nghiên cứu)', '研修 (huấn luyện)'] },
-  { id: 48, kanji: '県', hiragana: 'けん', mean: 'Huyện', on_yomi: 'ケン', examples: ['県庁 (tòa hành chính)', '県民 (dân tỉnh)'] },
-  { id: 49, kanji: '庫', hiragana: 'こ', mean: 'Khố', on_yomi: 'コ', examples: ['倉庫 (kho chứa)', '図書庫 (thư viện)'] },
-  { id: 50, kanji: '湖', hiragana: 'こ', mean: 'Hồ', on_yomi: 'コ', examples: ['湖畔 (bờ hồ)', '湖水 (nước hồ)'] },
-  { id: 51, kanji: '向', hiragana: 'こう', mean: 'Hướng', on_yomi: 'コウ', examples: ['向こう (phía bên kia)', '方向 (hướng đi)'] },
-  { id: 52, kanji: '幸', hiragana: 'こう', mean: 'Hạnh', on_yomi: 'コウ', examples: ['幸せ (hạnh phúc)', '幸福 (hạnh phúc)'] },
-  { id: 53, kanji: '港', hiragana: 'こう', mean: 'Cảng', on_yomi: 'コウ', examples: ['港口 (cảng biển)', '港町 (thị trấn cảng)'] },
-  { id: 54, kanji: '号', hiragana: 'ごう', mean: 'Hiệu', on_yomi: 'ゴウ', examples: ['番号 (số hiệu)', '号令 (mệnh lệnh)'] },
-  { id: 55, kanji: '根', hiragana: 'こん', mean: 'Căn', on_yomi: 'コン', examples: ['根本 (gốc rễ)', '根源 (nguồn gốc)'] },
-  { id: 56, kanji: '祭', hiragana: 'さい', mean: 'Lễ hội', on_yomi: 'サイ', examples: ['祭り (lễ hội)', '祭典 (lễ hội)'] },
-  { id: 57, kanji: '祭', hiragana: 'さい', mean: 'Lễ hội', on_yomi: 'サイ', examples: ['祭り (lễ hội)', '祭典 (lễ hội)'] },
-  { id: 58, kanji: '細', hiragana: 'さい', mean: 'Nhỏ, mảnh', on_yomi: 'サイ', examples: ['細かい (chi tiết)', '細工 (đồ thủ công)'] },
-  { id: 59, kanji: '最', hiragana: 'さい', mean: 'Nhất', on_yomi: 'サイ', examples: ['最初 (ban đầu)', '最強 (mạnh nhất)'] },
-  { id: 60, kanji: '才', hiragana: 'さい', mean: 'Tài năng', on_yomi: 'サイ', examples: ['才能 (tài năng)', '才色兼備 (tài sắc vẹn toàn)'] },
-  { id: 61, kanji: '材', hiragana: 'ざい', mean: 'Nguyên liệu', on_yomi: 'ザイ', examples: ['材料 (nguyên liệu)', '木材 (gỗ)'] },
-  { id: 62, kanji: '昨', hiragana: 'さく', mean: 'Hôm qua', on_yomi: 'サク', examples: ['昨夜 (tối qua)', '昨年 (năm ngoái)'] },
-  { id: 63, kanji: '札', hiragana: 'さつ', mean: 'Thẻ', on_yomi: 'サツ', examples: ['札幌 (Sapporo)', '名札 (thẻ tên)'] },
-  { id: 64, kanji: '殺', hiragana: 'さつ', mean: 'Giết', on_yomi: 'サツ', examples: ['殺人 (giết người)', '殺害 (sát hại)'] },
-  { id: 65, kanji: '察', hiragana: 'さつ', mean: 'Quan sát', on_yomi: 'サツ', examples: ['察する (quan sát)', '察知 (phát hiện)'] },
-  { id: 66, kanji: '参', hiragana: 'さん', mean: 'Tham gia', on_yomi: 'サン', examples: ['参加 (tham gia)', '参照 (tham khảo)'] },
-  { id: 67, kanji: '産', hiragana: 'さん', mean: 'Sản xuất', on_yomi: 'サン', examples: ['産業 (ngành công nghiệp)', '生産 (sản xuất)'] },
-  { id: 68, kanji: '散', hiragana: 'さん', mean: 'Tản bộ', on_yomi: 'サン', examples: ['散歩 (tản bộ)', '散らかす (vứt bừa)'] },
-  { id: 69, kanji: '残', hiragana: 'ざん', mean: 'Còn lại', on_yomi: 'ザン', examples: ['残業 (làm thêm)', '残り (còn lại)'] },
-  { id: 70, kanji: '仕', hiragana: 'し', mean: 'Công việc', on_yomi: 'シ', examples: ['仕事 (công việc)', '仕方 (cách làm)'] },
-  { id: 71, kanji: '使', hiragana: 'し', mean: 'Sử dụng', on_yomi: 'シ', examples: ['使う (dùng)', '使者 (sứ giả)'] },
-  { id: 72, kanji: '始', hiragana: 'し', mean: 'Bắt đầu', on_yomi: 'シ', examples: ['始める (bắt đầu)', '開始 (khởi đầu)'] },
-  { id: 73, kanji: '指', hiragana: 'し', mean: 'Ngón tay', on_yomi: 'シ', examples: ['指示 (chỉ thị)', '指輪 (nhẫn)'] },
-  { id: 74, kanji: '歯', hiragana: 'し', mean: 'Răng', on_yomi: 'シ', examples: ['歯車 (bánh răng)', '歯科 (khoa răng)'] },
-  { id: 75, kanji: '詩', hiragana: 'し', mean: 'Thơ', on_yomi: 'シ', examples: ['詩人 (nhà thơ)', '詩歌 (thơ ca)'] },
-  { id: 76, kanji: '次', hiragana: 'じ', mean: 'Tiếp theo', on_yomi: 'ジ', examples: ['次回 (lần sau)', '次元 (chiều)'] },
-  { id: 77, kanji: '事', hiragana: 'じ', mean: 'Sự việc', on_yomi: 'ジ', examples: ['仕事 (công việc)', '事務 (văn phòng)'] },
-  { id: 78, kanji: '持', hiragana: 'じ', mean: 'Cầm, nắm', on_yomi: 'ジ', examples: ['持つ (cầm)', '持ち物 (vật dụng)'] },
-  { id: 79, kanji: '時', hiragana: 'じ', mean: 'Thời gian', on_yomi: 'ジ', examples: ['時間 (thời gian)', '時計 (đồng hồ)'] },
-  { id: 80, kanji: '式', hiragana: 'しき', mean: 'Nghi thức', on_yomi: 'シキ', examples: ['式典 (lễ kỷ niệm)', '形式 (hình thức)'] }
-  ,{ 
-    "id": 81, 
-    "kanji": "実", 
-    "hiragana": "じつ", 
-    "mean": "Thực tế", 
-    "on_yomi": "ジツ", 
-    "examples": ["実際 (thực tế)", "実験 (thí nghiệm)"]
+  {
+    "id": 41,
+    "kanji": "具",
+    "hiragana": "ぐ",
+    "mean": {
+      "vi": "Cụ",
+      "en": "Tool"
+    },
+    "on_yomi": "グ",
+    "lesson": 1,
+    "examples": [
+      {
+        "sentence": "器具",
+        "reading": "きぐ",
+        "meaning": {
+          "vi": "dụng cụ",
+          "en": "tool"
+        }
+      },
+      {
+        "sentence": "具合",
+        "reading": "ぐあい",
+        "meaning": {
+          "vi": "tình trạng",
+          "en": "condition"
+        }
+      }
+    ],
+    "kanji_parts": []
   },
-  { 
-    "id": 82, 
-    "kanji": "写", 
-    "hiragana": "しゃ", 
-    "mean": "Sao chép", 
-    "on_yomi": "シャ", 
-    "examples": ["写真 (ảnh chụp)", "写生 (vẽ tranh)"]
+  {
+    "id": 42,
+    "kanji": "君",
+    "hiragana": "くん",
+    "mean": {
+      "vi": "Quân",
+      "en": "Ruler"
+    },
+    "on_yomi": "クン",
+    "lesson": 1,
+    "examples": [
+      {
+        "sentence": "君主",
+        "reading": "くんしゅ",
+        "meaning": {
+          "vi": "quân chủ",
+          "en": "monarch"
+        }
+      },
+      {
+        "sentence": "君子",
+        "reading": "くんし",
+        "meaning": {
+          "vi": "quân tử",
+          "en": "gentleman"
+        }
+      }
+    ],
+    "kanji_parts": []
   },
-  { 
-    "id": 83, 
-    "kanji": "者", 
-    "hiragana": "しゃ", 
-    "mean": "Người", 
-    "on_yomi": "シャ", 
-    "examples": ["医者 (bác sĩ)", "学者 (học giả)"]
+  {
+    "id": 43,
+    "kanji": "係",
+    "hiragana": "けい",
+    "mean": {
+      "vi": "Hệ",
+      "en": "Connection"
+    },
+    "on_yomi": "ケイ",
+    "lesson": 1,
+    "examples": [
+      {
+        "sentence": "係員",
+        "reading": "けいいん",
+        "meaning": {
+          "vi": "nhân viên",
+          "en": "staff"
+        }
+      },
+      {
+        "sentence": "係数",
+        "reading": "けいすう",
+        "meaning": {
+          "vi": "hệ số",
+          "en": "coefficient"
+        }
+      }
+    ],
+    "kanji_parts": []
   },
-  { 
-    "id": 84, 
-    "kanji": "謝", 
-    "hiragana": "しゃ", 
-    "mean": "Cảm ơn", 
-    "on_yomi": "シャ", 
-    "examples": ["謝罪 (xin lỗi)", "感謝 (biết ơn)"]
+  {
+    "id": 44,
+    "kanji": "軽",
+    "hiragana": "けい",
+    "mean": {
+      "vi": "Khinh",
+      "en": "Light"
+    },
+    "on_yomi": "ケイ",
+    "lesson": 1,
+    "examples": [
+      {
+        "sentence": "軽い",
+        "reading": "かるい",
+        "meaning": {
+          "vi": "nhẹ",
+          "en": "light"
+        }
+      },
+      {
+        "sentence": "軽視",
+        "reading": "けいし",
+        "meaning": {
+          "vi": "coi nhẹ",
+          "en": "disregard"
+        }
+      }
+    ],
+    "kanji_parts": []
   },
-  { 
-    "id": 85, 
-    "kanji": "酒", 
-    "hiragana": "しゅ", 
-    "mean": "Rượu", 
-    "on_yomi": "シュ", 
-    "examples": ["酒屋 (cửa hàng rượu)", "日本酒 (rượu Nhật)"]
+  {
+    "id": 45,
+    "kanji": "血",
+    "hiragana": "けつ",
+    "mean": {
+      "vi": "Huyết",
+      "en": "Blood"
+    },
+    "on_yomi": "ケツ",
+    "lesson": 1,
+    "examples": [
+      {
+        "sentence": "血液",
+        "reading": "けつえき",
+        "meaning": {
+          "vi": "máu",
+          "en": "blood"
+        }
+      },
+      {
+        "sentence": "血圧",
+        "reading": "けつあつ",
+        "meaning": {
+          "vi": "huyết áp",
+          "en": "blood pressure"
+        }
+      }
+    ],
+    "kanji_parts": []
   },
-  { 
-    "id": 86, 
-    "kanji": "守", 
-    "hiragana": "しゅ", 
-    "mean": "Bảo vệ", 
-    "on_yomi": "シュ", 
-    "examples": ["守る (bảo vệ)", "警守 (cảnh sát)"]
+  {
+    "id": 46,
+    "kanji": "決",
+    "hiragana": "けつ",
+    "mean": {
+      "vi": "Quyết",
+      "en": "Decision"
+    },
+    "on_yomi": "ケツ",
+    "lesson": 1,
+    "examples": [
+      {
+        "sentence": "決定",
+        "reading": "けってい",
+        "meaning": {
+          "vi": "quyết định",
+          "en": "decision"
+        }
+      },
+      {
+        "sentence": "決心",
+        "reading": "けっしん",
+        "meaning": {
+          "vi": "quyết tâm",
+          "en": "determination"
+        }
+      }
+    ],
+    "kanji_parts": []
   },
-  { 
-    "id": 87, 
-    "kanji": "取", 
-    "hiragana": "しゅ", 
-    "mean": "Lấy", 
-    "on_yomi": "シュ", 
-    "examples": ["取る (lấy)", "取得 (thu thập)"]
+  {
+    "id": 47,
+    "kanji": "研",
+    "hiragana": "けん",
+    "mean": {
+      "vi": "Nghiên",
+      "en": "Research"
+    },
+    "on_yomi": "ケン",
+    "lesson": 1,
+    "examples": [
+      {
+        "sentence": "研究",
+        "reading": "けんきゅう",
+        "meaning": {
+          "vi": "nghiên cứu",
+          "en": "research"
+        }
+      },
+      {
+        "sentence": "研修",
+        "reading": "けんしゅう",
+        "meaning": {
+          "vi": "huấn luyện",
+          "en": "training"
+        }
+      }
+    ],
+    "kanji_parts": []
   },
-  { 
-    "id": 88, 
-    "kanji": "受", 
-    "hiragana": "じゅ", 
-    "mean": "Nhận", 
-    "on_yomi": "ジュ", 
-    "examples": ["受ける (nhận)", "受賞 (nhận giải)"]
+  {
+    "id": 48,
+    "kanji": "県",
+    "hiragana": "けん",
+    "mean": {
+      "vi": "Huyện",
+      "en": "Prefecture"
+    },
+    "on_yomi": "ケン",
+    "lesson": 1,
+    "examples": [
+      {
+        "sentence": "県庁",
+        "reading": "けんちょう",
+        "meaning": {
+          "vi": "tòa hành chính",
+          "en": "prefectural office"
+        }
+      },
+      {
+        "sentence": "県民",
+        "reading": "けんみん",
+        "meaning": {
+          "vi": "dân tỉnh",
+          "en": "prefecture citizen"
+        }
+      }
+    ],
+    "kanji_parts": []
   },
-  { 
-    "id": 89, 
-    "kanji": "州", 
-    "hiragana": "しゅう", 
-    "mean": "Bang, tỉnh", 
-    "on_yomi": "シュウ", 
-    "examples": ["州 (bang)", "州立 (thuộc bang)"]
+  {
+    "id": 49,
+    "kanji": "庫",
+    "hiragana": "こ",
+    "mean": {
+      "vi": "Khố",
+      "en": "Warehouse"
+    },
+    "on_yomi": "コ",
+    "lesson": 1,
+    "examples": [
+      {
+        "sentence": "倉庫",
+        "reading": "そうこ",
+        "meaning": {
+          "vi": "kho chứa",
+          "en": "warehouse"
+        }
+      },
+      {
+        "sentence": "図書庫",
+        "reading": "としょこ",
+        "meaning": {
+          "vi": "thư viện",
+          "en": "library"
+        }
+      }
+    ],
+    "kanji_parts": []
   },
-  { 
-    "id": 90, 
-    "kanji": "拾", 
-    "hiragana": "しゅう", 
-    "mean": "Nhặt", 
-    "on_yomi": "シュウ", 
-    "examples": ["拾う (nhặt)", "拾得 (thu được)"]
+  {
+    "id": 50,
+    "kanji": "湖",
+    "hiragana": "こ",
+    "mean": {
+      "vi": "Hồ",
+      "en": "Lake"
+    },
+    "on_yomi": "コ",
+    "lesson": 1,
+    "examples": [
+      {
+        "sentence": "湖畔",
+        "reading": "こはん",
+        "meaning": {
+          "vi": "bờ hồ",
+          "en": "lake shore"
+        }
+      },
+      {
+        "sentence": "湖水",
+        "reading": "こすい",
+        "meaning": {
+          "vi": "nước hồ",
+          "en": "lake water"
+        }
+      }
+    ],
+    "kanji_parts": []
   },
-  { 
-    "id": 91, 
-    "kanji": "終", 
-    "hiragana": "しゅう", 
-    "mean": "Kết thúc", 
-    "on_yomi": "シュウ", 
-    "examples": ["終了 (kết thúc)", "終点 (điểm kết thúc)"]
+  {
+    "id": 51,
+    "kanji": "向",
+    "hiragana": "こう",
+    "mean": {
+      "vi": "Hướng",
+      "en": "Direction"
+    },
+    "on_yomi": "コウ",
+    "lesson": 1,
+    "examples": [
+      {
+        "sentence": "向こう",
+        "reading": "むこう",
+        "meaning": {
+          "vi": "phía bên kia",
+          "en": "over there"
+        }
+      },
+      {
+        "sentence": "方向",
+        "reading": "ほうこう",
+        "meaning": {
+          "vi": "hướng đi",
+          "en": "direction"
+        }
+      }
+    ],
+    "kanji_parts": []
   },
-  { 
-    "id": 92, 
-    "kanji": "習", 
-    "hiragana": "しゅう", 
-    "mean": "Học tập", 
-    "on_yomi": "シュウ", 
-    "examples": ["習う (học)", "習慣 (thói quen)"]
+  {
+    "id": 52,
+    "kanji": "幸",
+    "hiragana": "こう",
+    "mean": {
+      "vi": "Hạnh",
+      "en": "Happiness"
+    },
+    "on_yomi": "コウ",
+    "lesson": 1,
+    "examples": [
+      {
+        "sentence": "幸せ",
+        "reading": "しあわせ",
+        "meaning": {
+          "vi": "hạnh phúc",
+          "en": "happiness"
+        }
+      },
+      {
+        "sentence": "幸福",
+        "reading": "こうふく",
+        "meaning": {
+          "vi": "hạnh phúc",
+          "en": "happiness"
+        }
+      }
+    ],
+    "kanji_parts": []
   },
-  { 
-    "id": 93, 
-    "kanji": "集", 
-    "hiragana": "しゅう", 
-    "mean": "Tập hợp", 
-    "on_yomi": "シュウ", 
-    "examples": ["集める (thu thập)", "集会 (cuộc họp)"]
+  {
+    "id": 53,
+    "kanji": "港",
+    "hiragana": "こう",
+    "mean": {
+      "vi": "Cảng",
+      "en": "Port"
+    },
+    "on_yomi": "コウ",
+    "lesson": 1,
+    "examples": [
+      {
+        "sentence": "港口",
+        "reading": "こうこう",
+        "meaning": {
+          "vi": "cảng biển",
+          "en": "harbor"
+        }
+      },
+      {
+        "sentence": "港町",
+        "reading": "みなとまち",
+        "meaning": {
+          "vi": "thị trấn cảng",
+          "en": "port town"
+        }
+      }
+    ],
+    "kanji_parts": []
   },
-  { 
-    "id": 94, 
-    "kanji": "住", 
-    "hiragana": "じゅう", 
-    "mean": "Cư trú", 
-    "on_yomi": "ジュウ", 
-    "examples": ["住む (sống)", "住宅 (nhà ở)"]
+  {
+    "id": 54,
+    "kanji": "号",
+    "hiragana": "ごう",
+    "mean": {
+      "vi": "Hiệu",
+      "en": "Number"
+    },
+    "on_yomi": "ゴウ",
+    "lesson": 1,
+    "examples": [
+      {
+        "sentence": "番号",
+        "reading": "ばんごう",
+        "meaning": {
+          "vi": "số hiệu",
+          "en": "number"
+        }
+      },
+      {
+        "sentence": "号令",
+        "reading": "ごうれい",
+        "meaning": {
+          "vi": "mệnh lệnh",
+          "en": "command"
+        }
+      }
+    ],
+    "kanji_parts": []
   },
-  { 
-    "id": 95, 
-    "kanji": "重", 
-    "hiragana": "じゅう", 
-    "mean": "Nặng", 
-    "on_yomi": "ジュウ", 
-    "examples": ["重い (nặng)", "重量 (trọng lượng)"]
+  {
+    "id": 55,
+    "kanji": "根",
+    "hiragana": "こん",
+    "mean": {
+      "vi": "Căn",
+      "en": "Root"
+    },
+    "on_yomi": "コン",
+    "lesson": 1,
+    "examples": [
+      {
+        "sentence": "根本",
+        "reading": "こんぽん",
+        "meaning": {
+          "vi": "gốc rễ",
+          "en": "root"
+        }
+      },
+      {
+        "sentence": "根源",
+        "reading": "こんげん",
+        "meaning": {
+          "vi": "nguồn gốc",
+          "en": "source"
+        }
+      }
+    ],
+    "kanji_parts": []
   },
-  { 
-    "id": 96, 
-    "kanji": "宿", 
-    "hiragana": "しゅく", 
-    "mean": "Nhà trọ", 
-    "on_yomi": "シュク", 
-    "examples": ["宿泊 (lưu trú)", "宿題 (bài tập về nhà)"]
+  {
+    "id": 56,
+    "kanji": "祭",
+    "hiragana": "さい",
+    "mean": {
+      "vi": "Lễ hội",
+      "en": "Festival"
+    },
+    "on_yomi": "サイ",
+    "lesson": 1,
+    "examples": [
+      {
+        "sentence": "祭り",
+        "reading": "まつり",
+        "meaning": {
+          "vi": "lễ hội",
+          "en": "festival"
+        }
+      },
+      {
+        "sentence": "祭典",
+        "reading": "さいてん",
+        "meaning": {
+          "vi": "lễ hội",
+          "en": "festival"
+        }
+      }
+    ],
+    "kanji_parts": []
   },
-  { 
-    "id": 97, 
-    "kanji": "所", 
-    "hiragana": "しょ", 
-    "mean": "Nơi chốn", 
-    "on_yomi": "ショ", 
-    "examples": ["場所 (nơi chốn)", "所々 (nhiều nơi)"]
+  {
+    "id": 57,
+    "kanji": "祭",
+    "hiragana": "さい",
+    "mean": {
+      "vi": "Lễ hội",
+      "en": "Festival"
+    },
+    "on_yomi": "サイ",
+    "lesson": 1,
+    "examples": [
+      {
+        "sentence": "祭り",
+        "reading": "まつり",
+        "meaning": {
+          "vi": "lễ hội",
+          "en": "festival"
+        }
+      },
+      {
+        "sentence": "祭典",
+        "reading": "さいてん",
+        "meaning": {
+          "vi": "lễ hội",
+          "en": "festival"
+        }
+      }
+    ],
+    "kanji_parts": []
   },
-  { 
-    "id": 98, 
-    "kanji": "暑", 
-    "hiragana": "しょ", 
-    "mean": "Nóng", 
-    "on_yomi": "ショ", 
-    "examples": ["暑い (nóng)", "暑さ (nhiệt độ cao)"]
+  {
+    "id": 58,
+    "kanji": "細",
+    "hiragana": "さい",
+    "mean": {
+      "vi": "Nhỏ, mảnh",
+      "en": "Small"
+    },
+    "on_yomi": "サイ",
+    "lesson": 1,
+    "examples": [
+      {
+        "sentence": "細かい",
+        "reading": "こまかい",
+        "meaning": {
+          "vi": "chi tiết",
+          "en": "detailed"
+        }
+      },
+      {
+        "sentence": "細工",
+        "reading": "さいく",
+        "meaning": {
+          "vi": "đồ thủ công",
+          "en": "craftwork"
+        }
+      }
+    ],
+    "kanji_parts": []
   },
-  { 
-    "id": 99, 
-    "kanji": "助", 
-    "hiragana": "じょ", 
-    "mean": "Giúp đỡ", 
-    "on_yomi": "ジョ", 
-    "examples": ["助ける (giúp đỡ)", "助言 (lời khuyên)"]
+  {
+    "id": 59,
+    "kanji": "最",
+    "hiragana": "さい",
+    "mean": {
+      "vi": "Nhất",
+      "en": "Most"
+    },
+    "on_yomi": "サイ",
+    "lesson": 1,
+    "examples": [
+      {
+        "sentence": "最初",
+        "reading": "さいしょ",
+        "meaning": {
+          "vi": "ban đầu",
+          "en": "beginning"
+        }
+      },
+      {
+        "sentence": "最強",
+        "reading": "さいきょう",
+        "meaning": {
+          "vi": "mạnh nhất",
+          "en": "strongest"
+        }
+      }
+    ],
+    "kanji_parts": []
   },
-  { 
-    "id": 100, 
-    "kanji": "昭", 
-    "hiragana": "しょう", 
-    "mean": "Chiêu (thời kỳ)", 
-    "on_yomi": "ショウ", 
-    "examples": ["昭和 (thời kỳ Showa)", "昭示 (chỉ dẫn)"]
+  {
+    "id": 60,
+    "kanji": "才",
+    "hiragana": "さい",
+    "mean": {
+      "vi": "Tài năng",
+      "en": "Talent"
+    },
+    "on_yomi": "サイ",
+    "lesson": 1,
+    "examples": [
+      {
+        "sentence": "才能",
+        "reading": "さいのう",
+        "meaning": {
+          "vi": "tài năng",
+          "en": "talent"
+        }
+      },
+      {
+        "sentence": "才色兼備",
+        "reading": "さいしょくけんび",
+        "meaning": {
+          "vi": "tài sắc vẹn toàn",
+          "en": "perfect combination of beauty and talent"
+        }
+      }
+    ],
+    "kanji_parts": []
   },
-  { 
-    "id": 101, 
-    "kanji": "消", 
-    "hiragana": "しょう", 
-    "mean": "Tắt, biến mất", 
-    "on_yomi": "ショウ", 
-    "examples": ["消える (biến mất)", "消火 (dập lửa)"]
+  {
+    "id": 61,
+    "kanji": "材",
+    "hiragana": "ざい",
+    "mean": {
+      "vi": "Nguyên liệu",
+      "en": "Material"
+    },
+    "on_yomi": "ザイ",
+    "lesson": 1,
+    "examples": [
+      {
+        "sentence": "材料",
+        "reading": "ざいりょう",
+        "meaning": {
+          "vi": "nguyên liệu",
+          "en": "materials"
+        }
+      },
+      {
+        "sentence": "木材",
+        "reading": "もくざい",
+        "meaning": {
+          "vi": "gỗ",
+          "en": "wood"
+        }
+      }
+    ],
+    "kanji_parts": []
   },
-  { 
-    "id": 102, 
-    "kanji": "商", 
-    "hiragana": "しょう", 
-    "mean": "Buôn bán", 
-    "on_yomi": "ショウ", 
-    "examples": ["商売 (buôn bán)", "商業 (ngành công nghiệp)"]
+  {
+    "id": 62,
+    "kanji": "昨",
+    "hiragana": "さく",
+    "mean": {
+      "vi": "Hôm qua",
+      "en": "Yesterday"
+    },
+    "on_yomi": "サク",
+    "lesson": 1,
+    "examples": [
+      {
+        "sentence": "昨夜",
+        "reading": "さくや",
+        "meaning": {
+          "vi": "tối qua",
+          "en": "last night"
+        }
+      },
+      {
+        "sentence": "昨年",
+        "reading": "さくねん",
+        "meaning": {
+          "vi": "năm ngoái",
+          "en": "last year"
+        }
+      }
+    ],
+    "kanji_parts": []
   },
-  { 
-    "id": 103, 
-    "kanji": "章", 
-    "hiragana": "しょう", 
-    "mean": "Chương (sách)", 
-    "on_yomi": "ショウ", 
-    "examples": ["章 (chương)", "章句 (đoạn văn)"]
+  {
+    "id": 63,
+    "kanji": "札",
+    "hiragana": "さつ",
+    "mean": {
+      "vi": "Thẻ",
+      "en": "Card"
+    },
+    "on_yomi": "サツ",
+    "lesson": 1,
+    "examples": [
+      {
+        "sentence": "札幌",
+        "reading": "さっぽろ",
+        "meaning": {
+          "vi": "Sapporo",
+          "en": "Sapporo"
+        }
+      },
+      {
+        "sentence": "名札",
+        "reading": "なふだ",
+        "meaning": {
+          "vi": "thẻ tên",
+          "en": "name tag"
+        }
+      }
+    ],
+    "kanji_parts": []
+  },
+  {
+    "id": 64,
+    "kanji": "殺",
+    "hiragana": "さつ",
+    "mean": {
+      "vi": "Giết",
+      "en": "Kill"
+    },
+    "on_yomi": "サツ",
+    "lesson": 1,
+    "examples": [
+      {
+        "sentence": "殺人",
+        "reading": "さつじん",
+        "meaning": {
+          "vi": "giết người",
+          "en": "murder"
+        }
+      },
+      {
+        "sentence": "殺害",
+        "reading": "さつがい",
+        "meaning": {
+          "vi": "sát hại",
+          "en": "homicide"
+        }
+      }
+    ],
+    "kanji_parts": []
+  },
+  {
+    "id": 65,
+    "kanji": "察",
+    "hiragana": "さつ",
+    "mean": {
+      "vi": "Quan sát",
+      "en": "Observe"
+    },
+    "on_yomi": "サツ",
+    "lesson": 1,
+    "examples": [
+      {
+        "sentence": "察する",
+        "reading": "さっする",
+        "meaning": {
+          "vi": "quan sát",
+          "en": "observe"
+        }
+      },
+      {
+        "sentence": "察知",
+        "reading": "さっち",
+        "meaning": {
+          "vi": "phát hiện",
+          "en": "detect"
+        }
+      }
+    ],
+    "kanji_parts": []
+  },
+  {
+    "id": 66,
+    "kanji": "参",
+    "hiragana": "さん",
+    "mean": {
+      "vi": "Tham gia",
+      "en": "Join"
+    },
+    "on_yomi": "サン",
+    "lesson": 1,
+    "examples": [
+      {
+        "sentence": "参加",
+        "reading": "さんか",
+        "meaning": {
+          "vi": "tham gia",
+          "en": "participate"
+        }
+      },
+      {
+        "sentence": "参照",
+        "reading": "さんしょう",
+        "meaning": {
+          "vi": "tham khảo",
+          "en": "reference"
+        }
+      }
+    ],
+    "kanji_parts": []
+  },
+  {
+    "id": 67,
+    "kanji": "産",
+    "hiragana": "さん",
+    "mean": {
+      "vi": "Sản xuất",
+      "en": "Production"
+    },
+    "on_yomi": "サン",
+    "lesson": 1,
+    "examples": [
+      {
+        "sentence": "産業",
+        "reading": "さんぎょう",
+        "meaning": {
+          "vi": "ngành công nghiệp",
+          "en": "industry"
+        }
+      },
+      {
+        "sentence": "生産",
+        "reading": "せいさん",
+        "meaning": {
+          "vi": "sản xuất",
+          "en": "production"
+        }
+      }
+    ],
+    "kanji_parts": []
+  },
+  {
+    "id": 68,
+    "kanji": "散",
+    "hiragana": "さん",
+    "mean": {
+      "vi": "Tản bộ",
+      "en": "Walk"
+    },
+    "on_yomi": "サン",
+    "lesson": 1,
+    "examples": [
+      {
+        "sentence": "散歩",
+        "reading": "さんぽ",
+        "meaning": {
+          "vi": "tản bộ",
+          "en": "walk"
+        }
+      },
+      {
+        "sentence": "散らかす",
+        "reading": "ちらかす",
+        "meaning": {
+          "vi": "vứt bừa",
+          "en": "scatter"
+        }
+      }
+    ],
+    "kanji_parts": []
+  },
+  {
+    "id": 69,
+    "kanji": "残",
+    "hiragana": "ざん",
+    "mean": {
+      "vi": "Còn lại",
+      "en": "Remaining"
+    },
+    "on_yomi": "ザン",
+    "lesson": 1,
+    "examples": [
+      {
+        "sentence": "残業",
+        "reading": "ざんぎょう",
+        "meaning": {
+          "vi": "làm thêm",
+          "en": "overtime"
+        }
+      },
+      {
+        "sentence": "残り",
+        "reading": "のこり",
+        "meaning": {
+          "vi": "còn lại",
+          "en": "remaining"
+        }
+      }
+    ],
+    "kanji_parts": []
+  },
+  {
+    "id": 70,
+    "kanji": "仕",
+    "hiragana": "し",
+    "mean": {
+      "vi": "Công việc",
+      "en": "Work"
+    },
+    "on_yomi": "シ",
+    "lesson": 1,
+    "examples": [
+      {
+        "sentence": "仕事",
+        "reading": "しごと",
+        "meaning": {
+          "vi": "công việc",
+          "en": "work"
+        }
+      },
+      {
+        "sentence": "仕方",
+        "reading": "しかた",
+        "meaning": {
+          "vi": "cách làm",
+          "en": "way"
+        }
+      }
+    ],
+    "kanji_parts": []
+  },
+  {
+    "id": 71,
+    "kanji": "使",
+    "hiragana": "し",
+    "mean": {
+      "vi": "Sử dụng",
+      "en": "Use"
+    },
+    "on_yomi": "シ",
+    "lesson": 1,
+    "examples": [
+      {
+        "sentence": "使う",
+        "reading": "つかう",
+        "meaning": {
+          "vi": "dùng",
+          "en": "use"
+        }
+      },
+      {
+        "sentence": "使者",
+        "reading": "ししゃ",
+        "meaning": {
+          "vi": "sứ giả",
+          "en": "messenger"
+        }
+      }
+    ],
+    "kanji_parts": []
+  },
+  {
+    "id": 72,
+    "kanji": "始",
+    "hiragana": "し",
+    "mean": {
+      "vi": "Bắt đầu",
+      "en": "Start"
+    },
+    "on_yomi": "シ",
+    "lesson": 1,
+    "examples": [
+      {
+        "sentence": "始める",
+        "reading": "はじめる",
+        "meaning": {
+          "vi": "bắt đầu",
+          "en": "begin"
+        }
+      },
+      {
+        "sentence": "開始",
+        "reading": "かいし",
+        "meaning": {
+          "vi": "khởi đầu",
+          "en": "start"
+        }
+      }
+    ],
+    "kanji_parts": []
+  },
+  {
+    "id": 73,
+    "kanji": "指",
+    "hiragana": "し",
+    "mean": {
+      "vi": "Ngón tay",
+      "en": "Finger"
+    },
+    "on_yomi": "シ",
+    "lesson": 1,
+    "examples": [
+      {
+        "sentence": "指示",
+        "reading": "しじ",
+        "meaning": {
+          "vi": "chỉ thị",
+          "en": "instruction"
+        }
+      },
+      {
+        "sentence": "指輪",
+        "reading": "ゆびわ",
+        "meaning": {
+          "vi": "nhẫn",
+          "en": "ring"
+        }
+      }
+    ],
+    "kanji_parts": []
+  },
+  {
+    "id": 74,
+    "kanji": "歯",
+    "hiragana": "し",
+    "mean": {
+      "vi": "Răng",
+      "en": "Tooth"
+    },
+    "on_yomi": "シ",
+    "lesson": 1,
+    "examples": [
+      {
+        "sentence": "歯車",
+        "reading": "はぐるま",
+        "meaning": {
+          "vi": "bánh răng",
+          "en": "gear"
+        }
+      },
+      {
+        "sentence": "歯科",
+        "reading": "しか",
+        "meaning": {
+          "vi": "khoa răng",
+          "en": "dentistry"
+        }
+      }
+    ],
+    "kanji_parts": []
+  },
+  {
+    "id": 75,
+    "kanji": "詩",
+    "hiragana": "し",
+    "mean": {
+      "vi": "Thơ",
+      "en": "Poetry"
+    },
+    "on_yomi": "シ",
+    "lesson": 1,
+    "examples": [
+      {
+        "sentence": "詩人",
+        "reading": "しじん",
+        "meaning": {
+          "vi": "nhà thơ",
+          "en": "poet"
+        }
+      },
+      {
+        "sentence": "詩歌",
+        "reading": "しいか",
+        "meaning": {
+          "vi": "thơ ca",
+          "en": "poetry"
+        }
+      }
+    ],
+    "kanji_parts": []
+  },
+  {
+    "id": 76,
+    "kanji": "次",
+    "hiragana": "じ",
+    "mean": {
+      "vi": "Tiếp theo",
+      "en": "Next"
+    },
+    "on_yomi": "ジ",
+    "lesson": 1,
+    "examples": [
+      {
+        "sentence": "次回",
+        "reading": "じかい",
+        "meaning": {
+          "vi": "lần sau",
+          "en": "next time"
+        }
+      },
+      {
+        "sentence": "次元",
+        "reading": "じげん",
+        "meaning": {
+          "vi": "chiều",
+          "en": "dimension"
+        }
+      }
+    ],
+    "kanji_parts": []
+  },
+  {
+    "id": 77,
+    "kanji": "事",
+    "hiragana": "じ",
+    "mean": {
+      "vi": "Sự việc",
+      "en": "Event"
+    },
+    "on_yomi": "ジ",
+    "lesson": 1,
+    "examples": [
+      {
+        "sentence": "仕事",
+        "reading": "しごと",
+        "meaning": {
+          "vi": "công việc",
+          "en": "work"
+        }
+      },
+      {
+        "sentence": "事務",
+        "reading": "じむ",
+        "meaning": {
+          "vi": "văn phòng",
+          "en": "office work"
+        }
+      }
+    ],
+    "kanji_parts": []
+  },
+  {
+    "id": 78,
+    "kanji": "持",
+    "hiragana": "じ",
+    "mean": {
+      "vi": "Cầm, nắm",
+      "en": "Hold"
+    },
+    "on_yomi": "ジ",
+    "lesson": 1,
+    "examples": [
+      {
+        "sentence": "持つ",
+        "reading": "もつ",
+        "meaning": {
+          "vi": "cầm",
+          "en": "hold"
+        }
+      },
+      {
+        "sentence": "持ち物",
+        "reading": "もちもの",
+        "meaning": {
+          "vi": "vật dụng",
+          "en": "belongings"
+        }
+      }
+    ],
+    "kanji_parts": []
+  },
+  {
+    "id": 79,
+    "kanji": "時",
+    "hiragana": "じ",
+    "mean": {
+      "vi": "Thời gian",
+      "en": "Time"
+    },
+    "on_yomi": "ジ",
+    "lesson": 1,
+    "examples": [
+      {
+        "sentence": "時間",
+        "reading": "じかん",
+        "meaning": {
+          "vi": "thời gian",
+          "en": "time"
+        }
+      },
+      {
+        "sentence": "時計",
+        "reading": "とけい",
+        "meaning": {
+          "vi": "đồng hồ",
+          "en": "clock"
+        }
+      }
+    ],
+    "kanji_parts": []
+  },
+  {
+    "id": 80,
+    "kanji": "式",
+    "hiragana": "しき",
+    "mean": {
+      "vi": "Nghi thức",
+      "en": "Ritual"
+    },
+    "on_yomi": "シキ",
+    "lesson": 1,
+    "examples": [
+      {
+        "sentence": "式典",
+        "reading": "しきてん",
+        "meaning": {
+          "vi": "lễ kỷ niệm",
+          "en": "ceremony"
+        }
+      },
+      {
+        "sentence": "形式",
+        "reading": "けいしき",
+        "meaning": {
+          "vi": "hình thức",
+          "en": "form"
+        }
+      }
+    ],
+    "kanji_parts": []
+  },
+  {
+    "id": 81,
+    "kanji": "実",
+    "hiragana": "じつ",
+    "mean": {
+      "vi": "Thực tế",
+      "en": "Reality"
+    },
+    "on_yomi": "ジツ",
+    "lesson": 1,
+    "examples": [
+      {
+        "sentence": "実際",
+        "reading": "じっさい",
+        "meaning": {
+          "vi": "thực tế",
+          "en": "actuality"
+        }
+      },
+      {
+        "sentence": "実験",
+        "reading": "じっけん",
+        "meaning": {
+          "vi": "thí nghiệm",
+          "en": "experiment"
+        }
+      }
+    ],
+    "kanji_parts": []
+  },
+  {
+    "id": 82,
+    "kanji": "写",
+    "hiragana": "しゃ",
+    "mean": {
+      "vi": "Sao chép",
+      "en": "Copy"
+    },
+    "on_yomi": "シャ",
+    "lesson": 1,
+    "examples": [
+      {
+        "sentence": "写真",
+        "reading": "しゃしん",
+        "meaning": {
+          "vi": "ảnh chụp",
+          "en": "photograph"
+        }
+      },
+      {
+        "sentence": "写生",
+        "reading": "しゃせい",
+        "meaning": {
+          "vi": "vẽ tranh",
+          "en": "sketch"
+        }
+      }
+    ],
+    "kanji_parts": []
+  },
+  {
+    "id": 83,
+    "kanji": "者",
+    "hiragana": "しゃ",
+    "mean": {
+      "vi": "Người",
+      "en": "Person"
+    },
+    "on_yomi": "シャ",
+    "lesson": 1,
+    "examples": [
+      {
+        "sentence": "医者",
+        "reading": "いしゃ",
+        "meaning": {
+          "vi": "bác sĩ",
+          "en": "doctor"
+        }
+      },
+      {
+        "sentence": "学者",
+        "reading": "がくしゃ",
+        "meaning": {
+          "vi": "học giả",
+          "en": "scholar"
+        }
+      }
+    ],
+    "kanji_parts": []
+  },
+  {
+    "id": 84,
+    "kanji": "謝",
+    "hiragana": "しゃ",
+    "mean": {
+      "vi": "Cảm ơn",
+      "en": "Thank"
+    },
+    "on_yomi": "シャ",
+    "lesson": 1,
+    "examples": [
+      {
+        "sentence": "謝罪",
+        "reading": "しゃざい",
+        "meaning": {
+          "vi": "xin lỗi",
+          "en": "apology"
+        }
+      },
+      {
+        "sentence": "感謝",
+        "reading": "かんしゃ",
+        "meaning": {
+          "vi": "biết ơn",
+          "en": "gratitude"
+        }
+      }
+    ],
+    "kanji_parts": []
+  },
+  {
+    "id": 85,
+    "kanji": "酒",
+    "hiragana": "しゅ",
+    "mean": {
+      "vi": "Rượu",
+      "en": "Alcohol"
+    },
+    "on_yomi": "シュ",
+    "lesson": 1,
+    "examples": [
+      {
+        "sentence": "酒屋",
+        "reading": "さかや",
+        "meaning": {
+          "vi": "cửa hàng rượu",
+          "en": "liquor store"
+        }
+      },
+      {
+        "sentence": "日本酒",
+        "reading": "にほんしゅ",
+        "meaning": {
+          "vi": "rượu Nhật",
+          "en": "sake"
+        }
+      }
+    ],
+    "kanji_parts": []
+  },
+  {
+    "id": 86,
+    "kanji": "守",
+    "hiragana": "しゅ",
+    "mean": {
+      "vi": "Bảo vệ",
+      "en": "Protect"
+    },
+    "on_yomi": "シュ",
+    "lesson": 1,
+    "examples": [
+      {
+        "sentence": "守る",
+        "reading": "まもる",
+        "meaning": {
+          "vi": "bảo vệ",
+          "en": "protect"
+        }
+      },
+      {
+        "sentence": "警守",
+        "reading": "けいしゅ",
+        "meaning": {
+          "vi": "cảnh sát",
+          "en": "police"
+        }
+      }
+    ],
+    "kanji_parts": []
+  },
+  {
+    "id": 87,
+    "kanji": "取",
+    "hiragana": "しゅ",
+    "mean": {
+      "vi": "Lấy",
+      "en": "Take"
+    },
+    "on_yomi": "シュ",
+    "lesson": 1,
+    "examples": [
+      {
+        "sentence": "取る",
+        "reading": "とる",
+        "meaning": {
+          "vi": "lấy",
+          "en": "take"
+        }
+      },
+      {
+        "sentence": "取得",
+        "reading": "しゅとく",
+        "meaning": {
+          "vi": "thu thập",
+          "en": "acquisition"
+        }
+      }
+    ],
+    "kanji_parts": []
+  },
+  {
+    "id": 88,
+    "kanji": "受",
+    "hiragana": "じゅ",
+    "mean": {
+      "vi": "Nhận",
+      "en": "Receive"
+    },
+    "on_yomi": "ジュ",
+    "lesson": 1,
+    "examples": [
+      {
+        "sentence": "受ける",
+        "reading": "うける",
+        "meaning": {
+          "vi": "nhận",
+          "en": "receive"
+        }
+      },
+      {
+        "sentence": "受賞",
+        "reading": "じゅしょう",
+        "meaning": {
+          "vi": "nhận giải",
+          "en": "award"
+        }
+      }
+    ],
+    "kanji_parts": []
+  },
+  {
+    "id": 89,
+    "kanji": "州",
+    "hiragana": "しゅう",
+    "mean": {
+      "vi": "Bang, tỉnh",
+      "en": "State"
+    },
+    "on_yomi": "シュウ",
+    "lesson": 1,
+    "examples": [
+      {
+        "sentence": "州",
+        "reading": "しゅう",
+        "meaning": {
+          "vi": "bang",
+          "en": "state"
+        }
+      },
+      {
+        "sentence": "州立",
+        "reading": "しゅうりつ",
+        "meaning": {
+          "vi": "thuộc bang",
+          "en": "state-run"
+        }
+      }
+    ],
+    "kanji_parts": []
+  },
+  {
+    "id": 90,
+    "kanji": "拾",
+    "hiragana": "しゅう",
+    "mean": {
+      "vi": "Nhặt",
+      "en": "Pick up"
+    },
+    "on_yomi": "シュウ",
+    "lesson": 1,
+    "examples": [
+      {
+        "sentence": "拾う",
+        "reading": "ひろう",
+        "meaning": {
+          "vi": "nhặt",
+          "en": "pick up"
+        }
+      },
+      {
+        "sentence": "拾得",
+        "reading": "しゅうとく",
+        "meaning": {
+          "vi": "thu được",
+          "en": "find"
+        }
+      }
+    ],
+    "kanji_parts": []
+  },
+  {
+    "id": 91,
+    "kanji": "終",
+    "hiragana": "しゅう",
+    "mean": {
+      "vi": "Kết thúc",
+      "en": "End"
+    },
+    "on_yomi": "シュウ",
+    "lesson": 1,
+    "examples": [
+      {
+        "sentence": "終了",
+        "reading": "しゅうりょう",
+        "meaning": {
+          "vi": "kết thúc",
+          "en": "end"
+        }
+      },
+      {
+        "sentence": "終点",
+        "reading": "しゅうてん",
+        "meaning": {
+          "vi": "điểm kết thúc",
+          "en": "terminus"
+        }
+      }
+    ],
+    "kanji_parts": []
+  },
+  {
+    "id": 92,
+    "kanji": "習",
+    "hiragana": "しゅう",
+    "mean": {
+      "vi": "Học tập",
+      "en": "Learn"
+    },
+    "on_yomi": "シュウ",
+    "lesson": 1,
+    "examples": [
+      {
+        "sentence": "習う",
+        "reading": "ならう",
+        "meaning": {
+          "vi": "học",
+          "en": "learn"
+        }
+      },
+      {
+        "sentence": "習慣",
+        "reading": "しゅうかん",
+        "meaning": {
+          "vi": "thói quen",
+          "en": "habit"
+        }
+      }
+    ],
+    "kanji_parts": []
+  },
+  {
+    "id": 93,
+    "kanji": "集",
+    "hiragana": "しゅう",
+    "mean": {
+      "vi": "Tập hợp",
+      "en": "Gather"
+    },
+    "on_yomi": "シュウ",
+    "lesson": 1,
+    "examples": [
+      {
+        "sentence": "集める",
+        "reading": "あつめる",
+        "meaning": {
+          "vi": "thu thập",
+          "en": "gather"
+        }
+      },
+      {
+        "sentence": "集会",
+        "reading": "しゅうかい",
+        "meaning": {
+          "vi": "cuộc họp",
+          "en": "meeting"
+        }
+      }
+    ],
+    "kanji_parts": []
+  },
+  {
+    "id": 94,
+    "kanji": "住",
+    "hiragana": "じゅう",
+    "mean": {
+      "vi": "Cư trú",
+      "en": "Live"
+    },
+    "on_yomi": "ジュウ",
+    "lesson": 1,
+    "examples": [
+      {
+        "sentence": "住む",
+        "reading": "すむ",
+        "meaning": {
+          "vi": "sống",
+          "en": "live"
+        }
+      },
+      {
+        "sentence": "住宅",
+        "reading": "じゅうたく",
+        "meaning": {
+          "vi": "nhà ở",
+          "en": "residence"
+        }
+      }
+    ],
+    "kanji_parts": []
+  },
+  {
+    "id": 95,
+    "kanji": "重",
+    "hiragana": "じゅう",
+    "mean": {
+      "vi": "Nặng",
+      "en": "Heavy"
+    },
+    "on_yomi": "ジュウ",
+    "lesson": 1,
+    "examples": [
+      {
+        "sentence": "重い",
+        "reading": "おもい",
+        "meaning": {
+          "vi": "nặng",
+          "en": "heavy"
+        }
+      },
+      {
+        "sentence": "重量",
+        "reading": "じゅうりょう",
+        "meaning": {
+          "vi": "trọng lượng",
+          "en": "weight"
+        }
+      }
+    ],
+    "kanji_parts": []
+  },
+  {
+    "id": 96,
+    "kanji": "宿",
+    "hiragana": "しゅく",
+    "mean": {
+      "vi": "Nhà trọ",
+      "en": "Inn"
+    },
+    "on_yomi": "シュク",
+    "lesson": 1,
+    "examples": [
+      {
+        "sentence": "宿泊",
+        "reading": "しゅくはく",
+        "meaning": {
+          "vi": "lưu trú",
+          "en": "stay"
+        }
+      },
+      {
+        "sentence": "宿題",
+        "reading": "しゅくだい",
+        "meaning": {
+          "vi": "bài tập về nhà",
+          "en": "homework"
+        }
+      }
+    ],
+    "kanji_parts": []
+  },
+  {
+    "id": 97,
+    "kanji": "所",
+    "hiragana": "しょ",
+    "mean": {
+      "vi": "Nơi chốn",
+      "en": "Place"
+    },
+    "on_yomi": "ショ",
+    "lesson": 1,
+    "examples": [
+      {
+        "sentence": "場所",
+        "reading": "ばしょ",
+        "meaning": {
+          "vi": "nơi chốn",
+          "en": "place"
+        }
+      },
+      {
+        "sentence": "所々",
+        "reading": "ところどころ",
+        "meaning": {
+          "vi": "nhiều nơi",
+          "en": "here and there"
+        }
+      }
+    ],
+    "kanji_parts": []
+  },
+  {
+    "id": 98,
+    "kanji": "暑",
+    "hiragana": "しょ",
+    "mean": {
+      "vi": "Nóng",
+      "en": "Hot"
+    },
+    "on_yomi": "ショ",
+    "lesson": 1,
+    "examples": [
+      {
+        "sentence": "暑い",
+        "reading": "あつい",
+        "meaning": {
+          "vi": "nóng",
+          "en": "hot"
+        }
+      },
+      {
+        "sentence": "暑さ",
+        "reading": "あつさ",
+        "meaning": {
+          "vi": "nhiệt độ cao",
+          "en": "heat"
+        }
+      }
+    ],
+    "kanji_parts": []
+  },
+  {
+    "id": 99,
+    "kanji": "助",
+    "hiragana": "じょ",
+    "mean": {
+      "vi": "Giúp đỡ",
+      "en": "Help"
+    },
+    "on_yomi": "ジョ",
+    "lesson": 1,
+    "examples": [
+      {
+        "sentence": "助ける",
+        "reading": "たすける",
+        "meaning": {
+          "vi": "giúp đỡ",
+          "en": "to help"
+        }
+      },
+      {
+        "sentence": "助言",
+        "reading": "じょげん",
+        "meaning": {
+          "vi": "lời khuyên",
+          "en": "advice"
+        }
+      }
+    ],
+    "kanji_parts": []
+  },
+  {
+    "id": 100,
+    "kanji": "昭",
+    "hiragana": "しょう",
+    "mean": {
+      "vi": "Chiêu (thời kỳ)",
+      "en": "Shō (era)"
+    },
+    "on_yomi": "ショウ",
+    "lesson": 1,
+    "examples": [
+      {
+        "sentence": "昭和",
+        "reading": "しょうわ",
+        "meaning": {
+          "vi": "thời kỳ Showa",
+          "en": "Shōwa era"
+        }
+      },
+      {
+        "sentence": "昭示",
+        "reading": "しょうじ",
+        "meaning": {
+          "vi": "chỉ dẫn",
+          "en": "indication"
+        }
+      }
+    ],
+    "kanji_parts": []
+  },
+  {
+    "id": 101,
+    "kanji": "消",
+    "hiragana": "しょう",
+    "mean": {
+      "vi": "Tắt, biến mất",
+      "en": "Extinguish, disappear"
+    },
+    "on_yomi": "ショウ",
+    "lesson": 1,
+    "examples": [
+      {
+        "sentence": "消える",
+        "reading": "きえる",
+        "meaning": {
+          "vi": "biến mất",
+          "en": "to disappear"
+        }
+      },
+      {
+        "sentence": "消火",
+        "reading": "しょうか",
+        "meaning": {
+          "vi": "dập lửa",
+          "en": "firefighting"
+        }
+      }
+    ],
+    "kanji_parts": []
+  },
+  {
+    "id": 102,
+    "kanji": "商",
+    "hiragana": "しょう",
+    "mean": {
+      "vi": "Buôn bán",
+      "en": "Business"
+    },
+    "on_yomi": "ショウ",
+    "lesson": 1,
+    "examples": [
+      {
+        "sentence": "商売",
+        "reading": "しょうばい",
+        "meaning": {
+          "vi": "buôn bán",
+          "en": "business"
+        }
+      },
+      {
+        "sentence": "商業",
+        "reading": "しょうぎょう",
+        "meaning": {
+          "vi": "ngành công nghiệp",
+          "en": "commerce"
+        }
+      }
+    ],
+    "kanji_parts": []
+  },
+  {
+    "id": 103,
+    "kanji": "章",
+    "hiragana": "しょう",
+    "mean": {
+      "vi": "Chương (sách)",
+      "en": "Chapter"
+    },
+    "on_yomi": "ショウ",
+    "lesson": 1,
+    "examples": [
+      {
+        "sentence": "章",
+        "reading": "しょう",
+        "meaning": {
+          "vi": "chương",
+          "en": "chapter"
+        }
+      },
+      {
+        "sentence": "章句",
+        "reading": "しょうく",
+        "meaning": {
+          "vi": "đoạn văn",
+          "en": "passage"
+        }
+      }
+    ],
+    "kanji_parts": []
   }
 ]
 

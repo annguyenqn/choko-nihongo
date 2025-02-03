@@ -55,7 +55,10 @@ const QuizGame: React.FC<QuizGameProps> = ({ kanjiItems }) => {
     };
 
     const handleAnswer = (answer: string) => {
+
         const correct = answer === currentQuestion?.kanji;
+        const audio = new Audio(correct ? '/correct.mp3' : '/wrong.mp3');
+        audio.play();
         setSelectedAnswer(answer);
         setIsCorrect(correct);
 
@@ -64,9 +67,6 @@ const QuizGame: React.FC<QuizGameProps> = ({ kanjiItems }) => {
         } else {
             setWrongCount(prev => prev + 1);
         }
-
-        const audio = new Audio(correct ? '/correct.mp3' : '/wrong.mp3');
-        audio.play();
     };
 
     const resetGame = () => {
@@ -165,27 +165,32 @@ const QuizGame: React.FC<QuizGameProps> = ({ kanjiItems }) => {
                                     {currentQuestion.examples && currentQuestion.examples.length > 0 && (
                                         <p className="text-white mt-2 flex items-start gap-2">
                                             <FileText className="w-5 mt-1 h-5 text-green-400" />
-                                            <span className="flex-1 break-words">Ví dụ: {currentQuestion.examples[0].sentence} - {currentQuestion.examples[0].meaning.vi}</span>
+                                            <span className="flex-1 break-words">Ví dụ: {currentQuestion.examples[0].sentence} ({currentQuestion.examples[0].reading}) - {typeof currentQuestion.examples[0].meaning === 'string'
+                                                ? JSON.parse(currentQuestion.examples[0].meaning).vi
+                                                : currentQuestion.examples[0].meaning.vi}</span>
                                         </p>
                                     )}
 
                                     <div className="mt-2">
-                                        <strong className="text-white flex gap-2">
-                                            <List className="w-5 h-5 text-fuchsia-400" />
-                                            Kanji Parts:
-                                        </strong>
-                                        <ul className="list-inside list-disc pl-6" style={{ listStylePosition: 'inside' }}>
-                                            {currentQuestion.kanji_parts.map((part, idx) => (
-                                                <li key={idx} className="text-white mt-1 flex">
-                                                    <div className="flex items-center gap-2">
-                                                        <span className="flex-1">
-                                                            <strong> - {part.kanji}:</strong> {part.han_viet} - {typeof part.meaning === 'string' ? JSON.parse(part.meaning).vi : part.meaning?.vi}
-                                                        </span>
-                                                    </div>
-                                                </li>
-                                            ))}
-                                        </ul>
-
+                                        {currentQuestion.lesson !== 1 && (
+                                            <>
+                                                <strong className="text-white flex gap-2">
+                                                    <List className="w-5 h-5 text-fuchsia-400" />
+                                                    Kanji Parts:
+                                                </strong>
+                                                <ul className="list-inside list-disc pl-6" style={{ listStylePosition: 'inside' }}>
+                                                    {currentQuestion.kanji_parts.map((part, idx) => (
+                                                        <li key={idx} className="text-white mt-1 flex">
+                                                            <div className="flex items-center gap-2">
+                                                                <span className="flex-1">
+                                                                    <strong> - {part.kanji}:</strong> {part.han_viet} - {typeof part.meaning === 'string' ? JSON.parse(part.meaning).vi : part.meaning?.vi}
+                                                                </span>
+                                                            </div>
+                                                        </li>
+                                                    ))}
+                                                </ul>
+                                            </>
+                                        )}
                                     </div>
                                 </div>
                             )}
