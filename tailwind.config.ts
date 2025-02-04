@@ -9,6 +9,9 @@ const config: Config = {
   ],
   theme: {
   	extend: {
+		fontFamily: {
+			sans: ['var(--font-nunito)', 'sans-serif'],
+		  },
 		transform: ['hover', 'focus'],
 		rotate: {
 		  'y-180': 'rotateY(180deg)',

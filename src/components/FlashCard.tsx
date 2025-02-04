@@ -97,7 +97,7 @@ const FlashCard: React.FC<FlashCardProps> = ({ kanjiItems }) => {
               <div className="md:text-4xl text-xl text-black font-bold md:mb-4">
                 {shuffledKanjiItems[currentItem]?.lesson == 1 && (
                   <>
-                    <strong>Ví Dụ: </strong>
+                    <strong className="">Ví Dụ: </strong>
                     {shuffledKanjiItems[currentItem]?.examples?.map((example, idx) => (
                       <div key={idx} className="md:my-2 my-0 ml-3">
                         <span className="font-semibold"> - {example.sentence} ({example.reading})</span>{" "}
@@ -116,7 +116,7 @@ const FlashCard: React.FC<FlashCardProps> = ({ kanjiItems }) => {
                   {shuffledKanjiItems[currentItem]?.lesson !== 1 && (
                     <>
                       <strong className="md:text-4xl text-xl text-black">Kanji Parts:</strong>
-                      <ul className="list-inside list-disc pl-5 md:text-2xl md:mt-2 text-xl">
+                      <ul className="list-outside pl-10 list-disc  md:text-2xl md:mt-2 text-xl">
                         {Array.isArray(shuffledKanjiItems[currentItem]?.kanji_parts)
                           ? shuffledKanjiItems[currentItem]?.kanji_parts.map((part, idx) => (
                             <li key={idx} className="text-black">
