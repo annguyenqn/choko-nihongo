@@ -1,0 +1,19 @@
+{
+    "kanji": "無料",
+    "hiragana": "むりょう",
+    "mean": { "vi": "Miễn phí", "en": "Free of charge" },
+    "lesson": 1,
+    "level": "n4",
+    "examples": [
+      {
+        "sentence": "入場料は無料です",
+        "reading": "にゅうじょうりょうはむりょうです",
+        "meaning": { "vi": "Phí vào cửa miễn phí", "en": "The admission fee is free" }
+      }
+    ],
+    // này sẽ là 1 talble riêng
+    "kanji_parts": [
+      { "kanji": "無", "level":"n3", "han_viet": "Vô", "meaning": { "vi": "Không có, không tồn tại", "en": "Nothing, non-existent" } },
+      { "kanji": "料", "level":"n2", "han_viet": "Liệu", "meaning": { "vi": "Vật liệu, phí", "en": "Material, fee" } }
+    ]
+  } 

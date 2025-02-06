@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { Skeleton } from "@/components/ui/skeleton";
 import Pagination from '@/components/Pagination';
-import { KanjiLesson } from "@/interface/IKanjiItem";
+import { KanjiData } from "@/interface/Ikanji";
 
 interface FlashCardProps {
-  kanjiItems: KanjiLesson[];
+  kanjiItems: KanjiData[];
 }
 
 const FlashCard: React.FC<FlashCardProps> = ({ kanjiItems }) => {
@@ -39,6 +39,8 @@ const FlashCard: React.FC<FlashCardProps> = ({ kanjiItems }) => {
     setCurrentItem(0);
   };
 
+  const currentKanji = shuffledKanjiItems[currentItem];
+
   return (
     <div className="flex flex-col gap-3 justify-center items-center md:h-[650px] h-[450px] relative">
       <button
@@ -58,84 +60,85 @@ const FlashCard: React.FC<FlashCardProps> = ({ kanjiItems }) => {
           className={`card__content relative w-full h-full p-8 text-white font-bold transition-transform duration-700 transform ${flipped ? "rotate-x-180" : ""}`}
           style={{ transformStyle: "preserve-3d" }}
         >
+          {/* Mặt trước */}
           <div className="card__front absolute top-0 bottom-0 right-0 left-0 bg-white shadow-xl rounded-xl flex items-center justify-center backface-hidden">
-            {/* Skeleton cho phần Kanji */}
             {shuffledKanjiItems.length === 0 ? (
               <Skeleton className="w-24 h-24 bg-gray-300" />
             ) : (
-              <h2 className="text-5xl text-black">
-                {shuffledKanjiItems[currentItem]?.kanji}
-              </h2>
+              <h2 className="text-5xl text-black">{currentKanji?.kanji}</h2>
             )}
           </div>
+
+          {/* Mặt sau */}
           <div className="card__back absolute top-0 bottom-0 right-0 left-0 bg-white shadow-lg flex flex-col items-center justify-center transform rotate-y-180 backface-hidden p-6">
-            <div className="w-auto  mx-auto">
-              {/* Skeleton cho phần nghĩa */}
+            <div className="w-auto mx-auto">
+              {/* Âm Hán */}
               {shuffledKanjiItems.length === 0 ? (
                 <Skeleton className="w-32 h-6 bg-gray-300 mb-2" />
               ) : (
                 <div className="md:text-4xl text-xl text-black font-bold md:mb-4">
-                  <strong>Nghĩa: </strong>
-                  {typeof shuffledKanjiItems[currentItem]?.mean === 'string'
-                    ? JSON.parse(shuffledKanjiItems[currentItem]?.mean)?.vi
-                    : shuffledKanjiItems[currentItem]?.mean?.vi}
+                  <strong>Âm Hán Việt: </strong> {currentKanji?.han_viet}
                 </div>
               )}
 
-              {/* Skeleton cho Hiragana */}
+              {/* Nghĩa */}
+              {shuffledKanjiItems.length === 0 ? (
+                <Skeleton className="w-32 h-6 bg-gray-300 mb-2" />
+              ) : (
+                <div className="md:text-4xl text-xl text-black font-bold md:mb-4">
+                  <strong>Nghĩa: </strong> {currentKanji?.meaning_vi}
+                </div>
+              )}
+
+              {/* Phiên âm (On/Kun) */}
               {shuffledKanjiItems.length === 0 ? (
                 <Skeleton className="w-32 h-6 bg-gray-300 md:mb-2" />
               ) : (
                 <div className="md:space-y-2">
                   <div className="md:text-4xl text-xl text-black font-bold md:mb-4">
-                    <strong>Phiên âm:</strong> {shuffledKanjiItems[currentItem]?.hiragana}
+                    <strong>On-yomi:</strong> {currentKanji?.on_reading?.join(", ")}
+                  </div>
+                  <div className="md:text-4xl text-xl text-black font-bold md:mb-4">
+                    <strong>Kun-yomi:</strong> {currentKanji?.kun_reading?.join(", ")}
                   </div>
                 </div>
               )}
 
-              {/* ví dụ */}
+              {/* Ví dụ */}
               <div className="md:text-4xl text-xl text-black font-bold md:mb-4">
-                {shuffledKanjiItems[currentItem]?.lesson == 1 && (
+                {currentKanji?.examples?.length > 0 && (
                   <>
-                    <strong className="">Ví Dụ: </strong>
-                    {shuffledKanjiItems[currentItem]?.examples?.map((example, idx) => (
+                    <strong>Ví Dụ: </strong>
+                    {currentKanji?.examples.map((example, idx) => (
                       <div key={idx} className="md:my-2 my-0 ml-3">
-                        <span className="font-semibold"> - {example.sentence} ({example.reading})</span>{" "}
-                        <span>{example.meaning.vi}</span>
+                        <span className="font-semibold">
+                          - {example.sentence} ({example.reading})
+                        </span>{" "}
+                        <span>{example.meaning_vi}</span>
                       </div>
                     ))}
                   </>
                 )}
               </div>
 
-              {/* Kanji Parts */}
+              {/* Bộ thủ & Nét */}
+              {/* {shuffledKanjiItems.length === 0 ? (
+                <Skeleton className="w-full h-6 bg-gray-300 md:mt-4" />
+              ) : (
+                <div className="md:mt-2">
+                  <strong className="md:text-4xl text-xl text-black">Bộ Thủ:</strong>{" "}
+                  {currentKanji?.radicals}
+                </div>
+              )} */}
+              {/* 
               {shuffledKanjiItems.length === 0 ? (
                 <Skeleton className="w-full h-6 bg-gray-300 md:mt-4" />
               ) : (
                 <div className="md:mt-2">
-                  {shuffledKanjiItems[currentItem]?.lesson !== 1 && (
-                    <>
-                      <strong className="md:text-4xl text-xl text-black">Kanji Parts:</strong>
-                      <ul className="list-outside pl-10 list-disc  md:text-2xl md:mt-2 text-xl">
-                        {Array.isArray(shuffledKanjiItems[currentItem]?.kanji_parts)
-                          ? shuffledKanjiItems[currentItem]?.kanji_parts.map((part, idx) => (
-                            <li key={idx} className="text-black">
-                              <strong>{part.kanji}:</strong> {part.han_viet} - {typeof part.meaning === 'string' ? JSON.parse(part.meaning).vi : part.meaning?.vi}
-                            </li>
-                          ))
-                          : JSON.parse(shuffledKanjiItems[currentItem]?.kanji_parts)?.map(
-                            (part, idx) => (
-                              <li key={idx} className="text-black ">
-                                <strong>{part.kanji}:</strong> {part.han_viet} - {typeof part.meaning === 'string' ? JSON.parse(part.meaning).vi : part.meaning?.vi}
-                              </li>
-                            )
-                          )}
-                      </ul>
-                    </>
-                  )}
-
+                  <strong className="md:text-4xl text-xl text-black">Số Nét:</strong>{" "}
+                  {currentKanji?.strokes}
                 </div>
-              )}
+              )} */}
             </div>
           </div>
         </div>

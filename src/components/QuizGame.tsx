@@ -3,21 +3,20 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Separator } from "@/components/ui/separator";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { KanjiLesson } from '@/interface/IKanjiItem';
+import { KanjiData } from '@/interface/Ikanji';
 import { BookOpen, Pencil, FileText, List } from "lucide-react";
 
 interface QuizGameProps {
-    kanjiItems: KanjiLesson[];
+    kanjiItems: KanjiData[];
 }
 
 const QuizGame: React.FC<QuizGameProps> = ({ kanjiItems }) => {
-    const [questionType, setQuestionType] = useState<'hiragana' | 'mean'>('hiragana');
-    const [remainingQuestions, setRemainingQuestions] = useState<KanjiLesson[]>([...kanjiItems]);
-    const [currentQuestion, setCurrentQuestion] = useState<KanjiLesson | null>(null);
-    const [options, setOptions] = useState<KanjiLesson[]>([]);
+    const [questionType, setQuestionType] = useState<'kun_reading' | 'meaning_vi'>('kun_reading');
+    const [remainingQuestions, setRemainingQuestions] = useState<KanjiData[]>([...kanjiItems]);
+    const [currentQuestion, setCurrentQuestion] = useState<KanjiData | null>(null);
+    const [options, setOptions] = useState<KanjiData[]>([]);
     const [selectedAnswer, setSelectedAnswer] = useState<string | null>(null);
     const [isCorrect, setIsCorrect] = useState<boolean | null>(null);
-    const [showDetails, setShowDetails] = useState<boolean>(false);
     const [correctCount, setCorrectCount] = useState(0);
     const [wrongCount, setWrongCount] = useState(0);
     const [showResults, setShowResults] = useState(false);
@@ -30,6 +29,12 @@ const QuizGame: React.FC<QuizGameProps> = ({ kanjiItems }) => {
         }
     }, [kanjiItems]);
 
+    useEffect(() => {
+        if (remainingQuestions.length === 0) {
+            setShowResults(true);
+        }
+    }, [remainingQuestions]);
+
     const generateQuestion = () => {
         if (remainingQuestions.length === 0) {
             setShowResults(true);
@@ -39,26 +44,22 @@ const QuizGame: React.FC<QuizGameProps> = ({ kanjiItems }) => {
         const selectedQuestion = remainingQuestions[randomIndex];
         const correctAnswer = selectedQuestion.kanji;
         const shuffledOptions = kanjiItems
-            .filter(item => item.kanji !== correctAnswer)
+            .filter(item => item.kanji !== correctAnswer)  // Lọc ra những câu hỏi không trùng với đáp án
             .sort(() => Math.random() - 0.5)
-            .slice(0, 3);
+            .slice(0, 3);  // Chỉ lấy 3 lựa chọn khác, đảm bảo có đúng 4 lựa chọn khi thêm câu hỏi chính
 
-        shuffledOptions.push(selectedQuestion);
-        shuffledOptions.sort(() => Math.random() - 0.5);
+        shuffledOptions.push(selectedQuestion);  // Thêm câu hỏi chính vào
+        shuffledOptions.sort(() => Math.random() - 0.5);  // Trộn lại các lựa chọn
 
         setCurrentQuestion(selectedQuestion);
         setOptions(shuffledOptions);
         setSelectedAnswer(null);
         setIsCorrect(null);
-        setShowDetails(false);
         setRemainingQuestions(prev => prev.filter(item => item.id !== selectedQuestion.id));
     };
 
     const handleAnswer = (answer: string) => {
-
         const correct = answer === currentQuestion?.kanji;
-        const audio = new Audio(correct ? '/correct.mp3' : '/wrong.mp3');
-        audio.play();
         setSelectedAnswer(answer);
         setIsCorrect(correct);
 
@@ -92,13 +93,13 @@ const QuizGame: React.FC<QuizGameProps> = ({ kanjiItems }) => {
             </div>
             <CardHeader>
                 <CardTitle className="text-2xl">
-                    <Select value={questionType} onValueChange={(value) => setQuestionType(value as 'hiragana' | 'mean')}>
+                    <Select value={questionType} onValueChange={(value) => setQuestionType(value as 'kun_reading' | 'meaning_vi')}>
                         <SelectTrigger className="w-[150px] text-lg py-3 mb-5 md:mb-0 mt-3 md:mt-0">
                             <SelectValue placeholder="Chọn loại câu hỏi" />
                         </SelectTrigger>
                         <SelectContent className='bg-white'>
-                            <SelectItem value="hiragana">Hiragana</SelectItem>
-                            <SelectItem value="mean">Nghĩa</SelectItem>
+                            <SelectItem value="kun_reading">Kun Reading</SelectItem>
+                            <SelectItem value="meaning_vi">Nghĩa Tiếng Việt</SelectItem>
                         </SelectContent>
                     </Select>
                 </CardTitle>
@@ -118,11 +119,9 @@ const QuizGame: React.FC<QuizGameProps> = ({ kanjiItems }) => {
                     currentQuestion && (
                         <>
                             <p className="text-3xl font-semibold text-center mb-8">
-                                {questionType === "hiragana"
-                                    ? currentQuestion.hiragana
-                                    : typeof currentQuestion.mean === 'string'
-                                        ? JSON.parse(currentQuestion.mean)?.vi
-                                        : currentQuestion.mean?.vi}
+                                {questionType === "kun_reading"
+                                    ? currentQuestion.kun_reading?.join(", ")
+                                    : currentQuestion.meaning_vi}
                             </p>
 
                             <div className="grid grid-cols-2 gap-6">
@@ -151,55 +150,28 @@ const QuizGame: React.FC<QuizGameProps> = ({ kanjiItems }) => {
 
                                     <p className="text-white mt-2 flex items-center gap-2">
                                         <BookOpen className="w-5 h-5 text-yellow-400" />
-                                        <span className="flex-1 break-words">Ý nghĩa: {typeof currentQuestion.mean === 'string'
-                                            ? JSON.parse(currentQuestion.mean)?.vi
-                                            : currentQuestion.mean?.vi}
-                                        </span>
+                                        <span className="flex-1">Nghĩa: {currentQuestion.meaning_vi}</span>
                                     </p>
 
                                     <p className="text-white mt-2 flex items-center gap-2">
                                         <Pencil className="w-5 h-5 text-blue-400" />
-                                        <span className="flex-1 break-words">Phiên âm: {currentQuestion.hiragana}</span>
+                                        <span className="flex-1">Kun-yomi: {currentQuestion.kun_reading?.join(", ")}</span>
                                     </p>
 
-                                    {currentQuestion.examples && currentQuestion.examples.length > 0 && (
+                                    {/* ví dụ */}
+                                    {currentQuestion.examples?.length > 0 && (
                                         <p className="text-white mt-2 flex items-start gap-2">
-                                            <FileText className="w-5 mt-1 h-5 text-green-400" />
-                                            <span className="flex-1 break-words">Ví dụ: {currentQuestion.examples[0].sentence} ({currentQuestion.examples[0].reading}) - {typeof currentQuestion.examples[0].meaning === 'string'
-                                                ? JSON.parse(currentQuestion.examples[0].meaning).vi
-                                                : currentQuestion.examples[0].meaning.vi}</span>
+                                            <List className="w-5 h-5 text-green-400" />
+                                            <span className="flex-1">Ví dụ: {currentQuestion.examples[0].sentence} ({currentQuestion.examples[0].reading}) - {currentQuestion.examples[0].meaning_vi}</span>
                                         </p>
                                     )}
 
-                                    <div className="mt-2">
-                                        {currentQuestion.lesson !== 1 && (
-                                            <>
-                                                <strong className="text-white flex gap-2">
-                                                    <List className="w-5 h-5 text-fuchsia-400" />
-                                                    Kanji Parts:
-                                                </strong>
-                                                <ul className="list-inside list-disc pl-6" style={{ listStylePosition: 'inside' }}>
-                                                    {currentQuestion.kanji_parts.map((part, idx) => (
-                                                        <li key={idx} className="text-white mt-1 flex">
-                                                            <div className="flex items-center gap-2">
-                                                                <span className="flex-1">
-                                                                    <strong> - {part.kanji}:</strong> {part.han_viet} - {typeof part.meaning === 'string' ? JSON.parse(part.meaning).vi : part.meaning?.vi}
-                                                                </span>
-                                                            </div>
-                                                        </li>
-                                                    ))}
-                                                </ul>
-                                            </>
-                                        )}
-                                    </div>
+                                    <Separator className="my-3" />
+                                    <Button onClick={generateQuestion} className="w-full text-lg text-white py-6 bg-blue-500" disabled={selectedAnswer === null}>
+                                        Câu hỏi tiếp theo
+                                    </Button>
                                 </div>
                             )}
-
-                            <Separator className="my-3" />
-
-                            <Button onClick={generateQuestion} className="w-full text-lg text-white py-6 bg-blue-500" disabled={selectedAnswer === null}>
-                                Câu hỏi tiếp theo
-                            </Button>
                         </>
                     )
                 )}

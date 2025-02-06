@@ -1,60 +1,72 @@
 import { PrismaClient } from '@prisma/client';
-import { kanjiItems } from '../src/data/kanjiItems'; // Giả sử bạn đã có dữ liệu kanjiItems
+import { KanjiSeedData } from '../src/data/vocabsItems';
 const prisma = new PrismaClient();
-
 async function main() {
-  // 1️⃣ Lấy danh sách `lesson` và `kanji` đã có trong database
-  const existingKanji = await prisma.kanjiLesson.findMany({
+  console.log("🔄 Checking existing Kanji in the database...");
+
+  // 1️⃣ Fetch existing Kanji records to avoid duplicates
+  const existingKanji = await prisma.kanji.findMany({
     select: {
-      lesson: true,
       kanji: true,
+      id: true, // Fetch ID to link Examples later
     },
   });
 
-  // 2️⃣ Lọc ra những bản ghi chưa có
-  const newKanjiItems = kanjiItems.filter(
-    (item) =>
-      !existingKanji.some(
-        (existing) => existing.lesson === item.lesson && existing.kanji === item.kanji
-      )
+  // Convert to a set for quick lookup
+  const existingKanjiSet = new Map(existingKanji.map((k) => [k.kanji, k.id]));
+
+  // 2️⃣ Filter out already existing Kanji
+  const newKanjiItems = KanjiSeedData.filter(
+    (item) => !existingKanjiSet.has(item.kanji)
   );
 
-  // 3️⃣ Chuyển đổi dữ liệu để phù hợp với schema mới
-  const formattedKanjiItems = newKanjiItems.map(item => ({
-    ...item,
-    mean: JSON.stringify({
-      vi: item.mean.vi,
-      en: item.mean.en,
-    }),  // Chuyển đổi thành chuỗi JSON cho trường mean
-    examples: item.examples.map(example => ({
+  console.log(`🔍 Found ${newKanjiItems.length} new Kanji to insert.`);
+
+  // 3️⃣ Insert new Kanji records
+  for (const kanjiItem of newKanjiItems) {
+    const insertedKanji = await prisma.kanji.create({
+      data: {
+        kanji: kanjiItem.kanji,
+        kun_reading: kanjiItem.kun_reading,
+        on_reading: kanjiItem.on_reading,
+        han_viet: kanjiItem.han_viet,
+        meaning_vi: kanjiItem.meaning_vi,
+        meaning_en: kanjiItem.meaning_en,
+        radicals: kanjiItem.radicals,
+        strokes: kanjiItem.strokes,
+        level: kanjiItem.level,
+      },
+    });
+
+    console.log(`✅ Inserted Kanji: ${kanjiItem.kanji}`);
+
+    // Store the new ID for inserting examples
+    existingKanjiSet.set(insertedKanji.kanji, insertedKanji.id);
+  }
+
+  // 4️⃣ Insert related Example records
+  const exampleData = KanjiSeedData.flatMap((kanjiItem) =>
+    kanjiItem.examples.map((example) => ({
       sentence: example.sentence,
       reading: example.reading,
-      meaning: JSON.stringify({
-        vi: example.meaning.vi,
-        en: example.meaning.en,
-      }),  // Chuyển đổi thành chuỗi JSON cho trường meaning trong examples
-    })),
-    kanji_parts: item.kanji_parts.map(part => ({
-      kanji: part.kanji,
-      han_viet: part.han_viet,
-      meaning: JSON.stringify({
-        vi: part.meaning.vi,
-        en: part.meaning.en,
-      }),  // Chuyển đổi thành chuỗi JSON cho trường meaning trong kanji_parts
-    })),
-  }));
+      meaning_vi: example.meaning_vi,
+      meaning_en: example.meaning_en,
+      kanjiId: existingKanjiSet.get(kanjiItem.kanji), // Link to inserted Kanji
+    }))
+  );
 
-  // 4️⃣ Chỉ thêm vào database nếu có dữ liệu mới
-  if (formattedKanjiItems.length > 0) {
-    await prisma.kanjiLesson.createMany({
-      data: formattedKanjiItems,
+  if (exampleData.length > 0) {
+    await prisma.example.createMany({
+      data: exampleData,
+      skipDuplicates: true,
     });
-    console.log(`✅ Seeded ${formattedKanjiItems.length} new kanji items.`);
+    console.log(`✅ Inserted ${exampleData.length} Example records.`);
   } else {
-    console.log("⚠️ No new kanji items to seed.");
+    console.log("⚠️ No new Example records to insert.");
   }
 }
 
+// Execute the seed script
 main()
   .catch((e) => {
     console.error(e);

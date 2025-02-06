@@ -1,9 +1,3 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
-// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
-// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
-
 generator client {
   provider = "prisma-client-js"
 }
@@ -13,14 +7,139 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model KanjiLesson {
-  id          Int      @id @default(autoincrement())
-  lesson      Int
-  kanji       String
-  hiragana    String
-  mean        Json 
-  on_yomi     String
-  examples    Json 
-  kanji_parts Json    
-  createdAt   DateTime @default(now())
+model User {
+  id              Int       @id @default(autoincrement())
+  email           String    @unique
+  password        String
+  name            String?
+  role            String    @default("user")  // "user" hoặc "admin"
+  created_at      DateTime  @default(now())
+
+  progress        UserProgress[]
+  quiz            QuizGame[]
+  learningHistory LearningHistory[] // Thêm mối quan hệ đối ứng
+
+    // NextAuth fields
+  sessions   Session[]
+  accounts   Account[]
+}
+
+model Session {
+  id           String   @id @default(uuid())
+  userId       Int
+  expires      DateTime
+  sessionToken String   @unique
+  accessToken  String   @unique
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model Account {
+  id                String  @id @default(uuid())
+  userId            Int
+  type              String
+  provider          String
+  providerAccountId String  @unique
+  refreshToken      String?  
+  accessToken       String?  
+  expires_at        Int?  
+  user              User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model Vocab {
+  id              Int       @id @default(autoincrement())
+  vocab           String
+  hiragana        String
+  meaning_vi      String?
+  meaning_en      String?
+  lesson          Int?
+  level           String?
+  word_type       String?
+  examples        Example[]
+  progress        UserProgress[]
+  quiz            QuizGame[]
+  learningHistory LearningHistory[] // Thêm mối quan hệ đối ứng
+}
+
+model Example {
+  id          Int     @id @default(autoincrement())
+  sentence    String
+  reading     String
+  meaning_vi  String?
+  meaning_en  String?
+  vocabId     Int?
+  kanjiId     Int?
+
+  vocab       Vocab?  @relation(fields: [vocabId], references: [id])
+  kanji       Kanji?  @relation(fields: [kanjiId], references: [id])
+}
+
+model Kanji {
+  id              Int       @id @default(autoincrement())
+  kanji           String
+  kun_reading     String[]
+  on_reading      String[]
+  han_viet        String?
+  meaning_vi      String?
+  meaning_en      String?
+  radicals        String?
+  strokes         Int?
+  level           String?
+
+  examples        Example[]
+  progress        UserProgress[]
+  quiz            QuizGame[]
+  learningHistory LearningHistory[] // Thêm mối quan hệ đối ứng
+}
+
+model UserProgress {
+  id               Int       @id @default(autoincrement())
+  user_id          Int       
+  vocab_id         Int?      
+  kanji_id         Int?      
+  review_date      DateTime  
+  last_review_date DateTime  
+  ease_factor      Float     
+  interval         Int       
+  repetitions      Int       
+  memory_score     Int       @default(0)
+  status           String    @default("new") // Thêm trạng thái học
+
+  user             User      @relation(fields: [user_id], references: [id])
+  vocab            Vocab?    @relation(fields: [vocab_id], references: [id])
+  kanji            Kanji?    @relation(fields: [kanji_id], references: [id])
+
+   @@unique([user_id, vocab_id])
+}
+
+model QuizGame {
+  id          Int        @id @default(autoincrement())
+  user_id     Int        
+  vocab_id    Int?       
+  kanji_id    Int?       
+  question    String     
+  type        String     
+  correct_answer String  
+  options     String[]   
+  user_answer String?    
+  is_correct  Boolean?   
+  score       Int?       @default(0)  // Thêm điểm số
+  timestamp   DateTime   @default(now())
+
+  user        User       @relation(fields: [user_id], references: [id])
+  vocab       Vocab?     @relation(fields: [vocab_id], references: [id])
+  kanji       Kanji?     @relation(fields: [kanji_id], references: [id])
+}
+
+model LearningHistory {
+  id           Int      @id @default(autoincrement())
+  user_id      Int      
+  vocab_id     Int?     
+  kanji_id     Int?     
+  review_date  DateTime 
+  result       String   // "correct" hoặc "incorrect"
+  score        Float    
+
+  user         User     @relation(fields: [user_id], references: [id])
+  vocab        Vocab?   @relation(fields: [vocab_id], references: [id])
+  kanji        Kanji?   @relation(fields: [kanji_id], references: [id])
 }

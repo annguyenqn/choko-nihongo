@@ -7,31 +7,51 @@ export async function GET(request: Request) {
   try {
     const { searchParams } = new URL(request.url);
     const lessonParam = searchParams.get('lesson');
-    
-    // Kiểm tra nếu lesson không tồn tại hoặc không phải số
+
+    // Validate lesson parameter
     if (!lessonParam || isNaN(Number(lessonParam))) {
-      return NextResponse.json({ error: 'Missing or invalid lesson parameter' }, { status: 400 });
+      return NextResponse.json(
+        { error: 'Missing or invalid lesson parameter' },
+        { status: 400 }
+      );
     }
 
     const lesson = Number(lessonParam);
 
-    const kanjiItem = await prisma.kanjiLesson.findMany({
-      where: { lesson },
+    // Fetch Kanji data for the given lesson
+    const kanjiList = await prisma.kanji.findMany({
+      where: { level: `N${lesson}` }, // Assuming lessons follow N5, N4, etc.
       select: {
         id: true,
-        lesson: true,
         kanji: true,
-        hiragana: true,
-        mean: true,
-        on_yomi: true,
-        examples: true,
-        kanji_parts: true,
+        kun_reading: true,
+        on_reading: true,
+        han_viet: true,
+        meaning_vi: true,
+        meaning_en: true,
+        radicals: true,
+        strokes: true,
+        examples: {
+          select: {
+            sentence: true,
+            reading: true,
+            meaning_vi: true,
+            meaning_en: true,
+          },
+        },
       },
     });
 
-    return NextResponse.json(kanjiItem);
+    if (kanjiList.length === 0) {
+      return NextResponse.json(
+        { message: `No Kanji found for lesson N${lesson}` },
+        { status: 404 }
+      );
+    }
+
+    return NextResponse.json(kanjiList);
   } catch (error) {
-    console.error("Error fetching kanji:", error);
-    return NextResponse.json({ error: 'Failed to fetch kanji' }, { status: 500 });
+    console.error("❌ Error fetching Kanji:", error);
+    return NextResponse.json({ error: 'Failed to fetch Kanji' }, { status: 500 });
   }
 }
